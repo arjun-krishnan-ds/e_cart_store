@@ -1,0 +1,28 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<!-- Hero / Banner -->
+<section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+        <h1>Shop Smarter. Live Better.</h1>
+        <p>Premium products, unbeatable prices, delivered to your door.</p>
+        <a href="{% url 'products' %}" class="btn-primary">Explore Products</a>
+    </div>
+</section>
+
+<!-- Featured Products -->
+<section class="featured-products">
+    <h2 class="section-title">Featured Products</h2>
+    <div class="cards">
+        {% for product in products %}
+        <div class="card">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+            <h3>{{ product.name }}</h3>
+            <p class="price">₹{{ product.price }}</p>
+            <a href="{% url 'product_detail' product.id %}" class="btn-b">View Details</a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

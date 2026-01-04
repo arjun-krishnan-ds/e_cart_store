@@ -1,0 +1,11 @@
+{% extends "core/base.html" %}
+{% block content %}
+<section class="auth-section">
+    <div class="auth-card">
+        <h2>Welcome, {{ request.user.username }}</h2>
+        <p class="auth-subtitle">You are logged in successfully</p>
+
+        <a href="{% url 'logout' %}" class="btn-b full-width">Logout</a>
+    </div>
+</section>
+{% endblock %}
