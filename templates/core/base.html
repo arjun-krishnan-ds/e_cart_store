@@ -1,50 +1,67 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}E-Cart{% endblock %}</title>
-    
+    <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Main CSS -->
-    <link rel="stylesheet" href="{% static 'core/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/base.css' %}?v=2">
+    <!-- Extra page CSS -->
+    {% block extra_css %}{% endblock %}
     <!-- Mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSRF token for AJAX -->
+    <meta name="csrf-token" content="{{ csrf_token }}">
 </head>
+
 <body>
 
     <!-- Header -->
-   <header class="main-header">
-    <div class="container header-flex">
-        <div class="logo">
-            <img src="{% static 'core/images/logo.png' %}" alt="My E-Cart">
-            <span>Shopping Simplified.</span>
+    <header class="main-header">
+        <div class="container header-flex d-flex justify-content-between align-items-center">
+            <div class="logo d-flex align-items-center">
+                <img src="{% static 'core/images/ecart.png' %}" alt="My E-Cart" style="height:50px;">
+                <span class="ms-2">Shopping Simplified.</span>
+            </div>
+
+            <nav class="nav-links d-flex align-items-center gap-3">
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'product_list' %}">Products</a>
+                <a href="{% url 'login' %}">Sign in</a>
+                <a href="{% url 'signup' %}">Sign up</a>
+
+                <!-- Cart counter -->
+                <a href="{% url 'cart' %}" class="cart-link">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Cart
+                    <span id="cart-counter" class="cart-badge">{{ cart_count }}</span>
+
+                </a>
+
+            </nav>
         </div>
+    </header>
 
-        <nav class="nav-links">
-            <a href="{% url 'home' %}">Home</a>
-            <a href="{% url 'products' %}">Products</a>
-            <a href="{% url 'signin' %}">Sign in</a>
-            <a href="{% url 'signup' %}">Sign up</a>
-        </nav>
-    </div>
-</header>
+    <!-- ===== PAGE CONTENT ===== -->
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
 
-
-<!-- ===== PAGE CONTENT ===== -->
-<main>
-    {% block content %}
-    {% endblock %}
-</main>
-
-  <!-- Footer -->
+    <!-- Footer -->
     <footer>
         <div class="footer-grid">
             <div>
                 <h4>Quick Links</h4>
                 <a href="{% url 'home' %}">Home</a>
-                <a href="{% url 'products' %}">Products</a>
-                <a href="#">Cart</a>
+                <a href="{% url 'product_list' %}">Products</a>
+                <a href="{% url 'cart' %}">Cart</a>
             </div>
             <div>
                 <h4>Follow Us</h4>
@@ -58,13 +75,19 @@
                 <p>Phone: +91 1234567890</p>
             </div>
         </div>
-        <div class="footer-bottom">
+        <div class="footer-bottom text-center py-2">
             &copy; 2026 My E-Cart. All Rights Reserved.
         </div>
     </footer>
 
-<!-- Main JS -->
-<script src="{% static 'core/js/base.js' %}"></script>
+    <!-- Main JS -->
+    <script src="{% static 'e_cart/js/cart.js' %}?v=2"></script>
+
+
+    <!-- Extra page JS -->
+    {% block extra_js %}{% endblock %}
+
 
 </body>
+
 </html>

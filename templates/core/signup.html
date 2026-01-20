@@ -1,10 +1,17 @@
 {% extends "core/base.html" %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'core/css/auth.css' %}">
+{% endblock %}
 {% block content %}
-<section class="auth-section">
+<section class="auth-section signup">
     <div class="auth-card">
-        <h2>Create Account</h2>
-        <p class="auth-subtitle">Create My E-Cart account and join us in just seconds...</p>
 
+        <!-- Title -->
+        <h2>Create Account</h2>
+        <p class="auth-subtitle">Create your My E-Cart account and join us in just seconds...</p>
+
+        <!-- Form -->
         <form method="POST">
             {% csrf_token %}
 
@@ -28,16 +35,18 @@
                 {{ form.password2 }}
             </div>
 
-            <button type="submit" class="btn-primary full-width">
-                Create Account
-            </button>
+            <button type="submit" class="btn-primary full-width">Create Account</button>
         </form>
 
+        <!-- Links -->
         <div class="auth-links">
             <span>Already have an account?</span>
-            <a href="{% url 'signin' %}">Sign In</a>
+            <a href="{% url 'login' %}">Sign In</a>
         </div>
+
     </div>
 </section>
 {% endblock %}
-
+{% block extra_js %}
+<script src="{% static 'core/js/auth.js' %}"></script>
+{% endblock %}

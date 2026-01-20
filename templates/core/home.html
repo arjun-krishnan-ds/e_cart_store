@@ -1,4 +1,8 @@
 {% extends 'core/base.html' %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'core/css/home.css' %}">
+{% endblock %}
 
 {% block content %}
 <!-- Hero / Banner -->
@@ -7,7 +11,10 @@
     <div class="hero-content container">
         <h1>Shop Smarter. Live Better.</h1>
         <p>Premium products, unbeatable prices, delivered to your door.</p>
-        <a href="{% url 'products' %}" class="btn-primary">Explore Products</a>
+        <a href="{% url 'product_list' %}" class="btn-primary">
+            Explore Products
+        </a>
+
     </div>
 </section>
 
@@ -25,4 +32,7 @@
         {% endfor %}
     </div>
 </section>
+{% endblock %}
+{% block extra_js %}
+<script src="{% static 'core/js/home.js' %}"></script>
 {% endblock %}

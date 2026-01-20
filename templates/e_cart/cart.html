@@ -1,0 +1,92 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}My Cart{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'e_cart/css/cart.css' %}?v=6">
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h2 class="mb-4 fw-bold">🛒 Your Shopping Cart</h2>
+
+    {% if cart_items %}
+    <div class="cart-wrapper">
+
+        <!-- CART ITEMS -->
+        <div class="cart-items">
+
+            {% for item in cart_items %}
+            <div class="cart-item d-flex align-items-center justify-content-between mb-3 p-3 shadow-sm rounded"
+                 id="cart-row-{{ item.product.id }}">
+
+                <div class="cart-info">
+                    <h5 class="mb-1">{{ item.product.name }}</h5>
+
+                    <small class="text-muted">
+                        Quantity:
+                        <span class="cart-qty">{{ item.quantity }}</span>
+                    </small>
+                    <br>
+
+                    <strong>
+                        ₹ <span class="cart-item-subtotal">{{ item.subtotal }}</span>
+                    </strong>
+                </div>
+
+                <!-- REMOVE BUTTON -->
+                <button class="btn btn-outline-danger btn-sm btn-remove-cart"
+                        data-id="{{ item.product.id }}">
+                    Remove
+                </button>
+            </div>
+            {% endfor %}
+
+        </div>
+
+        <!-- CART SUMMARY -->
+        <div class="cart-summary mt-4 p-4 border rounded shadow-sm">
+            <h5 class="fw-bold mb-3">Order Summary</h5>
+
+            <div class="d-flex justify-content-between mb-2">
+                <span>Total Items</span>
+                <span id="cart-items-count">{{ cart_count }}</span>
+            </div>
+
+            <div class="d-flex justify-content-between mb-3">
+                <span>Total Price</span>
+                <strong>
+                    ₹ <span id="cart-total">{{ cart_total }}</span>
+                </strong>
+            </div>
+
+            <a href="{% url 'checkout' %}" class="btn btn-success w-100">
+                Proceed to Checkout
+            </a>
+        </div>
+
+    </div>
+
+    {% else %}
+    <!-- EMPTY CART -->
+    <div class="text-center py-5 cart-wrapper">
+        <h4>🛒 Your cart is empty</h4>
+        <a href="{% url 'product_list' %}" class="btn btn-primary mt-3">
+            Continue Shopping
+        </a>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block extra_js %}
+
+<!-- ✅ Django URLs injected safely -->
+<script>
+    const PRODUCT_LIST_URL = "{% url 'product_list' %}";
+    const REMOVE_CART_URL_PREFIX = "{% url 'remove_cart' 0 %}".replace("0/", "");
+</script>
+
+<script src="{% static 'e_cart/js/cart.js' %}?v=6"></script>
+{% endblock %}

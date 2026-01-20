@@ -1,0 +1,102 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'e_cart/css/category.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container my-4">
+
+  <div class="row g-4">
+
+    <!-- =========================
+        LEFT SIDEBAR
+    ========================== -->
+    <aside class="col-lg-3 col-md-4">
+
+      <div class="category-box">
+
+        <h5>Categories</h5>
+
+        <input type="text" id="categorySearch" class="form-control mb-3" placeholder="Search categories...">
+
+        {% for category in categories %}
+        <div class="category-group">
+
+          <div class="category-title">
+            {{ category.name }}
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+
+          {% if category.children.all %}
+          <ul class="subcategory-list">
+            {% for sub in category.children.all %}
+            <li class="subcategory-item">
+              <a href="?category={{ sub.id }}">{{ sub.name }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+
+        </div>
+        {% endfor %}
+
+      </div>
+
+    </aside>
+
+    <!-- =========================
+        PRODUCT GRID
+    ========================= -->
+    <section class="col-lg-9 col-md-8">
+
+      <div id="product-container" class="row g-4">
+
+        {% for product in products %}
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+
+          <div class="product-card">
+
+            <div class="product-img-wrapper">
+              <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-img">
+            </div>
+
+            <div class="product-body">
+              <h6 class="product-title">{{ product.name }}</h6>
+              <div class="product-price">₹ {{ product.price }}</div>
+            </div>
+
+            <div class="product-actions">
+              <a href="{% url 'product_detail' product.id %}" class="btn btn-sm btn-primary">
+                View
+              </a>
+
+              <button class="btn btn-warning btn-sm btn-add-cart" data-id="{{ product.id }}">
+                Add to Cart
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+        {% empty %}
+        <p>No products available.</p>
+        {% endfor %}
+
+      </div>
+
+      <div id="loader" style="display:none; text-align:center; padding:20px;">
+        <i class="fa fa-spinner fa-spin fa-2x"></i>
+      </div>
+
+    </section>
+
+  </div>
+
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'e_cart/js/category.js' %}"></script>
+{% endblock %}

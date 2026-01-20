@@ -1,56 +1,148 @@
-// Category
-document.querySelectorAll('.category-header').forEach(header => {
-    header.addEventListener('click', () => {
-        const parent = header.parentElement;
-        parent.classList.toggle('active');
-    });
-});
+document.addEventListener("DOMContentLoaded", () => {
 
+    console.log("🛒 store.js loaded");
 
-document.addEventListener('DOMContentLoaded', () => {
-    const quickViewButtons = document.querySelectorAll('.quick-view-btn');
-    const modal = new bootstrap.Modal(document.getElementById('quickViewModal'));
+    const csrfToken = document.querySelector("meta[name='csrf-token']").content;
 
-    quickViewButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const card = btn.closest('.product-card');
+    // --------------------------
+    // QUANTITY SELECTOR (Product Detail Page)
+    // --------------------------
+    const qtyDisplay = document.getElementById("qty-display");
+    const btnMinus = document.querySelector(".btn-minus");
+    const btnPlus = document.querySelector(".btn-plus");
 
-            // Fill modal with data
-            document.getElementById('quickViewTitle').textContent = card.dataset.name;
-            document.getElementById('quickViewImage').src = card.dataset.image;
-            document.getElementById('quickViewCategory').textContent = card.dataset.category;
-            document.getElementById('quickViewDescription').textContent = card.dataset.description;
-            document.getElementById('quickViewPrice').textContent = `₹ ${card.dataset.price}`;
+    let quantity = parseInt(qtyDisplay?.innerText) || 1;
 
-            // Add to cart button
-            const cartBtn = document.getElementById('quickViewAddToCart');
-            cartBtn.dataset.id = card.dataset.id;
-
-            // View Details link
-            const detailLink = document.getElementById('quickViewDetailLink');
-            detailLink.href = `/products/${card.dataset.id}/`; // Or {% url 'product-detail' product.id %} rendered dynamically
-
-            modal.show();
+    if (qtyDisplay && btnMinus && btnPlus) {
+        btnMinus.addEventListener("click", () => {
+            if (quantity > 1) quantity--;
+            qtyDisplay.innerText = quantity;
         });
-    });
 
-    // Add to Cart functionality
-    document.querySelectorAll('.btn-cart').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const productId = btn.dataset.id;
+        btnPlus.addEventListener("click", () => {
+            quantity++;
+            qtyDisplay.innerText = quantity;
+        });
+    }
 
-            fetch("{% url 'add-to-cart' %}", {
-                method: 'POST',
+    // --------------------------
+    // ADD TO CART
+    // --------------------------
+    const btnAddCart = document.querySelector(".btn-add-cart");
+    if (btnAddCart) {
+        btnAddCart.addEventListener("click", () => {
+            const productId = btnAddCart.dataset.id;
+            fetch(`${ADD_CART_URL_PREFIX}${productId}/`, {
+                method: "POST",
                 headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRFToken': '{{ csrf_token }}'
+                    "X-CSRFToken": csrfToken,
+                    "Content-Type": "application/x-www-form-urlencoded",
+                    "X-Requested-With": "XMLHttpRequest",
                 },
-                body: JSON.stringify({id: productId})
+                body: `qty=${quantity}`
             })
             .then(res => res.json())
-            .then(data => alert(data.message))
-            .catch(err => console.error(err));
+            .then(data => {
+                if (data.status === "success") {
+                    showToast(`✅ Added ${quantity} item(s) to cart!`, "success");
+                    const badge = document.getElementById("cart-counter");
+                    if (badge) badge.innerText = data.cart_count;
+                } else {
+                    showToast(data.message || "⚠️ Failed to add item.", "error");
+                }
+            })
+            .catch(() => showToast("⚠️ Server error. Try again.", "error"));
         });
-    });
-});
+    }
 
+    // --------------------------
+    // BUY NOW
+    // --------------------------
+    const btnBuyNow = document.querySelector(".btn-buy-now");
+    if (btnBuyNow) {
+        btnBuyNow.addEventListener("click", () => {
+            const productId = btnBuyNow.dataset.id;
+            fetch(`${ADD_CART_URL_PREFIX}${productId}/`, {
+                method: "POST",
+                headers: {
+                    "X-CSRFToken": csrfToken,
+                    "Content-Type": "application/x-www-form-urlencoded",
+                    "X-Requested-With": "XMLHttpRequest",
+                },
+                body: `qty=${quantity}`
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.status === "success") {
+                    window.location.href = CHECKOUT_URL;
+                } else {
+                    showToast(data.message || "⚠️ Failed to add item.", "error");
+                }
+            })
+            .catch(() => showToast("⚠️ Server error. Try again.", "error"));
+        });
+    }
+
+    // --------------------------
+    // PLACE ORDER (Checkout Page)
+    // --------------------------
+    const btnPlaceOrder = document.querySelector(".btn-place-order");
+    if (btnPlaceOrder) {
+        btnPlaceOrder.addEventListener("click", () => {
+            btnPlaceOrder.disabled = true;
+            btnPlaceOrder.innerText = "Placing order...";
+
+            fetch(PLACE_ORDER_URL, {
+                method: "POST",
+                headers: {
+                    "X-CSRFToken": csrfToken,
+                    "Content-Type": "application/x-www-form-urlencoded",
+                    "X-Requested-With": "XMLHttpRequest"
+                },
+                body: ""
+            })
+            .then(res => {
+                if (res.redirected) {
+                    // User not logged in, redirect to login page
+                    window.location.href = res.url;
+                    return;
+                }
+                return res.json();
+            })
+            .then(data => {
+                if (!data) return; // redirected to login, stop here
+
+                btnPlaceOrder.disabled = false;
+                btnPlaceOrder.innerText = "Place Order";
+
+                if (data.success) {
+                    showToast("✅ Order placed successfully!", "success");
+                    setTimeout(() => window.location.href = data.redirect_url, 1500);
+                } else {
+                    showToast(data.message || "⚠️ Failed to place order.", "error");
+                }
+            })
+            .catch(() => {
+                btnPlaceOrder.disabled = false;
+                btnPlaceOrder.innerText = "Place Order";
+                showToast("⚠️ Server error. Try again.", "error");
+            });
+        });
+    }
+
+    // --------------------------
+    // TOAST FUNCTION
+    // --------------------------
+    function showToast(message, type) {
+        const toast = document.createElement("div");
+        toast.className = `cart-toast ${type}`;
+        toast.innerText = message;
+        document.body.appendChild(toast);
+        setTimeout(() => toast.classList.add("show"), 50);
+        setTimeout(() => {
+            toast.classList.remove("show");
+            setTimeout(() => toast.remove(), 300);
+        }, 2200);
+    }
+
+});
