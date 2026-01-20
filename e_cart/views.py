@@ -1,4 +1,4 @@
-from django.shortcuts import redirect,render, get_object_or_404
+from django.shortcuts import redirect, render, get_object_or_404
 from django.views.decorators.http import require_POST
 from django.http import JsonResponse
 from django.urls import reverse
@@ -203,8 +203,10 @@ def remove_from_cart(request, product_id):
 # ------------------------
 # PLACE ORDER
 # ------------------------
-@login_required(login_url=reverse_lazy('login'))
 def place_order(request):
+    if not request.user.is_authenticated:
+        return JsonResponse({"success": False, "message": "Login required."}, status=401)
+
     if request.method != "POST":
         return JsonResponse({"success": False, "message": "Invalid request method."}, status=405)
 
@@ -222,7 +224,6 @@ def place_order(request):
             subtotal = product.price * quantity
             total_amount += subtotal
 
-            # Create OrderItem
             OrderItem.objects.create(
                 order=order,
                 product=product,
@@ -230,16 +231,13 @@ def place_order(request):
                 price=product.price
             )
 
-        # Update order total
         order.total_amount = total_amount
-        order.status = "COD"  # or "Pending" depending on your flow
+        order.status = "COD"
         order.save()
 
-        # Clear the cart from session
         request.session["cart"] = {}
         request.session.modified = True
 
-        # Return JSON with redirect URL to confirmation page
         return JsonResponse({
             "success": True,
             "redirect_url": reverse("order_confirmation", args=[order.id])
@@ -250,17 +248,19 @@ def place_order(request):
     except Exception as e:
         print("Place order error:", e)
         return JsonResponse({"success": False, "message": "Server error. Try again."}, status=500)
+
 # ------------------------
 # ORDER CONFIRMATION
 # ------------------------
-@login_required
+@login_required(login_url="/login/")
 def order_confirmation(request, order_id):
     try:
         order = Order.objects.get(id=order_id, user=request.user)
         order_items = OrderItem.objects.filter(order=order)
-        return render(request, "e_cart/order_confirmation.html", {
-            "order": order,
-            "order_items": order_items
-        })
+        return render(
+            request,
+            "e_cart/order_confirmation.html",
+            {"order": order, "order_items": order_items},
+        )
     except Order.DoesNotExist:
         return redirect("product_list")  # fallback

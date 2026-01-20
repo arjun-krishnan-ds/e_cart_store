@@ -88,45 +88,59 @@ document.addEventListener("DOMContentLoaded", () => {
     // --------------------------
     const btnPlaceOrder = document.querySelector(".btn-place-order");
     if (btnPlaceOrder) {
-        btnPlaceOrder.addEventListener("click", () => {
+        btnPlaceOrder.addEventListener("click", async () => {
             btnPlaceOrder.disabled = true;
             btnPlaceOrder.innerText = "Placing order...";
 
-            fetch(PLACE_ORDER_URL, {
-                method: "POST",
-                headers: {
-                    "X-CSRFToken": csrfToken,
-                    "Content-Type": "application/x-www-form-urlencoded",
-                    "X-Requested-With": "XMLHttpRequest"
-                },
-                body: ""
-            })
-            .then(res => {
+            try {
+                const res = await fetch(PLACE_ORDER_URL, {
+                    method: "POST",
+                    headers: {
+                        "X-CSRFToken": csrfToken,
+                        "Content-Type": "application/x-www-form-urlencoded",
+                        "X-Requested-With": "XMLHttpRequest"
+                    },
+                    body: ""
+                });
+
+                // If redirected (login required), go to login
                 if (res.redirected) {
-                    // User not logged in, redirect to login page
                     window.location.href = res.url;
                     return;
                 }
-                return res.json();
-            })
-            .then(data => {
-                if (!data) return; // redirected to login, stop here
+
+                // Try parsing JSON
+                let data;
+                try {
+                    data = await res.json();
+                } catch (err) {
+                    // If not JSON, probably login page
+                    window.location.href = "/login/?next=" + window.location.pathname;
+                    return;
+                }
 
                 btnPlaceOrder.disabled = false;
                 btnPlaceOrder.innerText = "Place Order";
 
-                if (data.success) {
+                // Handle login-required response from backend
+                if (data.success === false && data.message === "Login required.") {
+                    window.location.href = "/login/?next=" + window.location.pathname;
+                    return; // Stop execution so success toast doesn't show
+                }
+
+                // Show success toast only if order succeeded
+                if (data.success === true) {
                     showToast("✅ Order placed successfully!", "success");
                     setTimeout(() => window.location.href = data.redirect_url, 1500);
-                } else {
+                } else if (data.success === false) {
                     showToast(data.message || "⚠️ Failed to place order.", "error");
                 }
-            })
-            .catch(() => {
+
+            } catch (err) {
                 btnPlaceOrder.disabled = false;
                 btnPlaceOrder.innerText = "Place Order";
                 showToast("⚠️ Server error. Try again.", "error");
-            });
+            }
         });
     }
 
