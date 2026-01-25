@@ -12,7 +12,6 @@ class ECartAPITest(TestCase):
     def setUp(self):
         self.client = Client()
 
-        # -----------------------
         # Create User & Login
         # -----------------------
         self.user = User.objects.create_user(
