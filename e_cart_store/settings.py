@@ -82,11 +82,12 @@ WSGI_APPLICATION = "e_cart_store.wsgi.application"
 # DATABASE CONFIGURATION
 # --------------------------
 # Default SQLite for local dev
+
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.parse(
+    "postgresql://e_cart_product_db_user:SpLvYFp4H37keJVTRlKe6cKqGbC8nAiv@dpg-d5qv72p5pdvs739dripg-a.oregon-postgres.render.com/e_cart_product_db"
+    )
 }
 
 # Override with DATABASE_URL for production (Render)
