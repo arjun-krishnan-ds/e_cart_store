@@ -28,7 +28,7 @@ SECRET_KEY = "django-insecure-17cwtdn9#1_r!==e$9he1g-r*6nv1jnyjihmec_(ynwga6^c@^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -41,9 +41,12 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "e_cart.apps.ECartConfig",
     "core.apps.CoreConfig",
+    "rest_framework",
 ]
 
 MIDDLEWARE = [
+    "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware", #added
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
