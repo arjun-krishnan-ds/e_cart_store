@@ -2,10 +2,11 @@ from django.shortcuts import redirect, render, get_object_or_404
 from django.views.decorators.http import require_POST
 from django.http import JsonResponse
 from django.urls import reverse
-from .models import Product, Category, Order, OrderItem
+from .models import Product, Category, Order, OrderItem, Wallet, WalletTransaction
 from django.contrib.auth.decorators import login_required
 from decimal import Decimal
-from django.urls import reverse_lazy
+from django.contrib import messages
+from django.db import transaction
 
 
 # ===========================
@@ -67,23 +68,6 @@ def add_to_cart(request, product_id):
     request.session.modified = True
 
     return JsonResponse({"status": "success", "cart_count": sum(cart.values())})
-
-
-def checkout(request):
-    cart = request.session.get("cart", {})
-    products = []
-    total = 0
-
-    for pid, qty in cart.items():
-        product = get_object_or_404(Product, id=pid)
-        product.qty = qty
-        product.subtotal = qty * product.price
-        total += product.subtotal
-        products.append(product)
-
-    return render(
-        request, "e_cart/checkout.html", {"products": products, "total": total}
-    )
 
 
 # ===========================
@@ -200,67 +184,209 @@ def remove_from_cart(request, product_id):
     return JsonResponse({"success": False, "message": "Item not found in cart"})
 
 
-# ------------------------
-# PLACE ORDER
-# ------------------------
-def place_order(request):
-    if not request.user.is_authenticated:
-        return JsonResponse({"success": False, "message": "Login required."}, status=401)
-
-    if request.method != "POST":
-        return JsonResponse({"success": False, "message": "Invalid request method."}, status=405)
-
+@login_required(login_url="/login/")
+def checkout(request):
     cart = request.session.get("cart", {})
     if not cart:
-        return JsonResponse({"success": False, "message": "Your cart is empty."})
+        messages.error(request, "Your cart is empty.")
+        return redirect("cart")
 
-    try:
-        total_amount = Decimal("0.00")
-        order = Order.objects.create(user=request.user, total_amount=0)  # Temporary amount
+    cart_items = []
+    total = Decimal("0")
 
-        for product_id, qty in cart.items():
-            product = Product.objects.get(id=product_id)
-            quantity = int(qty)
-            subtotal = product.price * quantity
-            total_amount += subtotal
+    for product_id, qty in cart.items():
+        product = get_object_or_404(Product, id=product_id)
+        subtotal = product.price * qty
+        total += subtotal
+        cart_items.append({"product": product, "qty": qty, "subtotal": subtotal})
 
-            OrderItem.objects.create(
-                order=order,
-                product=product,
-                quantity=quantity,
-                price=product.price
-            )
+    return render(
+        request, "e_cart/checkout.html", {"cart_items": cart_items, "total": total}
+    )
 
-        order.total_amount = total_amount
-        order.status = "COD"
-        order.save()
+
+@login_required(login_url="/login/")
+@transaction.atomic
+def place_order(request):
+    if request.method != "POST":
+        return redirect("checkout")
+
+    address = request.POST.get("address")
+    cart = request.session.get("cart", {})
+
+    if not cart or not address:
+        messages.error(request, "Invalid checkout.")
+        return redirect("checkout")
+
+    order = Order.objects.create(user=request.user, address=address, status="PLACED")
+
+    total = Decimal("0")
+
+    for product_id, qty in cart.items():
+        product = get_object_or_404(Product, id=product_id)
+        OrderItem.objects.create(
+            order=order, product=product, quantity=qty, price=product.price
+        )
+        total += product.price * qty
+
+    order.total_amount = total
+    order.save()
+
+    return render(request, "e_cart/order_confirmation.html", {"order": order})
+
+
+@login_required(login_url="/login/")
+def process_payment(request, order_id):
+    order = get_object_or_404(Order, id=order_id, user=request.user)
+
+    payment_method = request.POST.get("payment_method")
+    order.payment_method = payment_method
+    order.save()
+
+    if payment_method == "COD":
+        request.session["cart"] = {}
+        return redirect("order_success", order_id=order.id)
+
+    if payment_method == "UPI":
+        return redirect("upi_payment", order_id=order.id)
+
+    if payment_method == "WALLET":
+        return redirect("wallet_payment", order_id=order.id)
+
+    return redirect("order_tracking", order_id=order.id)
+
+
+@login_required(login_url="/login/")
+@transaction.atomic
+def wallet_payment(request, order_id):
+    order = get_object_or_404(Order, id=order_id, user=request.user)
+    wallet, _ = Wallet.objects.get_or_create(user=request.user)
+
+    if request.method == "POST":
+        if wallet.balance < order.total_amount:
+            messages.error(request, "Insufficient wallet balance.")
+            return redirect("wallet_page")
+
+        wallet.balance -= order.total_amount
+        wallet.save()
+
+        WalletTransaction.objects.create(
+            wallet=wallet,
+            amount=order.total_amount,
+            transaction_type="DEBIT",
+            source="ORDER",
+            order=order,
+        )
 
         request.session["cart"] = {}
-        request.session.modified = True
+        return redirect("order_success", order_id=order.id)
 
-        return JsonResponse({
-            "success": True,
-            "redirect_url": reverse("order_confirmation", args=[order.id])
-        })
+    return render(
+        request, "e_cart/wallet_payment.html", {"order": order, "wallet": wallet}
+    )
 
-    except Product.DoesNotExist:
-        return JsonResponse({"success": False, "message": "Some products are no longer available."})
-    except Exception as e:
-        print("Place order error:", e)
-        return JsonResponse({"success": False, "message": "Server error. Try again."}, status=500)
 
-# ------------------------
-# ORDER CONFIRMATION
-# ------------------------
 @login_required(login_url="/login/")
-def order_confirmation(request, order_id):
-    try:
-        order = Order.objects.get(id=order_id, user=request.user)
-        order_items = OrderItem.objects.filter(order=order)
-        return render(
-            request,
-            "e_cart/order_confirmation.html",
-            {"order": order, "order_items": order_items},
-        )
-    except Order.DoesNotExist:
-        return redirect("product_list")  # fallback
+def wallet_page(request):
+    wallet, _ = Wallet.objects.get_or_create(user=request.user)
+    return render(request, "e_cart/wallet_main.html", {"wallet": wallet})
+@login_required(login_url="/login/")
+def wallet_add_money(request):
+    return render(request, "e_cart/wallet_add_money.html")
+
+
+@login_required(login_url="/login/")
+def wallet_processing(request):
+    if request.method == "POST":
+        amount = request.POST.get("amount")
+        bank = request.POST.get("bank")
+        account = request.POST.get("account")
+        ifsc = request.POST.get("ifsc")
+
+        if not all([amount, bank, account, ifsc]):
+            messages.error(request, "All bank fields are required.")
+            return redirect("wallet_add_money")
+
+        request.session["wallet_topup_amount"] = amount
+        return redirect("wallet_processing")
+
+    return render(request, "e_cart/wallet_processing.html")
+@login_required(login_url="/login/")
+@transaction.atomic
+def wallet_topup(request):
+    wallet, _ = Wallet.objects.get_or_create(user=request.user)
+
+    amount = request.session.get("wallet_topup_amount")
+    if not amount:
+        messages.error(request, "Invalid wallet transaction.")
+        return redirect("wallet_page")
+
+    amount = Decimal(amount)
+
+    wallet.balance += amount
+    wallet.save()
+
+    WalletTransaction.objects.create(
+        wallet=wallet,
+        amount=amount,
+        transaction_type="CREDIT",
+        source="BANK"
+    )
+
+    del request.session["wallet_topup_amount"]
+
+    messages.success(request, f"₹{amount} added successfully to your wallet.")
+    return redirect("wallet_page")
+
+@login_required(login_url="/login/")
+def order_success(request, order_id):
+    order = get_object_or_404(Order, id=order_id, user=request.user)
+    return render(request, "e_cart/order_success.html", {"order": order})
+
+
+@login_required(login_url="/login/")
+def order_tracking(request, order_id):
+    order = get_object_or_404(Order, id=order_id, user=request.user)
+    return render(request, "e_cart/order_tracking.html", {"order": order})
+
+
+@login_required(login_url="/login/")
+def cancel_order(request, order_id):
+    order = get_object_or_404(Order, id=order_id, user=request.user)
+
+    if order.status == "DELIVERED":
+        messages.error(request, "Delivered orders cannot be cancelled.")
+        return redirect("order_tracking", order_id=order.id)
+
+    if request.method == "POST":
+        order.cancel_reason = request.POST.get("reason")
+        order.status = "CANCELLED"
+        order.save()
+        messages.success(request, "Order cancelled successfully.")
+        return redirect("order_tracking", order_id=order.id)
+
+    return render(request, "e_cart/order_cancel.html", {"order": order})
+
+
+@login_required(login_url="/login/")
+def return_order(request, order_id):
+    order = get_object_or_404(Order, id=order_id, user=request.user)
+
+    if order.status != "DELIVERED":
+        messages.error(request, "Only delivered orders can be returned.")
+        return redirect("order_tracking", order_id=order.id)
+
+    if request.method == "POST":
+        order.return_reason = request.POST.get("reason")
+        order.status = "RETURNED"
+        order.save()
+        messages.success(request, "Return initiated successfully.")
+        return redirect("order_tracking", order_id=order.id)
+
+    return render(request, "e_cart/order_return.html", {"order": order})
+
+
+@login_required(login_url="/login/")
+def upi_payment(request, order_id):
+    order = get_object_or_404(Order, id=order_id, user=request.user)
+    return render(request, "e_cart/upi_scanner.html", {"order": order})

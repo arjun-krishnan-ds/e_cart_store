@@ -1,41 +1,70 @@
 {% extends "core/base.html" %}
 {% load static %}
+
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'core/css/auth.css' %}">
 {% endblock %}
+
 {% block content %}
 <section class="auth-section signup">
     <div class="auth-card">
 
         <!-- Title -->
         <h2>Create Account</h2>
-        <p class="auth-subtitle">Create your My E-Cart account and join us in just seconds...</p>
+        <p class="auth-subtitle">
+            Create your My E-Cart account and join us in just seconds...
+        </p>
 
         <!-- Form -->
-        <form method="POST">
+        <form method="POST" novalidate>
             {% csrf_token %}
 
+            <!-- ✅ GLOBAL FORM ERRORS -->
+            {% if form.non_field_errors %}
+                <div class="form-errors">
+                    {{ form.non_field_errors }}
+                </div>
+            {% endif %}
+
+            <!-- Username -->
             <div class="form-group">
                 <label for="id_username">Username</label>
                 {{ form.username }}
+                {% if form.username.errors %}
+                    <small class="error-text">{{ form.username.errors }}</small>
+                {% endif %}
             </div>
 
+            <!-- Email -->
             <div class="form-group">
                 <label for="id_email">Email</label>
                 {{ form.email }}
+                {% if form.email.errors %}
+                    <small class="error-text">{{ form.email.errors }}</small>
+                {% endif %}
             </div>
 
+            <!-- Password -->
             <div class="form-group">
                 <label for="id_password1">Password</label>
                 {{ form.password1 }}
+                {% if form.password1.errors %}
+                    <small class="error-text">{{ form.password1.errors }}</small>
+                {% endif %}
             </div>
 
+            <!-- Confirm Password -->
             <div class="form-group">
                 <label for="id_password2">Confirm Password</label>
                 {{ form.password2 }}
+                {% if form.password2.errors %}
+                    <small class="error-text">{{ form.password2.errors }}</small>
+                {% endif %}
             </div>
 
-            <button type="submit" class="btn-primary full-width">Create Account</button>
+            <button type="submit" class="btn-primary full-width">
+                Create Account
+            </button>
         </form>
 
         <!-- Links -->
@@ -47,6 +76,7 @@
     </div>
 </section>
 {% endblock %}
+
 {% block extra_js %}
 <script src="{% static 'core/js/auth.js' %}"></script>
 {% endblock %}

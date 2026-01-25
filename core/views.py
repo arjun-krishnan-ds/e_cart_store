@@ -14,13 +14,13 @@ def signup_view(request):
     if request.method == "POST":
         form = SignUpForm(request.POST)
         if form.is_valid():
-            user = form.save()
-            login(request, user)
-            return redirect("dashboard")
+            form.save()
+            return redirect("login")
     else:
         form = SignUpForm()
 
     return render(request, "core/signup.html", {"form": form})
+
 
 
 def login_view(request):

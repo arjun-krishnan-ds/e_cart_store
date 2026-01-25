@@ -1,0 +1,57 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'e_cart/css/order.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="cancel-container">
+
+    <div class="cancel-card">
+
+        <h2>Cancel Order #{{ order.id }}</h2>
+        <p>Select a reason for cancellation</p>
+
+        <form method="POST" id="cancelForm">
+            {% csrf_token %}
+
+            <div class="reason">
+                <input type="radio" name="reason" value="Ordered by mistake" required>
+                Ordered by mistake
+            </div>
+
+            <div class="reason">
+                <input type="radio" name="reason" value="Found better price elsewhere">
+                Found better price elsewhere
+            </div>
+
+            <div class="reason">
+                <input type="radio" name="reason" value="Delivery taking too long">
+                Delivery taking too long
+            </div>
+
+            <div class="reason">
+                <input type="radio" name="reason" value="Product no longer needed">
+                Product no longer needed
+            </div>
+
+            <div class="reason">
+                <input type="radio" name="reason" value="Other">
+                Other
+            </div>
+
+            <button type="submit" class="btn-danger">
+                Confirm Cancellation
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+{% block extra_js %}
+<script src="{% static 'e_cart/js/order.js' %}"></script>
+{% endblock %}
+{% endblock %}

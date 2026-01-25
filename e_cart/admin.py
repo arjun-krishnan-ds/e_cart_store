@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Category, Product, Order, OrderItem
+from .models import Category, Product, Order, OrderItem, Wallet, WalletTransaction
+
 
 # -------------------------
 # Category Admin
@@ -10,6 +11,7 @@ class CategoryAdmin(admin.ModelAdmin):
     search_fields = ("name",)
     list_filter = ("is_active",)
 
+
 # -------------------------
 # Product Admin
 # -------------------------
@@ -19,33 +21,54 @@ class ProductAdmin(admin.ModelAdmin):
     search_fields = ("name",)
     list_filter = ("is_available", "category")
 
+
 # -------------------------
-# OrderItem Inline
+# OrderItem Inline (inside Order)
 # -------------------------
 class OrderItemInline(admin.TabularInline):
     model = OrderItem
     extra = 0
-    fields = ("product", "quantity", "price")  # editable
+    fields = ("product", "quantity", "price")
+    readonly_fields = ("price",)
 
-# -------------------------
-# Order Admin
-# -------------------------
-@admin.register(Order)
-class OrderAdmin(admin.ModelAdmin):
-    list_display = ("id", "user", "total_amount", "status", "created_at")
-    list_filter = ("status", "created_at")
-    readonly_fields = ("created_at",)
-    inlines = [OrderItemInline]
+    def save_model(self, request, obj, form, change):
+        obj.price = obj.product.price
+        obj.save()
 
-    # Hide the products M2M field completely
-    def formfield_for_manytomany(self, db_field, request, **kwargs):
-        if db_field.name == "products":
-            kwargs["queryset"] = Product.objects.none()
-        return super().formfield_for_manytomany(db_field, request, **kwargs)
 
-# -------------------------
-# OrderItem Admin
+# OrderItem Admin (Optional standalone view)
 # -------------------------
 @admin.register(OrderItem)
 class OrderItemAdmin(admin.ModelAdmin):
     list_display = ("order", "product", "quantity", "price")
+    search_fields = ("product__name", "order__user__username")
+
+
+actions = ["mark_shipped", "mark_delivered"]
+
+
+def mark_shipped(self, request, queryset):
+    queryset.update(status="SHIPPED")
+
+
+mark_shipped.short_description = "Mark selected orders as SHIPPED"
+
+
+def mark_delivered(self, request, queryset):
+    queryset.update(status="DELIVERED")
+
+
+mark_delivered.short_description = "Mark selected orders as DELIVERED"
+
+
+@admin.register(Wallet)
+class WalletAdmin(admin.ModelAdmin):
+    list_display = ("user", "balance", "updated_at")
+    search_fields = ("user__username",)
+
+
+@admin.register(WalletTransaction)
+class WalletTransactionAdmin(admin.ModelAdmin):
+    list_display = ("wallet", "amount", "transaction_type", "source", "created_at")
+    list_filter = ("transaction_type", "source", "created_at")
+    search_fields = ("wallet__user__username",)

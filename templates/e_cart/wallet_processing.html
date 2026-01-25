@@ -1,0 +1,21 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'e_cart/css/wallet.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="processing-container">
+    <div class="processing-card">
+        <div class="loader"></div>
+        <h2>Processing Bank Transaction</h2>
+        <p>Please wait while we securely verify your payment...</p>
+        <small>Do not refresh or close this window.</small>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'e_cart/js/wallet.js' %}"></script>
+{% endblock %}

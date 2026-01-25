@@ -1,0 +1,87 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'e_cart/css/order.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="success-container">
+
+    <div class="success-card" id="invoice">
+
+        <div class="success-header">
+            <h2>✅ Order Placed Successfully</h2>
+            <p>Thank you for shopping with E-Cart</p>
+        </div>
+
+        <div class="invoice-section">
+            <div>
+                <strong>Order ID:</strong> #{{ order.id }}
+            </div>
+            <div>
+                <strong>Payment:</strong> {{ order.get_payment_method_display }}
+            </div>
+            <div>
+                <strong>Delivery Address:</strong>
+                <p>{{ order.address }}</p>
+            </div>
+        </div>
+
+        <table class="invoice-table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Qty</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in order.items.all %}
+                <tr>
+                    <td>{{ item.product.name }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>₹{{ item.price }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="total">
+            Total Paid: ₹{{ order.total_amount }}
+        </div>
+
+    </div>
+
+    <div class="action-panel">
+        <button onclick="downloadInvoice()" class="btn-secondary">
+            Download Invoice
+        </button>
+
+        <a href="{% url 'order_tracking' order.id %}" class="btn-primary">
+            Track Order
+        </a>
+
+        <a href="{% url 'product_list' %}" class="btn-light">
+            Continue Shopping
+        </a>
+
+        {% if order.status != "DELIVERED" %}
+        <a href="{% url 'cancel_order' order.id %}" class="btn-danger">
+            Cancel Order
+        </a>
+        {% endif %}
+
+        {% if order.status == "DELIVERED" %}
+        <a href="{% url 'return_order' order.id %}" class="btn-warning">
+            Return Order
+        </a>
+        {% endif %}
+    </div>
+
+</section>
+
+{% block extra_js %}
+<script src="{% static 'e_cart/js/order.js' %}"></script>
+{% endblock %}
+{% endblock %}

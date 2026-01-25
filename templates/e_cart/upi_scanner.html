@@ -1,0 +1,39 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'e_cart/css/upi_scanner.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="upi-container">
+
+    <div class="upi-card">
+
+        <h2>Scan & Pay</h2>
+        <p class="amount">Amount: ₹{{ order.total_amount }}</p>
+
+        <div class="qr-box">
+            <img src="{% static 'e_cart/images/sample_qr.png' %}" alt="QR Code">
+        </div>
+
+        <p class="hint">Scan this QR using any UPI app to complete payment.</p>
+
+        <button id="confirmBtn" class="btn-primary">
+            I Have Paid
+        </button>
+
+        <div id="status" class="status hidden">
+            Verifying payment...
+        </div>
+
+    </div>
+
+</section>
+{% endblock %}
+{% block extra_js %}
+<script>
+    const ORDER_SUCCESS_URL = "{% url 'order_success' order.id %}";
+</script>
+<script src="{% static 'e_cart/js/upi_scanner.js' %}"></script>
+{% endblock %}

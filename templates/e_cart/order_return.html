@@ -1,0 +1,57 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'e_cart/css/order.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="return-container">
+
+    <div class="return-card">
+
+        <h2>Return Order #{{ order.id }}</h2>
+        <p>Select a reason for return</p>
+
+        <form method="POST" id="returnForm">
+            {% csrf_token %}
+
+            <div class="reason">
+                <input type="radio" name="reason" value="Damaged product" required>
+                Damaged product
+            </div>
+
+            <div class="reason">
+                <input type="radio" name="reason" value="Wrong item received">
+                Wrong item received
+            </div>
+
+            <div class="reason">
+                <input type="radio" name="reason" value="Quality not as expected">
+                Quality not as expected
+            </div>
+
+            <div class="reason">
+                <input type="radio" name="reason" value="Size / specification mismatch">
+                Size / specification mismatch
+            </div>
+
+            <div class="reason">
+                <input type="radio" name="reason" value="Other">
+                Other
+            </div>
+
+            <button type="submit" class="btn-warning">
+                Submit Return Request
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+{% block extra_js %}
+<script src="{% static 'e_cart/js/order.js' %}"></script>
+{% endblock %}
+{% endblock %}

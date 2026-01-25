@@ -1,0 +1,92 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'e_cart/css/wallet.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="wallet-container">
+    <div class="wallet-card">
+        <h2>Add Money to Wallet</h2>
+
+        <form method="POST" action="{% url 'wallet_processing' %}" id="bankForm">
+            {% csrf_token %}
+
+            <!-- BANK SELECTOR -->
+            <div class="form-group">
+                <label>Select Bank</label>
+
+                <div class="bank-dropdown" id="bankDropdown">
+                    <div class="bank-selected" id="selectedBank">
+                        <img src="{% static 'e_cart/banks/sbi.png' %}" id="selectedLogo">
+                        <span id="selectedName">Select your bank</span>
+                        <span class="arrow">⌄</span>
+                    </div>
+
+                    <div class="bank-options" id="bankOptions">
+
+                        <div class="bank-option" data-bank="SBI" data-logo="{% static 'e_cart/banks/sbi.png' %}">
+                            <img src="{% static 'e_cart/banks/sbi.png' %}">
+                            <span>State Bank of India</span>
+                        </div>
+
+                        <div class="bank-option" data-bank="HDFC" data-logo="{% static 'e_cart/banks/hdfc.png' %}">
+                            <img src="{% static 'e_cart/banks/hdfc.png' %}">
+                            <span>HDFC Bank</span>
+                        </div>
+
+                        <div class="bank-option" data-bank="ICICI" data-logo="{% static 'e_cart/banks/icici.png' %}">
+                            <img src="{% static 'e_cart/banks/icici.png' %}">
+                            <span>ICICI Bank</span>
+                        </div>
+
+                        <div class="bank-option" data-bank="AXIS" data-logo="{% static 'e_cart/banks/axis.png' %}">
+                            <img src="{% static 'e_cart/banks/axis.png' %}">
+                            <span>Axis Bank</span>
+                        </div>
+
+                        <div class="bank-option" data-bank="KOTAK" data-logo="{% static 'e_cart/banks/kotak.png' %}">
+                            <img src="{% static 'e_cart/banks/kotak.png' %}">
+                            <span>Kotak Mahindra</span>
+                        </div>
+
+                        <div class="bank-option" data-bank="PNB" data-logo="{% static 'e_cart/banks/pnb.png' %}">
+                            <img src="{% static 'e_cart/banks/pnb.png' %}">
+                            <span>Punjab National Bank</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Hidden field for backend -->
+                <input type="hidden" name="bank" id="bankInput" required>
+            </div>
+
+            <div class="form-group">
+                <label>Account Number</label>
+                <input type="text" name="account" required maxlength="18">
+            </div>
+
+            <div class="form-group">
+                <label>IFSC Code</label>
+                <input type="text" name="ifsc" required maxlength="11">
+            </div>
+
+            <div class="form-group">
+                <label>Amount (₹)</label>
+                <input type="number" name="amount" min="100" required>
+            </div>
+
+            <button type="submit" class="btn-primary">
+                Proceed to Bank Verification →
+            </button>
+        </form>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'e_cart/js/wallet.js' %}"></script>
+{% endblock %}

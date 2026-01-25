@@ -1,0 +1,67 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'e_cart/css/wallet_payment.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="wallet-clean">
+
+    <div class="wallet-card">
+        <h2>Add Money to Wallet</h2>
+        <p class="subtitle">Secure wallet top-up using your bank account</p>
+
+        <form method="POST" action="{% url 'wallet_processing' %}">
+            {% csrf_token %}
+
+            <!-- BANK DROPDOWN -->
+            <div class="form-group">
+                <label>Select Bank</label>
+                <select name="bank" required>
+                    <option value="">Choose your bank</option>
+                    <option>SBI - State Bank of India</option>
+                    <option>HDFC Bank</option>
+                    <option>ICICI Bank</option>
+                    <option>Axis Bank</option>
+                    <option>Kotak Mahindra Bank</option>
+                    <option>Punjab National Bank</option>
+                    <option>Bank of Baroda</option>
+                    <option>Canara Bank</option>
+                    <option>Union Bank of India</option>
+                    <option>IDFC First Bank</option>
+                    <option>Yes Bank</option>
+                    <option>IndusInd Bank</option>
+                </select>
+            </div>
+
+            <!-- ACCOUNT -->
+            <div class="form-group">
+                <label>Account Number</label>
+                <input type="text" name="account" placeholder="Enter account number" required maxlength="18">
+            </div>
+
+            <div class="form-group">
+                <label>IFSC Code</label>
+                <input type="text" name="ifsc" placeholder="Enter IFSC code" required maxlength="11">
+            </div>
+
+            <!-- AMOUNT -->
+            <div class="form-group">
+                <label>Amount (₹)</label>
+                <input type="number" name="amount" min="100" placeholder="Enter Amount" required>
+            </div>
+
+            <button class="btn-primary" type="submit">
+                Continue Securely →
+            </button>
+
+        </form>
+    </div>
+
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'e_cart/js/wallet_payment.js' %}"></script>
+{% endblock %}

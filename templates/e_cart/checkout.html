@@ -1,51 +1,57 @@
-{% extends 'core/base.html' %}
+{% extends "core/base.html" %}
 {% load static %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'e_cart/css/store.css' %}?v=7">
-<link rel="stylesheet" href="{% static 'e_cart/css/cart.css' %}?v=7">
+<link rel="stylesheet" href="{% static 'e_cart/css/checkout.css' %}">
 {% endblock %}
 
 {% block content %}
-<div class="container my-5 checkout-page">
-    <h3 class="mb-4">Checkout</h3>
+<section class="checkout-container">
 
-    <div class="table-responsive shadow-sm rounded">
-        <table class="table table-hover align-middle mb-0">
-            <thead class="table-light">
-                <tr>
-                    <th>Product</th>
-                    <th>Qty</th>
-                    <th>Price</th>
-                    <th>Total</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for p in products %}
-                <tr>
-                    <td>{{ p.name }}</td>
-                    <td>{{ p.qty }}</td>
-                    <td>₹ {{ p.price }}</td>
-                    <td>₹ {{ p.subtotal }}</td>
-                </tr>
-                {% endfor %}
-                <tr class="fw-bold table-total-row">
-                    <td colspan="3" class="text-end">Grand Total</td>
-                    <td>₹ {{ total }}</td>
-                </tr>
-            </tbody>
-        </table>
+  <!-- Left Panel -->
+  <div class="checkout-left">
+    <h2>Billing Details</h2>
+
+    <form method="POST" action="{% url 'place_order' %}" id="checkoutForm">
+      {% csrf_token %}
+
+      <label>Delivery Address</label>
+      <textarea name="address" required placeholder="Enter full delivery address..."></textarea>
+
+      <button type="submit" class="btn-primary">
+        Place Order →
+      </button>
+    </form>
+  </div>
+
+  <!-- Right Panel -->
+  <div class="checkout-right">
+    <h2>Your Order</h2>
+
+    <div class="cart-items">
+      {% for item in cart_items %}
+      <div class="cart-row">
+        <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+        <div class="cart-info">
+          <h4>{{ item.product.name }}</h4>
+          <p>Qty: {{ item.qty }}</p>
+        </div>
+        <div class="price">
+          ₹{{ item.subtotal }}
+        </div>
+      </div>
+      {% endfor %}
     </div>
 
-    <div class="mt-4 text-end">
-        <button class="btn btn-success btn-lg btn-place-order">Place Order</button>
+    <div class="total-box">
+      <span>Total</span>
+      <strong>₹{{ total }}</strong>
     </div>
-</div>
+  </div>
+
+</section>
+
 {% endblock %}
-
 {% block extra_js %}
-<script>
-    const PLACE_ORDER_URL = "{% url 'place_order' %}";
-</script>
-<script src="{% static 'e_cart/js/store.js' %}?v=7"></script>
+<script src="{% static 'e_cart/js/checkout.js' %}"></script>
 {% endblock %}

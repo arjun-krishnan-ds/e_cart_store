@@ -1,0 +1,66 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'e_cart/css/order.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="tracking-container">
+
+    <div class="tracking-card">
+
+        <h2>Order Tracking</h2>
+
+        <div class="order-meta">
+            <p><strong>Order ID:</strong> #{{ order.id }}</p>
+            <p><strong>Status:</strong> {{ order.get_status_display }}</p>
+        </div>
+
+        <!-- Progress Tracker -->
+        <div class="progress-bar">
+
+            <div class="step {% if order.status in 'PLACED PACKED SHIPPED OUT DELIVERED' %}active{% endif %}">
+                Placed
+            </div>
+
+            <div class="step {% if order.status in 'PACKED SHIPPED OUT DELIVERED' %}active{% endif %}">
+                Packed
+            </div>
+
+            <div class="step {% if order.status in 'SHIPPED OUT DELIVERED' %}active{% endif %}">
+                Shipped
+            </div>
+
+            <div class="step {% if order.status in 'OUT DELIVERED' %}active{% endif %}">
+                Out for Delivery
+            </div>
+
+            <div class="step {% if order.status == 'DELIVERED' %}active{% endif %}">
+                Delivered
+            </div>
+
+        </div>
+
+        <div class="action-row">
+            {% if order.status != "DELIVERED" and order.status != "CANCELLED" %}
+            <a href="{% url 'cancel_order' order.id %}" class="btn-danger">
+                Cancel Order
+            </a>
+            {% endif %}
+
+            {% if order.status == "DELIVERED" %}
+            <a href="{% url 'return_order' order.id %}" class="btn-warning">
+                Return Order
+            </a>
+            {% endif %}
+        </div>
+
+    </div>
+
+</section>
+
+{% block extra_js %}
+<script src="{% static 'e_cart/js/order.js' %}"></script>
+{% endblock %}
+{% endblock %}

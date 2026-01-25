@@ -150,3 +150,17 @@
     font-size: 0.85rem;
   }
 }
+.error-text {
+    color: #e74c3c;
+    font-size: 0.85rem;
+    margin-top: 4px;
+    display: block;
+}
+
+.form-errors {
+    background: #ffecec;
+    color: #c0392b;
+    padding: 10px 12px;
+    border-radius: 6px;
+    margin-bottom: 14px;
+}

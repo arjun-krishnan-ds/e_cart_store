@@ -1,0 +1,277 @@
+/*ORDER CONFIRMATION */
+.confirm-container {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.confirm-card {
+  width: 100%;
+  max-width: 520px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 35px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.confirm-card h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.info-row p {
+  max-width: 260px;
+  text-align: right;
+}
+
+label {
+  display: block;
+  margin-top: 25px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.btn-primary {
+  width: 100%;
+  margin-top: 25px;
+  padding: 14px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #10b981, #047857);
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+/*ORDER SUCCESS */
+.success-container {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 30px;
+  padding: 40px;
+}
+
+.success-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 30px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.success-header {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.invoice-section div {
+  margin-bottom: 10px;
+}
+
+.invoice-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.invoice-table th,
+.invoice-table td {
+  border-bottom: 1px solid #eee;
+  padding: 10px;
+  text-align: left;
+}
+
+.total {
+  text-align: right;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.action-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-light,
+.btn-danger,
+.btn-warning {
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: white;
+}
+.btn-secondary {
+  background: #10b981;
+  color: white;
+}
+.btn-light {
+  background: #f3f4f6;
+  color: #111;
+}
+.btn-danger {
+  background: #dc2626;
+  color: white;
+}
+.btn-warning {
+  background: #f59e0b;
+  color: white;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-danger:hover,
+.btn-warning:hover {
+  opacity: 0.9;
+}
+
+/*ORDER TRACKING */
+
+.tracking-container {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.tracking-card {
+  width: 720px;
+  background: #fff;
+  padding: 35px;
+  border-radius: 16px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.order-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.progress-bar {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.step {
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  background: #e5e7eb;
+  font-size: 14px;
+}
+
+.step.active {
+  background: linear-gradient(135deg, #22c55e, #15803d);
+  color: white;
+}
+
+.action-row {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn-danger,
+.btn-warning {
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+}
+
+.btn-danger {
+  background: #dc2626;
+}
+.btn-warning {
+  background: #f59e0b;
+}
+/* ORDER CANCEL*/
+.cancel-container {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.cancel-card {
+  width: 460px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 35px;
+  text-align: center;
+  box-shadow: 0px 10px 28px rgba(0, 0, 0, 0.08);
+}
+
+.reason {
+  text-align: left;
+  margin: 12px 0;
+}
+
+.btn-danger {
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px;
+  background: #dc2626;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+/* ORDER RETURN */
+.return-container {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.return-card {
+  width: 460px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 35px;
+  text-align: center;
+  box-shadow: 0px 10px 28px rgba(0, 0, 0, 0.08);
+}
+
+.reason {
+  text-align: left;
+  margin: 12px 0;
+}
+
+.btn-warning {
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px;
+  background: #f59e0b;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
