@@ -13,6 +13,9 @@ import os
 from pathlib import Path
 from django.urls import reverse_lazy
 import dj_database_url
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # --------------------------
 # BASE DIRECTORY
@@ -22,13 +25,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # --------------------------
 # SECRET KEY & DEBUG
 # --------------------------
-# Use environment variables in production, fallback to dev key locally
 SECRET_KEY = os.environ.get("SECRET_KEY", "django-insecure-dev-key")
-DEBUG = os.environ.get("DEBUG", "False") == "True"
+DEBUG = os.environ.get("DEBUG", "True") == "True"
 
 # --------------------------
 # ALLOWED HOSTS
 # --------------------------
+# Render live host; keep localhost for local dev
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
 
 # --------------------------
@@ -48,7 +51,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",  # for serving static files on Render
+    "whitenoise.middleware.WhiteNoiseMiddleware",  # for static files on Render
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -69,7 +72,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-                "core.context_processors.cart_count",  # your custom cart context
+                "core.context_processors.cart_count",
             ],
         },
     },
@@ -80,7 +83,6 @@ WSGI_APPLICATION = "e_cart_store.wsgi.application"
 # --------------------------
 # DATABASE CONFIGURATION
 # --------------------------
-# Default SQLite for local development
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
@@ -88,13 +90,13 @@ DATABASES = {
     }
 }
 
-# Use Render PostgreSQL when DATABASE_URL is set
+# Use PostgreSQL on Render if DATABASE_URL exists
 DATABASE_URL = os.environ.get("DATABASE_URL")
 if DATABASE_URL:
     DATABASES["default"] = dj_database_url.parse(
         DATABASE_URL,
         conn_max_age=600,
-        ssl_require=True,
+        ssl_require=True
     )
 
 # --------------------------
@@ -120,16 +122,15 @@ USE_TZ = True
 # --------------------------
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
-# WhiteNoise storage for optimized static files in production
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # --------------------------
 # MEDIA FILES
 # --------------------------
 MEDIA_URL = "/media/"
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_ROOT = BASE_DIR / "media"
 
 # --------------------------
 # AUTHENTICATION
@@ -139,7 +140,7 @@ LOGIN_REDIRECT_URL = "/dashboard/"
 LOGOUT_REDIRECT_URL = "/"
 
 # --------------------------
-# EMAIL (development only)
+# EMAIL
 # --------------------------
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
@@ -151,13 +152,20 @@ REST_FRAMEWORK = {
         "rest_framework.permissions.AllowAny",
     ]
 }
+# ================================
+# Cloudinary Media Storage
+# ================================
 
-# --------------------------
-# SUPERUSER ENVIRONMENT VARIABLES (for professional deployment)
-# --------------------------
-# If DJANGO_SUPERUSER_USERNAME, DJANGO_SUPERUSER_EMAIL, and DJANGO_SUPERUSER_PASSWORD
-# are set, `createsuperuser --noinput` will automatically create the admin user.
-# Example Render environment variables:
-# DJANGO_SUPERUSER_USERNAME=admin
-# DJANGO_SUPERUSER_EMAIL=admin@e-cart.com
-# DJANGO_SUPERUSER_PASSWORD=StrongPassword123
+INSTALLED_APPS += [
+    'cloudinary',
+    'cloudinary_storage',
+]
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
+    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+MEDIA_URL = '/media/'

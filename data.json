@@ -1,2162 +1,2162 @@
 [
-{
-  "model": "auth.user",
-  "fields": {
-    "password": "pbkdf2_sha256$1200000$218yNnD8UroztXjEZqehkc$/aTMUTNtYKVzmtIXHys4Z1EBmDzBFFj4XwfNXdQsxwM=",
-    "last_login": "2026-01-20T14:53:28.227Z",
-    "is_superuser": true,
-    "username": "store_admin",
-    "first_name": "",
-    "last_name": "",
-    "email": "",
-    "is_staff": true,
-    "is_active": true,
-    "date_joined": "2026-01-03T06:11:02.649Z",
-    "groups": [],
-    "user_permissions": []
-  }
-},
-{
-  "model": "auth.user",
-  "fields": {
-    "password": "pbkdf2_sha256$1200000$wubh4IxLOZwsMWrRF7PCnq$KiWigB18V7RBBNCprxgmk7ketKcFjCd0GDjKwKMV+fo=",
-    "last_login": "2026-01-25T07:19:09.989Z",
-    "is_superuser": false,
-    "username": "dustybun",
-    "first_name": "",
-    "last_name": "",
-    "email": "dustinhenderson911@gmail.com",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2026-01-22T08:56:36.458Z",
-    "groups": [],
-    "user_permissions": []
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "0m7pupatq1p27r0a401sfzcndddipupy",
-  "fields": {
-    "session_data": ".eJxVjDEOgzAMAP_iGSFiCBDG7n1D5Nih0FKCIFEHxN8rJBbWu9PtwLRG6PYjA0spDjZtfrWjQAcIN-aIP34-hbxpfoWcwxzX0eVnkl92y59B_PS42ttgoG2ADrwwcquMYe6lddoJIWpkbCrSLXpnRCFiqYzrjaJCI0tRakGnC2qbHjL40TT5aGNY0mLpG9IcoYNK1zUcf50hRUE:1vjuCg:mbszivnHwZa6nF7xHELNcpvp727OQaH0A7T3ia48MZQ",
-    "expire_date": "2026-02-08T07:06:34.896Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "0sfznq8jyeh1c28yuf4q9buenxqevz7n",
-  "fields": {
-    "session_data": ".eJxVjLsOgzAMAP_FcxXZEMhj7N5vQIltCm0FEoEJ8e8VEgvr3el24LSsEHeoGoh0PKBL2zp0W9GlGwUiENxYTvzV6RTySdN7NjxP6zJmcybmssW8ZtHf82pvgyGVASI4zA2x1JopMHlnUUJvlQIiKzOq87ZNYj0huSr0uddgW_YOK2lqquH4A_d_O9E:1viD6d:hmRu5jSkZcfiwn28PtTH9_SgVuNh80vjGykP2PklnqM",
-    "expire_date": "2026-02-03T14:53:19.332Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "5mo3n0x1hk1qwwlzdwg6wdyew763llyx",
-  "fields": {
-    "session_data": ".eJxVjDkOgzAQAP-yNbJ2scFHmT5vQPbuEnIIJI4K8fcIiSJpZ0azQ5e3dei2RefuKZCAoPplJfNbx1PIK4-PyfA0rvOzmDMxl13MfRL93K72bzDkZYAEHktDLFYLRabgHUrsnVJEZGVG9cG1WVwgJF_HvvQaXcvBYy2NJQsVcJ5XSDvUDSR7HF94oDvT:1vcO1d:PSQrqzLP6vXReFBK8yrG2_ghAqtG399lQBASdwGDVVA",
-    "expire_date": "2026-01-18T13:20:05.252Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "75i75553m60g8ag58bg34lu0nj0id8o6",
-  "fields": {
-    "session_data": "eyJjYXJ0Ijp7IjI1IjoxLCIyNCI6MX19:1vixPf:dbvv9wZzY7Mpk3hp1hgIBXF9mf9A_j6A1oo6Hczvqtc",
-    "expire_date": "2026-02-05T16:20:03.536Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "a3lgdlnla54zcho3mtcq2bgilb3i71a3",
-  "fields": {
-    "session_data": ".eJxVjDEOgzAMAP_iGUU2BJIwducNKLFNoa1AIjAh_l4hMbTr3ekO6OO-jf2ede0ngRYIil-WIr91voS84vxcDC_ztk7JXIm5bTbdIvp53O3fYIx5hBYcpppYKk0UmLyzKGGwSgGRlRnVedtEsZ6QXBmGNGiwDXuHpdQVVVAAx3WD9jjPLxg0Ors:1viFh7:ludl5HaepxzWuBjjrG2IxEmka6sbK77ZZ019EQ5qC8c",
-    "expire_date": "2026-02-03T17:39:09.634Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "gzrbpkf9v5ohb1uce17c1b2m05936yqn",
-  "fields": {
-    "session_data": "eyJjYXJ0Ijp7IjI1Ijo3fX0:1vi8UC:Kk3go58UyEGjdbqcMkwe4XBAFLK88DwWexBm38FOpJk",
-    "expire_date": "2026-02-03T09:57:20.908Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "hnw66p0z48pn6zy0hvus02o052ptp8cq",
-  "fields": {
-    "session_data": ".eJxVjLkOgzAQBf_l1cjyGoOPMn2-AdnrJeQQSBwV4t8jJBramdHs4DSviDtMg2gqOESqQAGRjgpd2tah2xaZu3dBBOHGcuKvjKconzS-JsXTuM7vrM5EXXZRz6nI73G1t8GQlgERTueGuNSSKTB5Z3UJvRUKWrMwa3HetqlYT5qcCX3uJdiWvdOmNDXVOP7Rdz4p:1vhqYz:CPgxc4N66WlQSqlRTCNQ-btv7gocYQTQtg0YC9VHq54",
-    "expire_date": "2026-02-02T14:49:05.168Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "ho38iarzgombmdnwp35j7fhoziza1ewz",
-  "fields": {
-    "session_data": ".eJxVjMsKgzAUBf_lrkswpw0mWXbfb5D7iNW2KPhYif9eBDduZ4bZSHlaKG8ET9nvN2p4XbpmncvU9EaZQBcmrN8yHMI-PLxHp-OwTL24I3Gnnd1rtPJ7nu1l0PHcUaZiCo0-JdXWogQxBgIU9YNDRJFkHsDdJ2mT5ypArboHg4SKY93S_gcUVjx9:1vjuI9:sXUaG5RXRyxkPnRKY8YmXZhZ8oPyIA35dfY2inQMpgY",
-    "expire_date": "2026-02-08T07:12:13.565Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "hug6s57tbuyndz5kvo7742wz6vy9rqlk",
-  "fields": {
-    "session_data": ".eJxVjEsKgzAUAO_y1iUkT4NJlt33DOF9kmpbFPysxLsXwY3bmWF2EJpXSDu4DpI7HpBpW_u8LWXOg0IChBtjkm8ZT6EfGt-TkWlc54HNmZjLLuY1afk9r_Y26GnpIUFRQQkuRpGqgT0rIXoU7FryAQtHdYjYuMg1OrIeRW3jFdlbCl2F4w8XxTyC:1vjttd:ou8QKiqsuk7xmYruQxy8YDKa49b4eoQs1rO4yOPgz40",
-    "expire_date": "2026-02-08T06:46:53.416Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "i2tdwmwvunytclmocaqwixkcg8q43mis",
-  "fields": {
-    "session_data": "eyJjYXJ0Ijp7IjI1IjoxOSwiMjQiOjYsIjIzIjoxLCIyMiI6MywiMTgiOjIsIjE3IjoyLCIxMyI6MX19:1vi71c:O9M5FBvbwvzoyfT7OX7CpkgBhfAroLZDHS314CzpnOY",
-    "expire_date": "2026-02-03T08:23:44.144Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "jemha7pob334nfm0j5lpdvk45kqebf3u",
-  "fields": {
-    "session_data": "eyJjYXJ0Ijp7IjI0IjoxfX0:1viFhb:R9xr5Xcl1y3_2K6VMEAcDn8nuhNPSh2G9f48dGyNYFk",
-    "expire_date": "2026-02-03T17:39:39.459Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "m4je87f389s423ujr3gin6sswv2bekn4",
-  "fields": {
-    "session_data": ".eJxVjEsKgzAUAO_y1iWYp8Eky-57BnmfWG1LAlFX4t2L4MbtzDA7CNUV4n48YKBtnYZtSXWYFSIg3BiTfFM-hX4ov4uRktc6szkTc9nFvIqm3_Nqb4OJlgkiJBUUb0MQGdWzYyVEh4J9R85j4qAWEVsbeAyWGoeiTesU2TXk-xGOP0XgO2s:1vjuPT:9U5LYmwcYt2wPZuzWY1p5vGKD2XWfeH02S_-LEEACUU",
-    "expire_date": "2026-02-08T07:19:47.177Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "njvv2s82and81ng7xpko9eqie1emjx98",
-  "fields": {
-    "session_data": ".eJxVjEsKgzAUAO_y1iWYp8Eky-57hvA-SbUtCkZX4t2L4MbtzDA7CC0rxB1sgGiPByTa1iFtNS9pVIiAcGNM8s3TKfRD03s2Mk_rMrI5E3PZal6z5t_zam-DgeoAEbIKirchiBT17FgJ0aFg35HzmDmoRcTWBi7BUuNQtGmdIruGfF_g-AMZJTyE:1vjtTr:gRUhr5QiuyFy-UeM2erUOl28Gndz5qvSXKUy0OcK4Vg",
-    "expire_date": "2026-02-08T06:20:15.991Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "pjs576kli8hehvlztiip791xrjsgnq4q",
-  "fields": {
-    "session_data": ".eJxVjEsKgzAUAO_y1iWYp8Eky-57BnmfWG1LAlFX4t2L4MbtzDA7CNUV4n48YKBtnYZtSXWYFSIg3BiTfFM-hX4ov4uRktc6szkTc9nFvIqm3_Nqb4OJlgkiJBUUb0MQGdWzYyVEh4J9R85j4qAWEVsbeAyWGoeiTesU2TXk-xGOP0XgO2s:1visW0:VCGFlxmNHS3aX5GpNwEEIBiQbYQz337VJlBh0h0XjAs",
-    "expire_date": "2026-02-05T11:06:16.261Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "rmrdcwwlt798p3yeev2xuojj1jea0q0x",
-  "fields": {
-    "session_data": ".eJxVjMsKgzAQAP9lzyWY1cUkx977DWEfsdoWBR8n8d-L4MXrzDA7KM8rpB2QIPnjAZm3tc_bUuY8GCRAuDFh_ZbxFPbh8T05ncZ1HsSdibvs4l6Tld_zam-DnpceEhRT1OBjVO0sCIkxIqFi2zAFLBLNI2Lto3TRc0WoVtVkKFRxaDs4_hcWPIE:1vj9Hx:IEqzSvlT-GoaLikKr3vnAJ1rzgHG7DGNBzfgca_WUkI",
-    "expire_date": "2026-02-06T05:00:53.328Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "thpm0y1i5b69xpmen0hfzvm49y16ki17",
-  "fields": {
-    "session_data": ".eJxVjM0KgzAQBt9lzyWYr11Mcuy9zyCb3Vhti4I_J_Hdi-DF68wwG6lMC6WNwJSw36iRdemadS5T0xslAl1YFv2W4RD2keE9Oh2HZeqzOxJ32tm9Riu_59leBp3MHSUqptDgY1RtLWTOJgBDUT-EA0qO5gHcfcxt9FIx1Ko7GzJXEuqW9j8XwzyC:1vj099:I_me-_dG3vnIcdVv3wAIZlwhoqP4lR8pOaviBB9jqBc",
-    "expire_date": "2026-02-05T19:15:11.179Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "u5d73lqdvqwus3sdwwcyfw9spnvfstpu",
-  "fields": {
-    "session_data": "eyJjYXJ0Ijp7IjI1IjoxfX0:1visXP:C5dX_HpphsQT6f4CudrjMHkMx3taWh7StsAOwv9Uw9c",
-    "expire_date": "2026-02-05T11:07:43.566Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "vs9l2wf4qg6l60gykr9k8o7739nulwgu",
-  "fields": {
-    "session_data": "eyJjYXJ0Ijp7fX0:1vi7Z9:uQlgLuXh0U9jAdd1gRDZpTrlngW7td09mPs5N05z_1c",
-    "expire_date": "2026-02-03T08:58:23.977Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "w6ii9se0uigmptd3qxhx9r7xp71wb5v1",
-  "fields": {
-    "session_data": "eyJjYXJ0Ijp7IjIxIjoxLCIyMCI6MSwiMTMiOjF9fQ:1vixqz:8tIc-FfxeIl8-dq_oU2BlOXo4tnobGTt3H3yXV5e_dw",
-    "expire_date": "2026-02-05T16:48:17.337Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "x2o4xhgrit6kn1yluyl7abvlh6deykcn",
-  "fields": {
-    "session_data": ".eJxVjDEOgzAMAP_iuYpsCCRh7N43oMQ2DW0VJAJT1b9XSAztene6N4xx3_K4V13HWWAAgssvS5GfWg4hj1jui-GlbOuczJGY01ZzW0Rf17P9G-RYMwzgMHXE0mqiwOSdRQmTVQqIrMyozts-ivWE5JowpUmD7dk7bKRrqYXPF98FN28:1vburP:24FBsWkwjC6kDxlLn3zJELFY-BUj9SqSmbaX0hP6rrE",
-    "expire_date": "2026-01-17T06:11:35.943Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "xsp29gzohh1yq4k3rg59els0wzybt222",
-  "fields": {
-    "session_data": "eyJjYXJ0Ijp7IjI1IjoxLCIyNCI6MX19:1vivyM:zD3MMNTteyCVrSOUvtzcvl78bYvsy0WJ4adzNb06WzI",
-    "expire_date": "2026-02-05T14:47:46.929Z"
-  }
-},
-{
-  "model": "e_cart.category",
-  "pk": 1,
-  "fields": {
-    "name": "Electronics",
-    "slug": "electronics",
-    "parent": null,
-    "icon": "",
-    "is_active": true,
-    "created_at": "2026-01-03T06:20:38.504Z"
-  }
-},
-{
-  "model": "e_cart.category",
-  "pk": 2,
-  "fields": {
-    "name": "Mobile Phones",
-    "slug": "mobile-phones",
-    "parent": 1,
-    "icon": "fa-solid fa-mobile",
-    "is_active": true,
-    "created_at": "2026-01-03T06:20:43.382Z"
-  }
-},
-{
-  "model": "e_cart.category",
-  "pk": 3,
-  "fields": {
-    "name": "Android",
-    "slug": "android",
-    "parent": 2,
-    "icon": "",
-    "is_active": true,
-    "created_at": "2026-01-03T06:20:49.582Z"
-  }
-},
-{
-  "model": "e_cart.category",
-  "pk": 4,
-  "fields": {
-    "name": "Clothing and Fashion",
-    "slug": "clothing-and-fashion",
-    "parent": null,
-    "icon": "fa-solid fa-shirt",
-    "is_active": true,
-    "created_at": "2026-01-03T06:39:39.640Z"
-  }
-},
-{
-  "model": "e_cart.category",
-  "pk": 6,
-  "fields": {
-    "name": "Men's Wear",
-    "slug": "mens-wear",
-    "parent": 4,
-    "icon": "",
-    "is_active": true,
-    "created_at": "2026-01-03T06:40:59.465Z"
-  }
-},
-{
-  "model": "e_cart.category",
-  "pk": 7,
-  "fields": {
-    "name": "T-Shirts",
-    "slug": "t-shirt",
-    "parent": 6,
-    "icon": "",
-    "is_active": true,
-    "created_at": "2026-01-03T06:41:15.018Z"
-  }
-},
-{
-  "model": "e_cart.category",
-  "pk": 8,
-  "fields": {
-    "name": "Full Sleeve Shirts",
-    "slug": "full-sleeve-shirt",
-    "parent": 6,
-    "icon": "",
-    "is_active": true,
-    "created_at": "2026-01-03T06:41:45.919Z"
-  }
-},
-{
-  "model": "e_cart.category",
-  "pk": 9,
-  "fields": {
-    "name": "Formals",
-    "slug": "formals",
-    "parent": 6,
-    "icon": "",
-    "is_active": true,
-    "created_at": "2026-01-03T06:42:26.051Z"
-  }
-},
-{
-  "model": "e_cart.category",
-  "pk": 10,
-  "fields": {
-    "name": "Audio Accessories",
-    "slug": "audio-accessories",
-    "parent": 1,
-    "icon": "fa-solid fa-headset",
-    "is_active": true,
-    "created_at": "2026-01-03T06:47:32.549Z"
-  }
-},
-{
-  "model": "e_cart.category",
-  "pk": 11,
-  "fields": {
-    "name": "Headphones",
-    "slug": "headphones",
-    "parent": 10,
-    "icon": "",
-    "is_active": true,
-    "created_at": "2026-01-03T06:47:50.459Z"
-  }
-},
-{
-  "model": "e_cart.category",
-  "pk": 12,
-  "fields": {
-    "name": "Bluetooth Speakers",
-    "slug": "speaker",
-    "parent": 10,
-    "icon": "",
-    "is_active": true,
-    "created_at": "2026-01-03T06:48:46.207Z"
-  }
-},
-{
-  "model": "e_cart.category",
-  "pk": 13,
-  "fields": {
-    "name": "Wireless Headphones",
-    "slug": "wireless-headphones",
-    "parent": 11,
-    "icon": "",
-    "is_active": true,
-    "created_at": "2026-01-03T06:49:02.839Z"
-  }
-},
-{
-  "model": "e_cart.category",
-  "pk": 14,
-  "fields": {
-    "name": "Wired Headphones",
-    "slug": "wired-headphones",
-    "parent": 11,
-    "icon": "",
-    "is_active": true,
-    "created_at": "2026-01-03T06:49:52.709Z"
-  }
-},
-{
-  "model": "e_cart.category",
-  "pk": 15,
-  "fields": {
-    "name": "Laptops",
-    "slug": "laptops",
-    "parent": 1,
-    "icon": "",
-    "is_active": true,
-    "created_at": "2026-01-03T06:50:43.620Z"
-  }
-},
-{
-  "model": "e_cart.category",
-  "pk": 16,
-  "fields": {
-    "name": "Women's Wear",
-    "slug": "womens-wear",
-    "parent": 4,
-    "icon": "",
-    "is_active": true,
-    "created_at": "2026-01-03T06:51:47.523Z"
-  }
-},
-{
-  "model": "e_cart.category",
-  "pk": 17,
-  "fields": {
-    "name": "Kid's Wear",
-    "slug": "kids-wear",
-    "parent": 4,
-    "icon": "",
-    "is_active": true,
-    "created_at": "2026-01-03T06:52:02.274Z"
-  }
-},
-{
-  "model": "e_cart.category",
-  "pk": 18,
-  "fields": {
-    "name": "Gaming Laptops",
-    "slug": "ga",
-    "parent": 15,
-    "icon": "",
-    "is_active": true,
-    "created_at": "2026-01-03T06:52:33.466Z"
-  }
-},
-{
-  "model": "e_cart.category",
-  "pk": 19,
-  "fields": {
-    "name": "Televisons",
-    "slug": "televisons",
-    "parent": 1,
-    "icon": "",
-    "is_active": true,
-    "created_at": "2026-01-03T06:53:32.803Z"
-  }
-},
-{
-  "model": "e_cart.category",
-  "pk": 20,
-  "fields": {
-    "name": "Smart TVs",
-    "slug": "smart-tvs",
-    "parent": 19,
-    "icon": "",
-    "is_active": true,
-    "created_at": "2026-01-03T06:53:56.036Z"
-  }
-},
-{
-  "model": "e_cart.category",
-  "pk": 21,
-  "fields": {
-    "name": "AMOLED TVs",
-    "slug": "amoled-tvs",
-    "parent": 19,
-    "icon": "",
-    "is_active": true,
-    "created_at": "2026-01-03T06:54:39.467Z"
-  }
-},
-{
-  "model": "e_cart.category",
-  "pk": 22,
-  "fields": {
-    "name": "ios",
-    "slug": "ios",
-    "parent": 2,
-    "icon": "",
-    "is_active": true,
-    "created_at": "2026-01-04T00:04:49.370Z"
-  }
-},
-{
-  "model": "e_cart.category",
-  "pk": 23,
-  "fields": {
-    "name": "Bluetooth Earpods",
-    "slug": "bluetooth-earpods",
-    "parent": 10,
-    "icon": "",
-    "is_active": true,
-    "created_at": "2026-01-04T00:25:12.082Z"
-  }
-},
-{
-  "model": "e_cart.category",
-  "pk": 24,
-  "fields": {
-    "name": "Women's Kurti",
-    "slug": "womens-kurti",
-    "parent": 16,
-    "icon": "",
-    "is_active": true,
-    "created_at": "2026-01-04T00:39:50.903Z"
-  }
-},
-{
-  "model": "e_cart.category",
-  "pk": 25,
-  "fields": {
-    "name": "Men's Watches",
-    "slug": "mens-watches",
-    "parent": 6,
-    "icon": "",
-    "is_active": true,
-    "created_at": "2026-01-04T00:46:50.885Z"
-  }
-},
-{
-  "model": "e_cart.category",
-  "pk": 26,
-  "fields": {
-    "name": "Women's Watches",
-    "slug": "womens-watches",
-    "parent": 16,
-    "icon": "",
-    "is_active": true,
-    "created_at": "2026-01-04T00:48:49.999Z"
-  }
-},
-{
-  "model": "e_cart.category",
-  "pk": 27,
-  "fields": {
-    "name": "Women's Watches",
-    "slug": "women-s-watches",
-    "parent": 16,
-    "icon": "",
-    "is_active": true,
-    "created_at": "2026-01-04T00:49:52.985Z"
-  }
-},
-{
-  "model": "e_cart.product",
-  "pk": 1,
-  "fields": {
-    "name": "Iphone 11",
-    "slug": "iphone-11",
-    "category": 22,
-    "description": "8 GB RAM 256 GB ROM | Wonderful White | 3200 mAh Battery",
-    "price": "42999.00",
-    "stock": 111,
-    "image": "products/iphone11.avif",
-    "is_available": true,
-    "created_at": "2026-01-04T00:05:47.562Z",
-    "updated_at": "2026-01-04T00:05:47.562Z"
-  }
-},
-{
-  "model": "e_cart.product",
-  "pk": 2,
-  "fields": {
-    "name": "Iphone 12",
-    "slug": "iphone-12",
-    "category": 22,
-    "description": "8 GB RAM 256 GB ROM | Glacier Grey | 3700 mAh Battery",
-    "price": "51999.00",
-    "stock": 245,
-    "image": "products/iphone12.avif",
-    "is_available": true,
-    "created_at": "2026-01-04T00:07:15.698Z",
-    "updated_at": "2026-01-04T00:07:15.698Z"
-  }
-},
-{
-  "model": "e_cart.product",
-  "pk": 3,
-  "fields": {
-    "name": "Iphone 13",
-    "slug": "iphone-13",
-    "category": 22,
-    "description": "6GB RAM 128 GB ROM | Wonderful White | 2700 mAh Battery",
-    "price": "67899.00",
-    "stock": 456,
-    "image": "products/iphone13.avif",
-    "is_available": true,
-    "created_at": "2026-01-04T00:08:51.047Z",
-    "updated_at": "2026-01-04T00:08:51.047Z"
-  }
-},
-{
-  "model": "e_cart.product",
-  "pk": 4,
-  "fields": {
-    "name": "Samsung Galaxy S23 Ultra",
-    "slug": "samsung-galaxy-s23-ultra",
-    "category": 3,
-    "description": "8 GB RAM 256 GB ROM | Brilliant Black | 5100 mAh Battery",
-    "price": "65999.00",
-    "stock": 503,
-    "image": "products/s23ultra.avif",
-    "is_available": true,
-    "created_at": "2026-01-04T00:10:38.327Z",
-    "updated_at": "2026-01-04T00:10:38.327Z"
-  }
-},
-{
-  "model": "e_cart.product",
-  "pk": 5,
-  "fields": {
-    "name": "Samsung Galaxy S24 Ultra",
-    "slug": "samsung-galaxy-s24-ultra",
-    "category": 3,
-    "description": "12 GB RAM 512GB ROM | Titanium Gray | 5200 mAh Battery",
-    "price": "78999.00",
-    "stock": 657,
-    "image": "products/s24ultra.avif",
-    "is_available": true,
-    "created_at": "2026-01-04T00:12:58.608Z",
-    "updated_at": "2026-01-04T00:13:11.247Z"
-  }
-},
-{
-  "model": "e_cart.product",
-  "pk": 6,
-  "fields": {
-    "name": "Kids Combo Wear",
-    "slug": "kids-combo-wear",
-    "category": 17,
-    "description": "XYZ Kid's Wear Size : Medium (M) | Age:8 -12 Years",
-    "price": "2999.00",
-    "stock": 56,
-    "image": "products/kidswear1.avif",
-    "is_available": true,
-    "created_at": "2026-01-04T00:16:47.007Z",
-    "updated_at": "2026-01-04T00:16:47.007Z"
-  }
-},
-{
-  "model": "e_cart.product",
-  "pk": 7,
-  "fields": {
-    "name": "Kids Wear Combo",
-    "slug": "kids-wear-combo",
-    "category": 17,
-    "description": "XYZ Kid's Wear Size : Small (S) | Age:8 -12 Years",
-    "price": "2799.00",
-    "stock": 13,
-    "image": "products/kidswear2.avif",
-    "is_available": true,
-    "created_at": "2026-01-04T00:18:50.630Z",
-    "updated_at": "2026-01-04T00:19:32.359Z"
-  }
-},
-{
-  "model": "e_cart.product",
-  "pk": 8,
-  "fields": {
-    "name": "SONY Wired Headphones",
-    "slug": "sony-wired-headphones",
-    "category": 14,
-    "description": "SONY Wired Headphones White premium Sound Quality",
-    "price": "7000.00",
-    "stock": 99,
-    "image": "products/headphones-wired1.avif",
-    "is_available": true,
-    "created_at": "2026-01-04T00:21:42.370Z",
-    "updated_at": "2026-01-04T00:21:42.370Z"
-  }
-},
-{
-  "model": "e_cart.product",
-  "pk": 9,
-  "fields": {
-    "name": "Nothing in ear bluetooth Ear pods",
-    "slug": "nothing-in-ear-bluetooth-ear-pods",
-    "category": 23,
-    "description": "Raging Red| Fast Charging Supported |8hr Battery Back-up",
-    "price": "5999.00",
-    "stock": 271,
-    "image": "products/earpods1.avif",
-    "is_available": true,
-    "created_at": "2026-01-04T00:27:54.925Z",
-    "updated_at": "2026-01-04T00:27:54.925Z"
-  }
-},
-{
-  "model": "e_cart.product",
-  "pk": 10,
-  "fields": {
-    "name": "ASUS Rog Gaming Series ROG-7000",
-    "slug": "asus-rog-gaming-series-rog-7000",
-    "category": 18,
-    "description": "NVIDIA| TUF Gaming|",
-    "price": "98199.00",
-    "stock": 579,
-    "image": "products/gaminglaptop1.avif",
-    "is_available": true,
-    "created_at": "2026-01-04T00:29:52.528Z",
-    "updated_at": "2026-01-04T00:29:52.528Z"
-  }
-},
-{
-  "model": "e_cart.product",
-  "pk": 11,
-  "fields": {
-    "name": "Audible Wireless Bluetooth Headphones",
-    "slug": "audible-wireless-bluetooth-headphones",
-    "category": 13,
-    "description": "Bluetooth Wireless Headphones",
-    "price": "3455.00",
-    "stock": 12,
-    "image": "products/headphones1.avif",
-    "is_available": true,
-    "created_at": "2026-01-04T00:31:59.498Z",
-    "updated_at": "2026-01-04T00:31:59.498Z"
-  }
-},
-{
-  "model": "e_cart.product",
-  "pk": 12,
-  "fields": {
-    "name": "Audible Wireless Headphones",
-    "slug": "audible-wireless-headphones",
-    "category": 13,
-    "description": "White Bluetooth Wireless Headphones",
-    "price": "2955.00",
-    "stock": 90,
-    "image": "products/headphones2.avif",
-    "is_available": true,
-    "created_at": "2026-01-04T00:35:18.854Z",
-    "updated_at": "2026-01-04T00:35:18.854Z"
-  }
-},
-{
-  "model": "e_cart.product",
-  "pk": 13,
-  "fields": {
-    "name": "Audible Wired Headphones",
-    "slug": "audible-wired-headphones",
-    "category": 14,
-    "description": "Metallic Red",
-    "price": "1199.00",
-    "stock": 3,
-    "image": "products/headphones-wired2.avif",
-    "is_available": true,
-    "created_at": "2026-01-04T00:36:52.538Z",
-    "updated_at": "2026-01-04T00:36:52.538Z"
-  }
-},
-{
-  "model": "e_cart.product",
-  "pk": 14,
-  "fields": {
-    "name": "Audible Bluetooth Speaker",
-    "slug": "audible-bluetooth-speaker",
-    "category": 12,
-    "description": "Comes with Mic along with it",
-    "price": "21000.00",
-    "stock": 98,
-    "image": "products/speaker1.avif",
-    "is_available": true,
-    "created_at": "2026-01-04T00:39:11.044Z",
-    "updated_at": "2026-01-04T00:39:11.044Z"
-  }
-},
-{
-  "model": "e_cart.product",
-  "pk": 15,
-  "fields": {
-    "name": "Kurti for Women",
-    "slug": "kurti-for-women",
-    "category": 24,
-    "description": "Traditional Kurti for Women | Navy Blue",
-    "price": "4177.00",
-    "stock": 78,
-    "image": "products/womens-wear.avif",
-    "is_available": true,
-    "created_at": "2026-01-04T00:42:36.975Z",
-    "updated_at": "2026-01-04T00:42:36.975Z"
-  }
-},
-{
-  "model": "e_cart.product",
-  "pk": 16,
-  "fields": {
-    "name": "SONY BRAVIA B-40 AMOLED TV",
-    "slug": "sony-bravia-b-40-amoled-tv",
-    "category": 21,
-    "description": "40 INCH AMOLED TV | 2 Years Warranty",
-    "price": "71000.00",
-    "stock": 56,
-    "image": "products/tv2.avif",
-    "is_available": true,
-    "created_at": "2026-01-04T00:45:26.394Z",
-    "updated_at": "2026-01-04T00:45:26.394Z"
-  }
-},
-{
-  "model": "e_cart.product",
-  "pk": 17,
-  "fields": {
-    "name": "TIMEX Black Series for Men",
-    "slug": "timex-black-series-for-men",
-    "category": 25,
-    "description": "45Cm dial ANALOGUE",
-    "price": "7000.00",
-    "stock": 23,
-    "image": "products/watches3.avif",
-    "is_available": true,
-    "created_at": "2026-01-04T00:48:08.012Z",
-    "updated_at": "2026-01-04T00:48:08.012Z"
-  }
-},
-{
-  "model": "e_cart.product",
-  "pk": 18,
-  "fields": {
-    "name": "Rodeo Classic Watches for Women",
-    "slug": "rodeo-classic-watches-for-women",
-    "category": 27,
-    "description": "Premium look Classy White",
-    "price": "5999.00",
-    "stock": 5,
-    "image": "products/womes-watches1.avif",
-    "is_available": true,
-    "created_at": "2026-01-04T00:52:08.757Z",
-    "updated_at": "2026-01-04T00:52:08.757Z"
-  }
-},
-{
-  "model": "e_cart.product",
-  "pk": 19,
-  "fields": {
-    "name": "Retro T-Shirt for Men Prime Black",
-    "slug": "retro-t-shirt-for-men-prime-black",
-    "category": 7,
-    "description": "Black XL",
-    "price": "1799.00",
-    "stock": 0,
-    "image": "products/tshirt1.avif",
-    "is_available": true,
-    "created_at": "2026-01-04T00:54:08.733Z",
-    "updated_at": "2026-01-20T15:39:32.822Z"
-  }
-},
-{
-  "model": "e_cart.product",
-  "pk": 20,
-  "fields": {
-    "name": "Retro T-Shirt for Men Wonder White",
-    "slug": "retro-t-shirt-for-men-wonder-white",
-    "category": 7,
-    "description": "White 32 XL",
-    "price": "1799.00",
-    "stock": 0,
-    "image": "products/tshirt2.avif",
-    "is_available": true,
-    "created_at": "2026-01-04T00:55:33.257Z",
-    "updated_at": "2026-01-20T15:39:20.558Z"
-  }
-},
-{
-  "model": "e_cart.product",
-  "pk": 21,
-  "fields": {
-    "name": "Rodeo Classic Watches for Men",
-    "slug": "rodeo-classic-watches-for-men",
-    "category": 25,
-    "description": "Analogue dial",
-    "price": "5699.00",
-    "stock": 0,
-    "image": "products/watches2.avif",
-    "is_available": true,
-    "created_at": "2026-01-04T01:00:19.511Z",
-    "updated_at": "2026-01-20T15:39:28.165Z"
-  }
-},
-{
-  "model": "e_cart.product",
-  "pk": 22,
-  "fields": {
-    "name": "Femme Women's Wear Full Set",
-    "slug": "femme-womens-wear-full-set",
-    "category": 16,
-    "description": "Full Set",
-    "price": "6999.00",
-    "stock": 12,
-    "image": "products/womens-wear1.avif",
-    "is_available": true,
-    "created_at": "2026-01-04T01:03:01.515Z",
-    "updated_at": "2026-01-04T01:05:14.898Z"
-  }
-},
-{
-  "model": "e_cart.product",
-  "pk": 23,
-  "fields": {
-    "name": "JBL Bluetooth Speaker",
-    "slug": "jbl-bluetooth-speaker",
-    "category": 12,
-    "description": "12HR battery backup",
-    "price": "16799.00",
-    "stock": 3,
-    "image": "products/speaker2.avif",
-    "is_available": true,
-    "created_at": "2026-01-04T01:05:07.548Z",
-    "updated_at": "2026-01-04T01:05:07.548Z"
-  }
-},
-{
-  "model": "e_cart.product",
-  "pk": 24,
-  "fields": {
-    "name": "SONY SMART TV Android",
-    "slug": "sony-smart-tv-android",
-    "category": 20,
-    "description": "Android Smart TV  42 Inch",
-    "price": "91000.00",
-    "stock": 45,
-    "image": "products/tv4.webp",
-    "is_available": true,
-    "created_at": "2026-01-04T01:06:57.031Z",
-    "updated_at": "2026-01-04T01:06:57.031Z"
-  }
-},
-{
-  "model": "e_cart.product",
-  "pk": 25,
-  "fields": {
-    "name": "SONY SMART TV",
-    "slug": "sony-smart-tv",
-    "category": 20,
-    "description": "40 Inch Android TV Sony Bravia series",
-    "price": "72000.00",
-    "stock": 41,
-    "image": "products/tv3.avif",
-    "is_available": true,
-    "created_at": "2026-01-04T01:08:52.963Z",
-    "updated_at": "2026-01-04T01:08:52.963Z"
-  }
-},
-{
-  "model": "e_cart.wallet",
-  "pk": 1,
-  "fields": {
-    "user": [
-      "store_admin"
-    ],
-    "balance": "0.00",
-    "updated_at": "2026-01-23T04:35:21.836Z"
-  }
-},
-{
-  "model": "e_cart.wallet",
-  "pk": 2,
-  "fields": {
-    "user": [
-      "dustybun"
-    ],
-    "balance": "0.00",
-    "updated_at": "2026-01-23T05:00:11.466Z"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 1,
-  "fields": {
-    "action_time": "2026-01-03T06:20:38.506Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "category"
-    ],
-    "object_id": "1",
-    "object_repr": "Electronics",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 2,
-  "fields": {
-    "action_time": "2026-01-03T06:20:43.384Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "category"
-    ],
-    "object_id": "2",
-    "object_repr": "Mobile Phones",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 3,
-  "fields": {
-    "action_time": "2026-01-03T06:20:49.584Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "category"
-    ],
-    "object_id": "3",
-    "object_repr": "Android",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 4,
-  "fields": {
-    "action_time": "2026-01-03T06:39:39.647Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "category"
-    ],
-    "object_id": "4",
-    "object_repr": "Clothing and Fashion",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 5,
-  "fields": {
-    "action_time": "2026-01-03T06:39:42.202Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "category"
-    ],
-    "object_id": "5",
-    "object_repr": "Men's Wear",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 6,
-  "fields": {
-    "action_time": "2026-01-03T06:40:34.332Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "category"
-    ],
-    "object_id": "5",
-    "object_repr": "Men's Wear",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 7,
-  "fields": {
-    "action_time": "2026-01-03T06:40:59.470Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "category"
-    ],
-    "object_id": "6",
-    "object_repr": "Men's Wear",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 8,
-  "fields": {
-    "action_time": "2026-01-03T06:41:15.023Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "category"
-    ],
-    "object_id": "7",
-    "object_repr": "T-Shirt",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 9,
-  "fields": {
-    "action_time": "2026-01-03T06:41:45.924Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "category"
-    ],
-    "object_id": "8",
-    "object_repr": "Full Sleeve Shirt",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 10,
-  "fields": {
-    "action_time": "2026-01-03T06:42:26.056Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "category"
-    ],
-    "object_id": "9",
-    "object_repr": "Formals",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 11,
-  "fields": {
-    "action_time": "2026-01-03T06:47:32.551Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "category"
-    ],
-    "object_id": "10",
-    "object_repr": "Audio Accessories",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 12,
-  "fields": {
-    "action_time": "2026-01-03T06:47:50.463Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "category"
-    ],
-    "object_id": "11",
-    "object_repr": "Headphones",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 13,
-  "fields": {
-    "action_time": "2026-01-03T06:48:46.210Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "category"
-    ],
-    "object_id": "12",
-    "object_repr": "Speaker",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 14,
-  "fields": {
-    "action_time": "2026-01-03T06:49:02.843Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "category"
-    ],
-    "object_id": "13",
-    "object_repr": "Wireless Headphones",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 15,
-  "fields": {
-    "action_time": "2026-01-03T06:49:24.421Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "category"
-    ],
-    "object_id": "12",
-    "object_repr": "Bluetooth Speaker",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 16,
-  "fields": {
-    "action_time": "2026-01-03T06:49:52.712Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "category"
-    ],
-    "object_id": "14",
-    "object_repr": "Wired Headphones",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 17,
-  "fields": {
-    "action_time": "2026-01-03T06:50:43.624Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "category"
-    ],
-    "object_id": "15",
-    "object_repr": "Laptops",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 18,
-  "fields": {
-    "action_time": "2026-01-03T06:50:54.174Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "category"
-    ],
-    "object_id": "8",
-    "object_repr": "Full Sleeve Shirts",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 19,
-  "fields": {
-    "action_time": "2026-01-03T06:51:04.712Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "category"
-    ],
-    "object_id": "7",
-    "object_repr": "T-Shirts",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 20,
-  "fields": {
-    "action_time": "2026-01-03T06:51:11.366Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "category"
-    ],
-    "object_id": "12",
-    "object_repr": "Bluetooth Speakers",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 21,
-  "fields": {
-    "action_time": "2026-01-03T06:51:47.526Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "category"
-    ],
-    "object_id": "16",
-    "object_repr": "Women's Wear",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 22,
-  "fields": {
-    "action_time": "2026-01-03T06:52:02.275Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "category"
-    ],
-    "object_id": "17",
-    "object_repr": "KId's Wear",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 23,
-  "fields": {
-    "action_time": "2026-01-03T06:52:33.470Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "category"
-    ],
-    "object_id": "18",
-    "object_repr": "GA",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 24,
-  "fields": {
-    "action_time": "2026-01-03T06:52:48.317Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "category"
-    ],
-    "object_id": "18",
-    "object_repr": "Gaming Laptops",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Name\", \"Parent\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 25,
-  "fields": {
-    "action_time": "2026-01-03T06:53:32.805Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "category"
-    ],
-    "object_id": "19",
-    "object_repr": "Televisons",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 26,
-  "fields": {
-    "action_time": "2026-01-03T06:53:56.039Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "category"
-    ],
-    "object_id": "20",
-    "object_repr": "Smart TVs",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 27,
-  "fields": {
-    "action_time": "2026-01-03T06:54:39.471Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "category"
-    ],
-    "object_id": "21",
-    "object_repr": "AMOLED TVs",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 28,
-  "fields": {
-    "action_time": "2026-01-04T00:04:49.373Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "category"
-    ],
-    "object_id": "22",
-    "object_repr": "ios",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 29,
-  "fields": {
-    "action_time": "2026-01-04T00:05:47.564Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "product"
-    ],
-    "object_id": "1",
-    "object_repr": "Iphone 11",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 30,
-  "fields": {
-    "action_time": "2026-01-04T00:07:15.700Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "product"
-    ],
-    "object_id": "2",
-    "object_repr": "Iphone 12",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 31,
-  "fields": {
-    "action_time": "2026-01-04T00:08:51.049Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "product"
-    ],
-    "object_id": "3",
-    "object_repr": "Iphone 13",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 32,
-  "fields": {
-    "action_time": "2026-01-04T00:10:38.329Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "product"
-    ],
-    "object_id": "4",
-    "object_repr": "Samsung Galaxy S23 Ultra",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 33,
-  "fields": {
-    "action_time": "2026-01-04T00:12:58.610Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "product"
-    ],
-    "object_id": "5",
-    "object_repr": "Samsung Galaxy S24 Ultra",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 34,
-  "fields": {
-    "action_time": "2026-01-04T00:13:11.250Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "product"
-    ],
-    "object_id": "5",
-    "object_repr": "Samsung Galaxy S24 Ultra",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 35,
-  "fields": {
-    "action_time": "2026-01-04T00:16:47.009Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "product"
-    ],
-    "object_id": "6",
-    "object_repr": "Kids Combo Wear",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 36,
-  "fields": {
-    "action_time": "2026-01-04T00:18:50.632Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "product"
-    ],
-    "object_id": "7",
-    "object_repr": "Kids Wear Combo",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 37,
-  "fields": {
-    "action_time": "2026-01-04T00:19:32.369Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "product"
-    ],
-    "object_id": "7",
-    "object_repr": "Kids Wear Combo",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 38,
-  "fields": {
-    "action_time": "2026-01-04T00:21:42.372Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "product"
-    ],
-    "object_id": "8",
-    "object_repr": "SONY Wired Headphones",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 39,
-  "fields": {
-    "action_time": "2026-01-04T00:25:12.084Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "category"
-    ],
-    "object_id": "23",
-    "object_repr": "Bluetooth Earpods",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 40,
-  "fields": {
-    "action_time": "2026-01-04T00:27:54.927Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "product"
-    ],
-    "object_id": "9",
-    "object_repr": "Nothing in ear bluetooth Ear pods",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 41,
-  "fields": {
-    "action_time": "2026-01-04T00:29:52.530Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "product"
-    ],
-    "object_id": "10",
-    "object_repr": "ASUS Rog Gaming Series ROG-7000",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 42,
-  "fields": {
-    "action_time": "2026-01-04T00:31:59.501Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "product"
-    ],
-    "object_id": "11",
-    "object_repr": "Audible Wireless Bluetooth Headphones",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 43,
-  "fields": {
-    "action_time": "2026-01-04T00:35:18.856Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "product"
-    ],
-    "object_id": "12",
-    "object_repr": "Audible Wireless Headphones",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 44,
-  "fields": {
-    "action_time": "2026-01-04T00:36:52.541Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "product"
-    ],
-    "object_id": "13",
-    "object_repr": "Audible Wired Headphones",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 45,
-  "fields": {
-    "action_time": "2026-01-04T00:39:11.046Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "product"
-    ],
-    "object_id": "14",
-    "object_repr": "Audible Bluetooth Speaker",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 46,
-  "fields": {
-    "action_time": "2026-01-04T00:39:50.905Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "category"
-    ],
-    "object_id": "24",
-    "object_repr": "Women's Kurti",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 47,
-  "fields": {
-    "action_time": "2026-01-04T00:42:36.977Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "product"
-    ],
-    "object_id": "15",
-    "object_repr": "Kurti for Women",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 48,
-  "fields": {
-    "action_time": "2026-01-04T00:45:26.396Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "product"
-    ],
-    "object_id": "16",
-    "object_repr": "SONY BRAVIA B-40 AMOLED TV",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 49,
-  "fields": {
-    "action_time": "2026-01-04T00:46:50.887Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "category"
-    ],
-    "object_id": "25",
-    "object_repr": "Men's Watches",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 50,
-  "fields": {
-    "action_time": "2026-01-04T00:48:08.013Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "product"
-    ],
-    "object_id": "17",
-    "object_repr": "TIMEX Black Series for Men",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 51,
-  "fields": {
-    "action_time": "2026-01-04T00:48:50.001Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "category"
-    ],
-    "object_id": "26",
-    "object_repr": "Women's Watches",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 52,
-  "fields": {
-    "action_time": "2026-01-04T00:49:52.987Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "category"
-    ],
-    "object_id": "27",
-    "object_repr": "Women's Watches",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 53,
-  "fields": {
-    "action_time": "2026-01-04T00:52:08.759Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "product"
-    ],
-    "object_id": "18",
-    "object_repr": "Rodeo Classic Watches for Women",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 54,
-  "fields": {
-    "action_time": "2026-01-04T00:54:08.735Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "product"
-    ],
-    "object_id": "19",
-    "object_repr": "Retro T-Shirt for Men Prime Black",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 55,
-  "fields": {
-    "action_time": "2026-01-04T00:55:33.259Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "product"
-    ],
-    "object_id": "20",
-    "object_repr": "Retro T-Shirt for Men Wonder White",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 56,
-  "fields": {
-    "action_time": "2026-01-04T00:55:37.556Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "product"
-    ],
-    "object_id": "19",
-    "object_repr": "Retro T-Shirt for Men Prime Black",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Is available\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 57,
-  "fields": {
-    "action_time": "2026-01-04T01:00:19.513Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "product"
-    ],
-    "object_id": "21",
-    "object_repr": "0Rodeo Classic Watches for Men",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 58,
-  "fields": {
-    "action_time": "2026-01-04T01:03:01.517Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "product"
-    ],
-    "object_id": "22",
-    "object_repr": "Femme Women's Wear Full Set",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 59,
-  "fields": {
-    "action_time": "2026-01-04T01:05:07.550Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "product"
-    ],
-    "object_id": "23",
-    "object_repr": "JBL Bluetooth Speaker",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 60,
-  "fields": {
-    "action_time": "2026-01-04T01:05:14.901Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "product"
-    ],
-    "object_id": "22",
-    "object_repr": "Femme Women's Wear Full Set",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Is available\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 61,
-  "fields": {
-    "action_time": "2026-01-04T01:05:27.396Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "product"
-    ],
-    "object_id": "21",
-    "object_repr": "Rodeo Classic Watches for Men",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 62,
-  "fields": {
-    "action_time": "2026-01-04T01:06:57.034Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "product"
-    ],
-    "object_id": "24",
-    "object_repr": "SONY SMART TV Android",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 63,
-  "fields": {
-    "action_time": "2026-01-04T01:08:52.965Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "product"
-    ],
-    "object_id": "25",
-    "object_repr": "SONY SMART TV",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 64,
-  "fields": {
-    "action_time": "2026-01-20T15:39:06.170Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "category"
-    ],
-    "object_id": "17",
-    "object_repr": "Kid's Wear",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 65,
-  "fields": {
-    "action_time": "2026-01-20T15:39:20.560Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "product"
-    ],
-    "object_id": "20",
-    "object_repr": "Retro T-Shirt for Men Wonder White",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Is available\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 66,
-  "fields": {
-    "action_time": "2026-01-20T15:39:24.047Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "product"
-    ],
-    "object_id": "21",
-    "object_repr": "Rodeo Classic Watches for Men",
-    "action_flag": 2,
-    "change_message": "[]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 67,
-  "fields": {
-    "action_time": "2026-01-20T15:39:28.167Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "product"
-    ],
-    "object_id": "21",
-    "object_repr": "Rodeo Classic Watches for Men",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Is available\"]}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 68,
-  "fields": {
-    "action_time": "2026-01-20T15:39:32.825Z",
-    "user": [
-      "store_admin"
-    ],
-    "content_type": [
-      "e_cart",
-      "product"
-    ],
-    "object_id": "19",
-    "object_repr": "Retro T-Shirt for Men Prime Black",
-    "action_flag": 2,
-    "change_message": "[{\"changed\": {\"fields\": [\"Is available\"]}}]"
-  }
-}
+    {
+        "model": "auth.user",
+        "fields": {
+            "password": "pbkdf2_sha256$1200000$218yNnD8UroztXjEZqehkc$/aTMUTNtYKVzmtIXHys4Z1EBmDzBFFj4XwfNXdQsxwM=",
+            "last_login": "2026-01-20T14:53:28.227Z",
+            "is_superuser": true,
+            "username": "store_admin",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2026-01-03T06:11:02.649Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "fields": {
+            "password": "pbkdf2_sha256$1200000$wubh4IxLOZwsMWrRF7PCnq$KiWigB18V7RBBNCprxgmk7ketKcFjCd0GDjKwKMV+fo=",
+            "last_login": "2026-01-25T07:19:09.989Z",
+            "is_superuser": false,
+            "username": "dustybun",
+            "first_name": "",
+            "last_name": "",
+            "email": "dustinhenderson911@gmail.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2026-01-22T08:56:36.458Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "0m7pupatq1p27r0a401sfzcndddipupy",
+        "fields": {
+            "session_data": ".eJxVjDEOgzAMAP_iGSFiCBDG7n1D5Nih0FKCIFEHxN8rJBbWu9PtwLRG6PYjA0spDjZtfrWjQAcIN-aIP34-hbxpfoWcwxzX0eVnkl92y59B_PS42ttgoG2ADrwwcquMYe6lddoJIWpkbCrSLXpnRCFiqYzrjaJCI0tRakGnC2qbHjL40TT5aGNY0mLpG9IcoYNK1zUcf50hRUE:1vjuCg:mbszivnHwZa6nF7xHELNcpvp727OQaH0A7T3ia48MZQ",
+            "expire_date": "2026-02-08T07:06:34.896Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "0sfznq8jyeh1c28yuf4q9buenxqevz7n",
+        "fields": {
+            "session_data": ".eJxVjLsOgzAMAP_FcxXZEMhj7N5vQIltCm0FEoEJ8e8VEgvr3el24LSsEHeoGoh0PKBL2zp0W9GlGwUiENxYTvzV6RTySdN7NjxP6zJmcybmssW8ZtHf82pvgyGVASI4zA2x1JopMHlnUUJvlQIiKzOq87ZNYj0huSr0uddgW_YOK2lqquH4A_d_O9E:1viD6d:hmRu5jSkZcfiwn28PtTH9_SgVuNh80vjGykP2PklnqM",
+            "expire_date": "2026-02-03T14:53:19.332Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "5mo3n0x1hk1qwwlzdwg6wdyew763llyx",
+        "fields": {
+            "session_data": ".eJxVjDkOgzAQAP-yNbJ2scFHmT5vQPbuEnIIJI4K8fcIiSJpZ0azQ5e3dei2RefuKZCAoPplJfNbx1PIK4-PyfA0rvOzmDMxl13MfRL93K72bzDkZYAEHktDLFYLRabgHUrsnVJEZGVG9cG1WVwgJF_HvvQaXcvBYy2NJQsVcJ5XSDvUDSR7HF94oDvT:1vcO1d:PSQrqzLP6vXReFBK8yrG2_ghAqtG399lQBASdwGDVVA",
+            "expire_date": "2026-01-18T13:20:05.252Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "75i75553m60g8ag58bg34lu0nj0id8o6",
+        "fields": {
+            "session_data": "eyJjYXJ0Ijp7IjI1IjoxLCIyNCI6MX19:1vixPf:dbvv9wZzY7Mpk3hp1hgIBXF9mf9A_j6A1oo6Hczvqtc",
+            "expire_date": "2026-02-05T16:20:03.536Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "a3lgdlnla54zcho3mtcq2bgilb3i71a3",
+        "fields": {
+            "session_data": ".eJxVjDEOgzAMAP_iGUU2BJIwducNKLFNoa1AIjAh_l4hMbTr3ekO6OO-jf2ede0ngRYIil-WIr91voS84vxcDC_ztk7JXIm5bTbdIvp53O3fYIx5hBYcpppYKk0UmLyzKGGwSgGRlRnVedtEsZ6QXBmGNGiwDXuHpdQVVVAAx3WD9jjPLxg0Ors:1viFh7:ludl5HaepxzWuBjjrG2IxEmka6sbK77ZZ019EQ5qC8c",
+            "expire_date": "2026-02-03T17:39:09.634Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "gzrbpkf9v5ohb1uce17c1b2m05936yqn",
+        "fields": {
+            "session_data": "eyJjYXJ0Ijp7IjI1Ijo3fX0:1vi8UC:Kk3go58UyEGjdbqcMkwe4XBAFLK88DwWexBm38FOpJk",
+            "expire_date": "2026-02-03T09:57:20.908Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "hnw66p0z48pn6zy0hvus02o052ptp8cq",
+        "fields": {
+            "session_data": ".eJxVjLkOgzAQBf_l1cjyGoOPMn2-AdnrJeQQSBwV4t8jJBramdHs4DSviDtMg2gqOESqQAGRjgpd2tah2xaZu3dBBOHGcuKvjKconzS-JsXTuM7vrM5EXXZRz6nI73G1t8GQlgERTueGuNSSKTB5Z3UJvRUKWrMwa3HetqlYT5qcCX3uJdiWvdOmNDXVOP7Rdz4p:1vhqYz:CPgxc4N66WlQSqlRTCNQ-btv7gocYQTQtg0YC9VHq54",
+            "expire_date": "2026-02-02T14:49:05.168Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "ho38iarzgombmdnwp35j7fhoziza1ewz",
+        "fields": {
+            "session_data": ".eJxVjMsKgzAUBf_lrkswpw0mWXbfb5D7iNW2KPhYif9eBDduZ4bZSHlaKG8ET9nvN2p4XbpmncvU9EaZQBcmrN8yHMI-PLxHp-OwTL24I3Gnnd1rtPJ7nu1l0PHcUaZiCo0-JdXWogQxBgIU9YNDRJFkHsDdJ2mT5ypArboHg4SKY93S_gcUVjx9:1vjuI9:sXUaG5RXRyxkPnRKY8YmXZhZ8oPyIA35dfY2inQMpgY",
+            "expire_date": "2026-02-08T07:12:13.565Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "hug6s57tbuyndz5kvo7742wz6vy9rqlk",
+        "fields": {
+            "session_data": ".eJxVjEsKgzAUAO_y1iUkT4NJlt33DOF9kmpbFPysxLsXwY3bmWF2EJpXSDu4DpI7HpBpW_u8LWXOg0IChBtjkm8ZT6EfGt-TkWlc54HNmZjLLuY1afk9r_Y26GnpIUFRQQkuRpGqgT0rIXoU7FryAQtHdYjYuMg1OrIeRW3jFdlbCl2F4w8XxTyC:1vjttd:ou8QKiqsuk7xmYruQxy8YDKa49b4eoQs1rO4yOPgz40",
+            "expire_date": "2026-02-08T06:46:53.416Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "i2tdwmwvunytclmocaqwixkcg8q43mis",
+        "fields": {
+            "session_data": "eyJjYXJ0Ijp7IjI1IjoxOSwiMjQiOjYsIjIzIjoxLCIyMiI6MywiMTgiOjIsIjE3IjoyLCIxMyI6MX19:1vi71c:O9M5FBvbwvzoyfT7OX7CpkgBhfAroLZDHS314CzpnOY",
+            "expire_date": "2026-02-03T08:23:44.144Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "jemha7pob334nfm0j5lpdvk45kqebf3u",
+        "fields": {
+            "session_data": "eyJjYXJ0Ijp7IjI0IjoxfX0:1viFhb:R9xr5Xcl1y3_2K6VMEAcDn8nuhNPSh2G9f48dGyNYFk",
+            "expire_date": "2026-02-03T17:39:39.459Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "m4je87f389s423ujr3gin6sswv2bekn4",
+        "fields": {
+            "session_data": ".eJxVjEsKgzAUAO_y1iWYp8Eky-57BnmfWG1LAlFX4t2L4MbtzDA7CNUV4n48YKBtnYZtSXWYFSIg3BiTfFM-hX4ov4uRktc6szkTc9nFvIqm3_Nqb4OJlgkiJBUUb0MQGdWzYyVEh4J9R85j4qAWEVsbeAyWGoeiTesU2TXk-xGOP0XgO2s:1vjuPT:9U5LYmwcYt2wPZuzWY1p5vGKD2XWfeH02S_-LEEACUU",
+            "expire_date": "2026-02-08T07:19:47.177Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "njvv2s82and81ng7xpko9eqie1emjx98",
+        "fields": {
+            "session_data": ".eJxVjEsKgzAUAO_y1iWYp8Eky-57hvA-SbUtCkZX4t2L4MbtzDA7CC0rxB1sgGiPByTa1iFtNS9pVIiAcGNM8s3TKfRD03s2Mk_rMrI5E3PZal6z5t_zam-DgeoAEbIKirchiBT17FgJ0aFg35HzmDmoRcTWBi7BUuNQtGmdIruGfF_g-AMZJTyE:1vjtTr:gRUhr5QiuyFy-UeM2erUOl28Gndz5qvSXKUy0OcK4Vg",
+            "expire_date": "2026-02-08T06:20:15.991Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "pjs576kli8hehvlztiip791xrjsgnq4q",
+        "fields": {
+            "session_data": ".eJxVjEsKgzAUAO_y1iWYp8Eky-57BnmfWG1LAlFX4t2L4MbtzDA7CNUV4n48YKBtnYZtSXWYFSIg3BiTfFM-hX4ov4uRktc6szkTc9nFvIqm3_Nqb4OJlgkiJBUUb0MQGdWzYyVEh4J9R85j4qAWEVsbeAyWGoeiTesU2TXk-xGOP0XgO2s:1visW0:VCGFlxmNHS3aX5GpNwEEIBiQbYQz337VJlBh0h0XjAs",
+            "expire_date": "2026-02-05T11:06:16.261Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "rmrdcwwlt798p3yeev2xuojj1jea0q0x",
+        "fields": {
+            "session_data": ".eJxVjMsKgzAQAP9lzyWY1cUkx977DWEfsdoWBR8n8d-L4MXrzDA7KM8rpB2QIPnjAZm3tc_bUuY8GCRAuDFh_ZbxFPbh8T05ncZ1HsSdibvs4l6Tld_zam-DnpceEhRT1OBjVO0sCIkxIqFi2zAFLBLNI2Lto3TRc0WoVtVkKFRxaDs4_hcWPIE:1vj9Hx:IEqzSvlT-GoaLikKr3vnAJ1rzgHG7DGNBzfgca_WUkI",
+            "expire_date": "2026-02-06T05:00:53.328Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "thpm0y1i5b69xpmen0hfzvm49y16ki17",
+        "fields": {
+            "session_data": ".eJxVjM0KgzAQBt9lzyWYr11Mcuy9zyCb3Vhti4I_J_Hdi-DF68wwG6lMC6WNwJSw36iRdemadS5T0xslAl1YFv2W4RD2keE9Oh2HZeqzOxJ32tm9Riu_59leBp3MHSUqptDgY1RtLWTOJgBDUT-EA0qO5gHcfcxt9FIx1Ko7GzJXEuqW9j8XwzyC:1vj099:I_me-_dG3vnIcdVv3wAIZlwhoqP4lR8pOaviBB9jqBc",
+            "expire_date": "2026-02-05T19:15:11.179Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "u5d73lqdvqwus3sdwwcyfw9spnvfstpu",
+        "fields": {
+            "session_data": "eyJjYXJ0Ijp7IjI1IjoxfX0:1visXP:C5dX_HpphsQT6f4CudrjMHkMx3taWh7StsAOwv9Uw9c",
+            "expire_date": "2026-02-05T11:07:43.566Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "vs9l2wf4qg6l60gykr9k8o7739nulwgu",
+        "fields": {
+            "session_data": "eyJjYXJ0Ijp7fX0:1vi7Z9:uQlgLuXh0U9jAdd1gRDZpTrlngW7td09mPs5N05z_1c",
+            "expire_date": "2026-02-03T08:58:23.977Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "w6ii9se0uigmptd3qxhx9r7xp71wb5v1",
+        "fields": {
+            "session_data": "eyJjYXJ0Ijp7IjIxIjoxLCIyMCI6MSwiMTMiOjF9fQ:1vixqz:8tIc-FfxeIl8-dq_oU2BlOXo4tnobGTt3H3yXV5e_dw",
+            "expire_date": "2026-02-05T16:48:17.337Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "x2o4xhgrit6kn1yluyl7abvlh6deykcn",
+        "fields": {
+            "session_data": ".eJxVjDEOgzAMAP_iuYpsCCRh7N43oMQ2DW0VJAJT1b9XSAztene6N4xx3_K4V13HWWAAgssvS5GfWg4hj1jui-GlbOuczJGY01ZzW0Rf17P9G-RYMwzgMHXE0mqiwOSdRQmTVQqIrMyozts-ivWE5JowpUmD7dk7bKRrqYXPF98FN28:1vburP:24FBsWkwjC6kDxlLn3zJELFY-BUj9SqSmbaX0hP6rrE",
+            "expire_date": "2026-01-17T06:11:35.943Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "xsp29gzohh1yq4k3rg59els0wzybt222",
+        "fields": {
+            "session_data": "eyJjYXJ0Ijp7IjI1IjoxLCIyNCI6MX19:1vivyM:zD3MMNTteyCVrSOUvtzcvl78bYvsy0WJ4adzNb06WzI",
+            "expire_date": "2026-02-05T14:47:46.929Z"
+        }
+    },
+    {
+        "model": "e_cart.category",
+        "pk": 1,
+        "fields": {
+            "name": "Electronics",
+            "slug": "electronics",
+            "parent": null,
+            "icon": "",
+            "is_active": true,
+            "created_at": "2026-01-03T06:20:38.504Z"
+        }
+    },
+    {
+        "model": "e_cart.category",
+        "pk": 2,
+        "fields": {
+            "name": "Mobile Phones",
+            "slug": "mobile-phones",
+            "parent": 1,
+            "icon": "fa-solid fa-mobile",
+            "is_active": true,
+            "created_at": "2026-01-03T06:20:43.382Z"
+        }
+    },
+    {
+        "model": "e_cart.category",
+        "pk": 3,
+        "fields": {
+            "name": "Android",
+            "slug": "android",
+            "parent": 2,
+            "icon": "",
+            "is_active": true,
+            "created_at": "2026-01-03T06:20:49.582Z"
+        }
+    },
+    {
+        "model": "e_cart.category",
+        "pk": 4,
+        "fields": {
+            "name": "Clothing and Fashion",
+            "slug": "clothing-and-fashion",
+            "parent": null,
+            "icon": "fa-solid fa-shirt",
+            "is_active": true,
+            "created_at": "2026-01-03T06:39:39.640Z"
+        }
+    },
+    {
+        "model": "e_cart.category",
+        "pk": 6,
+        "fields": {
+            "name": "Men's Wear",
+            "slug": "mens-wear",
+            "parent": 4,
+            "icon": "",
+            "is_active": true,
+            "created_at": "2026-01-03T06:40:59.465Z"
+        }
+    },
+    {
+        "model": "e_cart.category",
+        "pk": 7,
+        "fields": {
+            "name": "T-Shirts",
+            "slug": "t-shirt",
+            "parent": 6,
+            "icon": "",
+            "is_active": true,
+            "created_at": "2026-01-03T06:41:15.018Z"
+        }
+    },
+    {
+        "model": "e_cart.category",
+        "pk": 8,
+        "fields": {
+            "name": "Full Sleeve Shirts",
+            "slug": "full-sleeve-shirt",
+            "parent": 6,
+            "icon": "",
+            "is_active": true,
+            "created_at": "2026-01-03T06:41:45.919Z"
+        }
+    },
+    {
+        "model": "e_cart.category",
+        "pk": 9,
+        "fields": {
+            "name": "Formals",
+            "slug": "formals",
+            "parent": 6,
+            "icon": "",
+            "is_active": true,
+            "created_at": "2026-01-03T06:42:26.051Z"
+        }
+    },
+    {
+        "model": "e_cart.category",
+        "pk": 10,
+        "fields": {
+            "name": "Audio Accessories",
+            "slug": "audio-accessories",
+            "parent": 1,
+            "icon": "fa-solid fa-headset",
+            "is_active": true,
+            "created_at": "2026-01-03T06:47:32.549Z"
+        }
+    },
+    {
+        "model": "e_cart.category",
+        "pk": 11,
+        "fields": {
+            "name": "Headphones",
+            "slug": "headphones",
+            "parent": 10,
+            "icon": "",
+            "is_active": true,
+            "created_at": "2026-01-03T06:47:50.459Z"
+        }
+    },
+    {
+        "model": "e_cart.category",
+        "pk": 12,
+        "fields": {
+            "name": "Bluetooth Speakers",
+            "slug": "speaker",
+            "parent": 10,
+            "icon": "",
+            "is_active": true,
+            "created_at": "2026-01-03T06:48:46.207Z"
+        }
+    },
+    {
+        "model": "e_cart.category",
+        "pk": 13,
+        "fields": {
+            "name": "Wireless Headphones",
+            "slug": "wireless-headphones",
+            "parent": 11,
+            "icon": "",
+            "is_active": true,
+            "created_at": "2026-01-03T06:49:02.839Z"
+        }
+    },
+    {
+        "model": "e_cart.category",
+        "pk": 14,
+        "fields": {
+            "name": "Wired Headphones",
+            "slug": "wired-headphones",
+            "parent": 11,
+            "icon": "",
+            "is_active": true,
+            "created_at": "2026-01-03T06:49:52.709Z"
+        }
+    },
+    {
+        "model": "e_cart.category",
+        "pk": 15,
+        "fields": {
+            "name": "Laptops",
+            "slug": "laptops",
+            "parent": 1,
+            "icon": "",
+            "is_active": true,
+            "created_at": "2026-01-03T06:50:43.620Z"
+        }
+    },
+    {
+        "model": "e_cart.category",
+        "pk": 16,
+        "fields": {
+            "name": "Women's Wear",
+            "slug": "womens-wear",
+            "parent": 4,
+            "icon": "",
+            "is_active": true,
+            "created_at": "2026-01-03T06:51:47.523Z"
+        }
+    },
+    {
+        "model": "e_cart.category",
+        "pk": 17,
+        "fields": {
+            "name": "Kid's Wear",
+            "slug": "kids-wear",
+            "parent": 4,
+            "icon": "",
+            "is_active": true,
+            "created_at": "2026-01-03T06:52:02.274Z"
+        }
+    },
+    {
+        "model": "e_cart.category",
+        "pk": 18,
+        "fields": {
+            "name": "Gaming Laptops",
+            "slug": "ga",
+            "parent": 15,
+            "icon": "",
+            "is_active": true,
+            "created_at": "2026-01-03T06:52:33.466Z"
+        }
+    },
+    {
+        "model": "e_cart.category",
+        "pk": 19,
+        "fields": {
+            "name": "Televisons",
+            "slug": "televisons",
+            "parent": 1,
+            "icon": "",
+            "is_active": true,
+            "created_at": "2026-01-03T06:53:32.803Z"
+        }
+    },
+    {
+        "model": "e_cart.category",
+        "pk": 20,
+        "fields": {
+            "name": "Smart TVs",
+            "slug": "smart-tvs",
+            "parent": 19,
+            "icon": "",
+            "is_active": true,
+            "created_at": "2026-01-03T06:53:56.036Z"
+        }
+    },
+    {
+        "model": "e_cart.category",
+        "pk": 21,
+        "fields": {
+            "name": "AMOLED TVs",
+            "slug": "amoled-tvs",
+            "parent": 19,
+            "icon": "",
+            "is_active": true,
+            "created_at": "2026-01-03T06:54:39.467Z"
+        }
+    },
+    {
+        "model": "e_cart.category",
+        "pk": 22,
+        "fields": {
+            "name": "ios",
+            "slug": "ios",
+            "parent": 2,
+            "icon": "",
+            "is_active": true,
+            "created_at": "2026-01-04T00:04:49.370Z"
+        }
+    },
+    {
+        "model": "e_cart.category",
+        "pk": 23,
+        "fields": {
+            "name": "Bluetooth Earpods",
+            "slug": "bluetooth-earpods",
+            "parent": 10,
+            "icon": "",
+            "is_active": true,
+            "created_at": "2026-01-04T00:25:12.082Z"
+        }
+    },
+    {
+        "model": "e_cart.category",
+        "pk": 24,
+        "fields": {
+            "name": "Women's Kurti",
+            "slug": "womens-kurti",
+            "parent": 16,
+            "icon": "",
+            "is_active": true,
+            "created_at": "2026-01-04T00:39:50.903Z"
+        }
+    },
+    {
+        "model": "e_cart.category",
+        "pk": 25,
+        "fields": {
+            "name": "Men's Watches",
+            "slug": "mens-watches",
+            "parent": 6,
+            "icon": "",
+            "is_active": true,
+            "created_at": "2026-01-04T00:46:50.885Z"
+        }
+    },
+    {
+        "model": "e_cart.category",
+        "pk": 26,
+        "fields": {
+            "name": "Women's Watches",
+            "slug": "womens-watches",
+            "parent": 16,
+            "icon": "",
+            "is_active": true,
+            "created_at": "2026-01-04T00:48:49.999Z"
+        }
+    },
+    {
+        "model": "e_cart.category",
+        "pk": 27,
+        "fields": {
+            "name": "Women's Watches",
+            "slug": "women-s-watches",
+            "parent": 16,
+            "icon": "",
+            "is_active": true,
+            "created_at": "2026-01-04T00:49:52.985Z"
+        }
+    },
+    {
+        "model": "e_cart.product",
+        "pk": 1,
+        "fields": {
+            "name": "Iphone 11",
+            "slug": "iphone-11",
+            "category": 22,
+            "description": "8 GB RAM 256 GB ROM | Wonderful White | 3200 mAh Battery",
+            "price": "42999.00",
+            "stock": 111,
+            "image": "products/iphone11.avif",
+            "is_available": true,
+            "created_at": "2026-01-04T00:05:47.562Z",
+            "updated_at": "2026-01-04T00:05:47.562Z"
+        }
+    },
+    {
+        "model": "e_cart.product",
+        "pk": 2,
+        "fields": {
+            "name": "Iphone 12",
+            "slug": "iphone-12",
+            "category": 22,
+            "description": "8 GB RAM 256 GB ROM | Glacier Grey | 3700 mAh Battery",
+            "price": "51999.00",
+            "stock": 245,
+            "image": "products/iphone12.avif",
+            "is_available": true,
+            "created_at": "2026-01-04T00:07:15.698Z",
+            "updated_at": "2026-01-04T00:07:15.698Z"
+        }
+    },
+    {
+        "model": "e_cart.product",
+        "pk": 3,
+        "fields": {
+            "name": "Iphone 13",
+            "slug": "iphone-13",
+            "category": 22,
+            "description": "6GB RAM 128 GB ROM | Wonderful White | 2700 mAh Battery",
+            "price": "67899.00",
+            "stock": 456,
+            "image": "products/iphone13.avif",
+            "is_available": true,
+            "created_at": "2026-01-04T00:08:51.047Z",
+            "updated_at": "2026-01-04T00:08:51.047Z"
+        }
+    },
+    {
+        "model": "e_cart.product",
+        "pk": 4,
+        "fields": {
+            "name": "Samsung Galaxy S23 Ultra",
+            "slug": "samsung-galaxy-s23-ultra",
+            "category": 3,
+            "description": "8 GB RAM 256 GB ROM | Brilliant Black | 5100 mAh Battery",
+            "price": "65999.00",
+            "stock": 503,
+            "image": "products/s23ultra.avif",
+            "is_available": true,
+            "created_at": "2026-01-04T00:10:38.327Z",
+            "updated_at": "2026-01-04T00:10:38.327Z"
+        }
+    },
+    {
+        "model": "e_cart.product",
+        "pk": 5,
+        "fields": {
+            "name": "Samsung Galaxy S24 Ultra",
+            "slug": "samsung-galaxy-s24-ultra",
+            "category": 3,
+            "description": "12 GB RAM 512GB ROM | Titanium Gray | 5200 mAh Battery",
+            "price": "78999.00",
+            "stock": 657,
+            "image": "products/s24ultra.avif",
+            "is_available": true,
+            "created_at": "2026-01-04T00:12:58.608Z",
+            "updated_at": "2026-01-04T00:13:11.247Z"
+        }
+    },
+    {
+        "model": "e_cart.product",
+        "pk": 6,
+        "fields": {
+            "name": "Kids Combo Wear",
+            "slug": "kids-combo-wear",
+            "category": 17,
+            "description": "XYZ Kid's Wear Size : Medium (M) | Age:8 -12 Years",
+            "price": "2999.00",
+            "stock": 56,
+            "image": "products/kidswear1.avif",
+            "is_available": true,
+            "created_at": "2026-01-04T00:16:47.007Z",
+            "updated_at": "2026-01-04T00:16:47.007Z"
+        }
+    },
+    {
+        "model": "e_cart.product",
+        "pk": 7,
+        "fields": {
+            "name": "Kids Wear Combo",
+            "slug": "kids-wear-combo",
+            "category": 17,
+            "description": "XYZ Kid's Wear Size : Small (S) | Age:8 -12 Years",
+            "price": "2799.00",
+            "stock": 13,
+            "image": "products/kidswear2.avif",
+            "is_available": true,
+            "created_at": "2026-01-04T00:18:50.630Z",
+            "updated_at": "2026-01-04T00:19:32.359Z"
+        }
+    },
+    {
+        "model": "e_cart.product",
+        "pk": 8,
+        "fields": {
+            "name": "SONY Wired Headphones",
+            "slug": "sony-wired-headphones",
+            "category": 14,
+            "description": "SONY Wired Headphones White premium Sound Quality",
+            "price": "7000.00",
+            "stock": 99,
+            "image": "products/headphones-wired1.avif",
+            "is_available": true,
+            "created_at": "2026-01-04T00:21:42.370Z",
+            "updated_at": "2026-01-04T00:21:42.370Z"
+        }
+    },
+    {
+        "model": "e_cart.product",
+        "pk": 9,
+        "fields": {
+            "name": "Nothing in ear bluetooth Ear pods",
+            "slug": "nothing-in-ear-bluetooth-ear-pods",
+            "category": 23,
+            "description": "Raging Red| Fast Charging Supported |8hr Battery Back-up",
+            "price": "5999.00",
+            "stock": 271,
+            "image": "products/earpods1.avif",
+            "is_available": true,
+            "created_at": "2026-01-04T00:27:54.925Z",
+            "updated_at": "2026-01-04T00:27:54.925Z"
+        }
+    },
+    {
+        "model": "e_cart.product",
+        "pk": 10,
+        "fields": {
+            "name": "ASUS Rog Gaming Series ROG-7000",
+            "slug": "asus-rog-gaming-series-rog-7000",
+            "category": 18,
+            "description": "NVIDIA| TUF Gaming|",
+            "price": "98199.00",
+            "stock": 579,
+            "image": "products/gaminglaptop1.avif",
+            "is_available": true,
+            "created_at": "2026-01-04T00:29:52.528Z",
+            "updated_at": "2026-01-04T00:29:52.528Z"
+        }
+    },
+    {
+        "model": "e_cart.product",
+        "pk": 11,
+        "fields": {
+            "name": "Audible Wireless Bluetooth Headphones",
+            "slug": "audible-wireless-bluetooth-headphones",
+            "category": 13,
+            "description": "Bluetooth Wireless Headphones",
+            "price": "3455.00",
+            "stock": 12,
+            "image": "products/headphones1.avif",
+            "is_available": true,
+            "created_at": "2026-01-04T00:31:59.498Z",
+            "updated_at": "2026-01-04T00:31:59.498Z"
+        }
+    },
+    {
+        "model": "e_cart.product",
+        "pk": 12,
+        "fields": {
+            "name": "Audible Wireless Headphones",
+            "slug": "audible-wireless-headphones",
+            "category": 13,
+            "description": "White Bluetooth Wireless Headphones",
+            "price": "2955.00",
+            "stock": 90,
+            "image": "products/headphones2.avif",
+            "is_available": true,
+            "created_at": "2026-01-04T00:35:18.854Z",
+            "updated_at": "2026-01-04T00:35:18.854Z"
+        }
+    },
+    {
+        "model": "e_cart.product",
+        "pk": 13,
+        "fields": {
+            "name": "Audible Wired Headphones",
+            "slug": "audible-wired-headphones",
+            "category": 14,
+            "description": "Metallic Red",
+            "price": "1199.00",
+            "stock": 3,
+            "image": "products/headphones-wired2.avif",
+            "is_available": true,
+            "created_at": "2026-01-04T00:36:52.538Z",
+            "updated_at": "2026-01-04T00:36:52.538Z"
+        }
+    },
+    {
+        "model": "e_cart.product",
+        "pk": 14,
+        "fields": {
+            "name": "Audible Bluetooth Speaker",
+            "slug": "audible-bluetooth-speaker",
+            "category": 12,
+            "description": "Comes with Mic along with it",
+            "price": "21000.00",
+            "stock": 98,
+            "image": "products/speaker1.avif",
+            "is_available": true,
+            "created_at": "2026-01-04T00:39:11.044Z",
+            "updated_at": "2026-01-04T00:39:11.044Z"
+        }
+    },
+    {
+        "model": "e_cart.product",
+        "pk": 15,
+        "fields": {
+            "name": "Kurti for Women",
+            "slug": "kurti-for-women",
+            "category": 24,
+            "description": "Traditional Kurti for Women | Navy Blue",
+            "price": "4177.00",
+            "stock": 78,
+            "image": "products/womens-wear.avif",
+            "is_available": true,
+            "created_at": "2026-01-04T00:42:36.975Z",
+            "updated_at": "2026-01-04T00:42:36.975Z"
+        }
+    },
+    {
+        "model": "e_cart.product",
+        "pk": 16,
+        "fields": {
+            "name": "SONY BRAVIA B-40 AMOLED TV",
+            "slug": "sony-bravia-b-40-amoled-tv",
+            "category": 21,
+            "description": "40 INCH AMOLED TV | 2 Years Warranty",
+            "price": "71000.00",
+            "stock": 56,
+            "image": "products/tv2.avif",
+            "is_available": true,
+            "created_at": "2026-01-04T00:45:26.394Z",
+            "updated_at": "2026-01-04T00:45:26.394Z"
+        }
+    },
+    {
+        "model": "e_cart.product",
+        "pk": 17,
+        "fields": {
+            "name": "TIMEX Black Series for Men",
+            "slug": "timex-black-series-for-men",
+            "category": 25,
+            "description": "45Cm dial ANALOGUE",
+            "price": "7000.00",
+            "stock": 23,
+            "image": "products/watches3.avif",
+            "is_available": true,
+            "created_at": "2026-01-04T00:48:08.012Z",
+            "updated_at": "2026-01-04T00:48:08.012Z"
+        }
+    },
+    {
+        "model": "e_cart.product",
+        "pk": 18,
+        "fields": {
+            "name": "Rodeo Classic Watches for Women",
+            "slug": "rodeo-classic-watches-for-women",
+            "category": 27,
+            "description": "Premium look Classy White",
+            "price": "5999.00",
+            "stock": 5,
+            "image": "products/womes-watches1.avif",
+            "is_available": true,
+            "created_at": "2026-01-04T00:52:08.757Z",
+            "updated_at": "2026-01-04T00:52:08.757Z"
+        }
+    },
+    {
+        "model": "e_cart.product",
+        "pk": 19,
+        "fields": {
+            "name": "Retro T-Shirt for Men Prime Black",
+            "slug": "retro-t-shirt-for-men-prime-black",
+            "category": 7,
+            "description": "Black XL",
+            "price": "1799.00",
+            "stock": 0,
+            "image": "products/tshirt1.avif",
+            "is_available": true,
+            "created_at": "2026-01-04T00:54:08.733Z",
+            "updated_at": "2026-01-20T15:39:32.822Z"
+        }
+    },
+    {
+        "model": "e_cart.product",
+        "pk": 20,
+        "fields": {
+            "name": "Retro T-Shirt for Men Wonder White",
+            "slug": "retro-t-shirt-for-men-wonder-white",
+            "category": 7,
+            "description": "White 32 XL",
+            "price": "1799.00",
+            "stock": 0,
+            "image": "products/tshirt2.avif",
+            "is_available": true,
+            "created_at": "2026-01-04T00:55:33.257Z",
+            "updated_at": "2026-01-20T15:39:20.558Z"
+        }
+    },
+    {
+        "model": "e_cart.product",
+        "pk": 21,
+        "fields": {
+            "name": "Rodeo Classic Watches for Men",
+            "slug": "rodeo-classic-watches-for-men",
+            "category": 25,
+            "description": "Analogue dial",
+            "price": "5699.00",
+            "stock": 0,
+            "image": "products/watches2.avif",
+            "is_available": true,
+            "created_at": "2026-01-04T01:00:19.511Z",
+            "updated_at": "2026-01-20T15:39:28.165Z"
+        }
+    },
+    {
+        "model": "e_cart.product",
+        "pk": 22,
+        "fields": {
+            "name": "Femme Women's Wear Full Set",
+            "slug": "femme-womens-wear-full-set",
+            "category": 16,
+            "description": "Full Set",
+            "price": "6999.00",
+            "stock": 12,
+            "image": "products/womens-wear1.avif",
+            "is_available": true,
+            "created_at": "2026-01-04T01:03:01.515Z",
+            "updated_at": "2026-01-04T01:05:14.898Z"
+        }
+    },
+    {
+        "model": "e_cart.product",
+        "pk": 23,
+        "fields": {
+            "name": "JBL Bluetooth Speaker",
+            "slug": "jbl-bluetooth-speaker",
+            "category": 12,
+            "description": "12HR battery backup",
+            "price": "16799.00",
+            "stock": 3,
+            "image": "products/speaker2.avif",
+            "is_available": true,
+            "created_at": "2026-01-04T01:05:07.548Z",
+            "updated_at": "2026-01-04T01:05:07.548Z"
+        }
+    },
+    {
+        "model": "e_cart.product",
+        "pk": 24,
+        "fields": {
+            "name": "SONY SMART TV Android",
+            "slug": "sony-smart-tv-android",
+            "category": 20,
+            "description": "Android Smart TV  42 Inch",
+            "price": "91000.00",
+            "stock": 45,
+            "image": "products/tv4.webp",
+            "is_available": true,
+            "created_at": "2026-01-04T01:06:57.031Z",
+            "updated_at": "2026-01-04T01:06:57.031Z"
+        }
+    },
+    {
+        "model": "e_cart.product",
+        "pk": 25,
+        "fields": {
+            "name": "SONY SMART TV",
+            "slug": "sony-smart-tv",
+            "category": 20,
+            "description": "40 Inch Android TV Sony Bravia series",
+            "price": "72000.00",
+            "stock": 41,
+            "image": "products/tv3.avif",
+            "is_available": true,
+            "created_at": "2026-01-04T01:08:52.963Z",
+            "updated_at": "2026-01-04T01:08:52.963Z"
+        }
+    },
+    {
+        "model": "e_cart.wallet",
+        "pk": 1,
+        "fields": {
+            "user": [
+                "store_admin"
+            ],
+            "balance": "0.00",
+            "updated_at": "2026-01-23T04:35:21.836Z"
+        }
+    },
+    {
+        "model": "e_cart.wallet",
+        "pk": 2,
+        "fields": {
+            "user": [
+                "dustybun"
+            ],
+            "balance": "0.00",
+            "updated_at": "2026-01-23T05:00:11.466Z"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 1,
+        "fields": {
+            "action_time": "2026-01-03T06:20:38.506Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "category"
+            ],
+            "object_id": "1",
+            "object_repr": "Electronics",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 2,
+        "fields": {
+            "action_time": "2026-01-03T06:20:43.384Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "category"
+            ],
+            "object_id": "2",
+            "object_repr": "Mobile Phones",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 3,
+        "fields": {
+            "action_time": "2026-01-03T06:20:49.584Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "category"
+            ],
+            "object_id": "3",
+            "object_repr": "Android",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 4,
+        "fields": {
+            "action_time": "2026-01-03T06:39:39.647Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "category"
+            ],
+            "object_id": "4",
+            "object_repr": "Clothing and Fashion",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 5,
+        "fields": {
+            "action_time": "2026-01-03T06:39:42.202Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "category"
+            ],
+            "object_id": "5",
+            "object_repr": "Men's Wear",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 6,
+        "fields": {
+            "action_time": "2026-01-03T06:40:34.332Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "category"
+            ],
+            "object_id": "5",
+            "object_repr": "Men's Wear",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 7,
+        "fields": {
+            "action_time": "2026-01-03T06:40:59.470Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "category"
+            ],
+            "object_id": "6",
+            "object_repr": "Men's Wear",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 8,
+        "fields": {
+            "action_time": "2026-01-03T06:41:15.023Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "category"
+            ],
+            "object_id": "7",
+            "object_repr": "T-Shirt",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 9,
+        "fields": {
+            "action_time": "2026-01-03T06:41:45.924Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "category"
+            ],
+            "object_id": "8",
+            "object_repr": "Full Sleeve Shirt",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 10,
+        "fields": {
+            "action_time": "2026-01-03T06:42:26.056Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "category"
+            ],
+            "object_id": "9",
+            "object_repr": "Formals",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 11,
+        "fields": {
+            "action_time": "2026-01-03T06:47:32.551Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "category"
+            ],
+            "object_id": "10",
+            "object_repr": "Audio Accessories",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 12,
+        "fields": {
+            "action_time": "2026-01-03T06:47:50.463Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "category"
+            ],
+            "object_id": "11",
+            "object_repr": "Headphones",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 13,
+        "fields": {
+            "action_time": "2026-01-03T06:48:46.210Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "category"
+            ],
+            "object_id": "12",
+            "object_repr": "Speaker",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 14,
+        "fields": {
+            "action_time": "2026-01-03T06:49:02.843Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "category"
+            ],
+            "object_id": "13",
+            "object_repr": "Wireless Headphones",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 15,
+        "fields": {
+            "action_time": "2026-01-03T06:49:24.421Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "category"
+            ],
+            "object_id": "12",
+            "object_repr": "Bluetooth Speaker",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 16,
+        "fields": {
+            "action_time": "2026-01-03T06:49:52.712Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "category"
+            ],
+            "object_id": "14",
+            "object_repr": "Wired Headphones",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 17,
+        "fields": {
+            "action_time": "2026-01-03T06:50:43.624Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "category"
+            ],
+            "object_id": "15",
+            "object_repr": "Laptops",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 18,
+        "fields": {
+            "action_time": "2026-01-03T06:50:54.174Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "category"
+            ],
+            "object_id": "8",
+            "object_repr": "Full Sleeve Shirts",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 19,
+        "fields": {
+            "action_time": "2026-01-03T06:51:04.712Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "category"
+            ],
+            "object_id": "7",
+            "object_repr": "T-Shirts",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 20,
+        "fields": {
+            "action_time": "2026-01-03T06:51:11.366Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "category"
+            ],
+            "object_id": "12",
+            "object_repr": "Bluetooth Speakers",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 21,
+        "fields": {
+            "action_time": "2026-01-03T06:51:47.526Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "category"
+            ],
+            "object_id": "16",
+            "object_repr": "Women's Wear",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 22,
+        "fields": {
+            "action_time": "2026-01-03T06:52:02.275Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "category"
+            ],
+            "object_id": "17",
+            "object_repr": "KId's Wear",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 23,
+        "fields": {
+            "action_time": "2026-01-03T06:52:33.470Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "category"
+            ],
+            "object_id": "18",
+            "object_repr": "GA",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 24,
+        "fields": {
+            "action_time": "2026-01-03T06:52:48.317Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "category"
+            ],
+            "object_id": "18",
+            "object_repr": "Gaming Laptops",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Name\", \"Parent\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 25,
+        "fields": {
+            "action_time": "2026-01-03T06:53:32.805Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "category"
+            ],
+            "object_id": "19",
+            "object_repr": "Televisons",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 26,
+        "fields": {
+            "action_time": "2026-01-03T06:53:56.039Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "category"
+            ],
+            "object_id": "20",
+            "object_repr": "Smart TVs",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 27,
+        "fields": {
+            "action_time": "2026-01-03T06:54:39.471Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "category"
+            ],
+            "object_id": "21",
+            "object_repr": "AMOLED TVs",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 28,
+        "fields": {
+            "action_time": "2026-01-04T00:04:49.373Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "category"
+            ],
+            "object_id": "22",
+            "object_repr": "ios",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 29,
+        "fields": {
+            "action_time": "2026-01-04T00:05:47.564Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "product"
+            ],
+            "object_id": "1",
+            "object_repr": "Iphone 11",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 30,
+        "fields": {
+            "action_time": "2026-01-04T00:07:15.700Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "product"
+            ],
+            "object_id": "2",
+            "object_repr": "Iphone 12",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 31,
+        "fields": {
+            "action_time": "2026-01-04T00:08:51.049Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "product"
+            ],
+            "object_id": "3",
+            "object_repr": "Iphone 13",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 32,
+        "fields": {
+            "action_time": "2026-01-04T00:10:38.329Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "product"
+            ],
+            "object_id": "4",
+            "object_repr": "Samsung Galaxy S23 Ultra",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 33,
+        "fields": {
+            "action_time": "2026-01-04T00:12:58.610Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "product"
+            ],
+            "object_id": "5",
+            "object_repr": "Samsung Galaxy S24 Ultra",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 34,
+        "fields": {
+            "action_time": "2026-01-04T00:13:11.250Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "product"
+            ],
+            "object_id": "5",
+            "object_repr": "Samsung Galaxy S24 Ultra",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 35,
+        "fields": {
+            "action_time": "2026-01-04T00:16:47.009Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "product"
+            ],
+            "object_id": "6",
+            "object_repr": "Kids Combo Wear",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 36,
+        "fields": {
+            "action_time": "2026-01-04T00:18:50.632Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "product"
+            ],
+            "object_id": "7",
+            "object_repr": "Kids Wear Combo",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 37,
+        "fields": {
+            "action_time": "2026-01-04T00:19:32.369Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "product"
+            ],
+            "object_id": "7",
+            "object_repr": "Kids Wear Combo",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 38,
+        "fields": {
+            "action_time": "2026-01-04T00:21:42.372Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "product"
+            ],
+            "object_id": "8",
+            "object_repr": "SONY Wired Headphones",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 39,
+        "fields": {
+            "action_time": "2026-01-04T00:25:12.084Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "category"
+            ],
+            "object_id": "23",
+            "object_repr": "Bluetooth Earpods",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 40,
+        "fields": {
+            "action_time": "2026-01-04T00:27:54.927Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "product"
+            ],
+            "object_id": "9",
+            "object_repr": "Nothing in ear bluetooth Ear pods",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 41,
+        "fields": {
+            "action_time": "2026-01-04T00:29:52.530Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "product"
+            ],
+            "object_id": "10",
+            "object_repr": "ASUS Rog Gaming Series ROG-7000",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 42,
+        "fields": {
+            "action_time": "2026-01-04T00:31:59.501Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "product"
+            ],
+            "object_id": "11",
+            "object_repr": "Audible Wireless Bluetooth Headphones",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 43,
+        "fields": {
+            "action_time": "2026-01-04T00:35:18.856Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "product"
+            ],
+            "object_id": "12",
+            "object_repr": "Audible Wireless Headphones",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 44,
+        "fields": {
+            "action_time": "2026-01-04T00:36:52.541Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "product"
+            ],
+            "object_id": "13",
+            "object_repr": "Audible Wired Headphones",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 45,
+        "fields": {
+            "action_time": "2026-01-04T00:39:11.046Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "product"
+            ],
+            "object_id": "14",
+            "object_repr": "Audible Bluetooth Speaker",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 46,
+        "fields": {
+            "action_time": "2026-01-04T00:39:50.905Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "category"
+            ],
+            "object_id": "24",
+            "object_repr": "Women's Kurti",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 47,
+        "fields": {
+            "action_time": "2026-01-04T00:42:36.977Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "product"
+            ],
+            "object_id": "15",
+            "object_repr": "Kurti for Women",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 48,
+        "fields": {
+            "action_time": "2026-01-04T00:45:26.396Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "product"
+            ],
+            "object_id": "16",
+            "object_repr": "SONY BRAVIA B-40 AMOLED TV",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 49,
+        "fields": {
+            "action_time": "2026-01-04T00:46:50.887Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "category"
+            ],
+            "object_id": "25",
+            "object_repr": "Men's Watches",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 50,
+        "fields": {
+            "action_time": "2026-01-04T00:48:08.013Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "product"
+            ],
+            "object_id": "17",
+            "object_repr": "TIMEX Black Series for Men",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 51,
+        "fields": {
+            "action_time": "2026-01-04T00:48:50.001Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "category"
+            ],
+            "object_id": "26",
+            "object_repr": "Women's Watches",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 52,
+        "fields": {
+            "action_time": "2026-01-04T00:49:52.987Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "category"
+            ],
+            "object_id": "27",
+            "object_repr": "Women's Watches",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 53,
+        "fields": {
+            "action_time": "2026-01-04T00:52:08.759Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "product"
+            ],
+            "object_id": "18",
+            "object_repr": "Rodeo Classic Watches for Women",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 54,
+        "fields": {
+            "action_time": "2026-01-04T00:54:08.735Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "product"
+            ],
+            "object_id": "19",
+            "object_repr": "Retro T-Shirt for Men Prime Black",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 55,
+        "fields": {
+            "action_time": "2026-01-04T00:55:33.259Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "product"
+            ],
+            "object_id": "20",
+            "object_repr": "Retro T-Shirt for Men Wonder White",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 56,
+        "fields": {
+            "action_time": "2026-01-04T00:55:37.556Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "product"
+            ],
+            "object_id": "19",
+            "object_repr": "Retro T-Shirt for Men Prime Black",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Is available\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 57,
+        "fields": {
+            "action_time": "2026-01-04T01:00:19.513Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "product"
+            ],
+            "object_id": "21",
+            "object_repr": "0Rodeo Classic Watches for Men",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 58,
+        "fields": {
+            "action_time": "2026-01-04T01:03:01.517Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "product"
+            ],
+            "object_id": "22",
+            "object_repr": "Femme Women's Wear Full Set",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 59,
+        "fields": {
+            "action_time": "2026-01-04T01:05:07.550Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "product"
+            ],
+            "object_id": "23",
+            "object_repr": "JBL Bluetooth Speaker",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 60,
+        "fields": {
+            "action_time": "2026-01-04T01:05:14.901Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "product"
+            ],
+            "object_id": "22",
+            "object_repr": "Femme Women's Wear Full Set",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Is available\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 61,
+        "fields": {
+            "action_time": "2026-01-04T01:05:27.396Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "product"
+            ],
+            "object_id": "21",
+            "object_repr": "Rodeo Classic Watches for Men",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 62,
+        "fields": {
+            "action_time": "2026-01-04T01:06:57.034Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "product"
+            ],
+            "object_id": "24",
+            "object_repr": "SONY SMART TV Android",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 63,
+        "fields": {
+            "action_time": "2026-01-04T01:08:52.965Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "product"
+            ],
+            "object_id": "25",
+            "object_repr": "SONY SMART TV",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 64,
+        "fields": {
+            "action_time": "2026-01-20T15:39:06.170Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "category"
+            ],
+            "object_id": "17",
+            "object_repr": "Kid's Wear",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 65,
+        "fields": {
+            "action_time": "2026-01-20T15:39:20.560Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "product"
+            ],
+            "object_id": "20",
+            "object_repr": "Retro T-Shirt for Men Wonder White",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Is available\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 66,
+        "fields": {
+            "action_time": "2026-01-20T15:39:24.047Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "product"
+            ],
+            "object_id": "21",
+            "object_repr": "Rodeo Classic Watches for Men",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 67,
+        "fields": {
+            "action_time": "2026-01-20T15:39:28.167Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "product"
+            ],
+            "object_id": "21",
+            "object_repr": "Rodeo Classic Watches for Men",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Is available\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 68,
+        "fields": {
+            "action_time": "2026-01-20T15:39:32.825Z",
+            "user": [
+                "store_admin"
+            ],
+            "content_type": [
+                "e_cart",
+                "product"
+            ],
+            "object_id": "19",
+            "object_repr": "Retro T-Shirt for Men Prime Black",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Is available\"]}}]"
+        }
+    }
 ]
