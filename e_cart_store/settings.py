@@ -70,7 +70,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-                "core.context_processors.cart_count",  # your custom cart context
+                "core.context_processors.cart_count",
             ],
         },
     },
@@ -81,19 +81,25 @@ WSGI_APPLICATION = "e_cart_store.wsgi.application"
 # --------------------------
 # DATABASE CONFIGURATION
 # --------------------------
-# Default SQLite for local dev
-
 
 DATABASES = {
-    'default': dj_database_url.parse(
-    "postgresql://e_cart_product_db_user:SpLvYFp4H37keJVTRlKe6cKqGbC8nAiv@dpg-d5qv72p5pdvs739dripg-a.oregon-postgres.render.com/e_cart_product_db"
-    )
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    }
 }
 
-# Override with DATABASE_URL for production (Render)
-DATABASE_URL = os.environ.get('DATABASE_URL')
-if DATABASE_URL:
-    DATABASES['default'] = dj_database_url.parse(DATABASE_URL, conn_max_age=600)
+# Only use Render PostgreSQL when running on Render
+RENDER = os.environ.get("RENDER")
+
+DATABASE_URL = os.environ.get("DATABASE_URL")
+
+if RENDER and DATABASE_URL:
+    DATABASES["default"] = dj_database_url.parse(
+        DATABASE_URL,
+        conn_max_age=600,
+        ssl_require=True,
+    )
 
 # --------------------------
 # PASSWORD VALIDATION
@@ -118,7 +124,10 @@ USE_TZ = True
 # --------------------------
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")  # WhiteNoise will serve these
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
+# WhiteNoise optimization
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # --------------------------
 # MEDIA FILES
@@ -139,7 +148,7 @@ LOGOUT_REDIRECT_URL = "/"
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 # --------------------------
-# DJANGO REST FRAMEWORK (if needed)
+# DJANGO REST FRAMEWORK
 # --------------------------
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": [
