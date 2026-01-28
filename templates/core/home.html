@@ -1,5 +1,6 @@
 {% extends 'core/base.html' %}
 {% load static %}
+
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'core/css/home.css' %}">
 {% endblock %}
@@ -14,25 +15,33 @@
         <a href="{% url 'product_list' %}" class="btn-primary">
             Explore Products
         </a>
-
     </div>
 </section>
 
 <!-- Featured Products -->
 <section class="featured-products">
-    <h2 class="section-title">Featured Products</h2>
+    <h2 class="section-title">Deals of the Day</h2>
     <div class="cards">
         {% for product in products %}
         <div class="card">
+            {% if product.image %}
             <img src="{{ product.image.url }}" alt="{{ product.name }}">
+            {% else %}
+            <img src="{% static 'core/img/placeholder.png' %}" alt="{{ product.name }}">
+            {% endif %}
             <h3>{{ product.name }}</h3>
             <p class="price">₹{{ product.price }}</p>
             <a href="{% url 'product_detail' product.id %}" class="btn-b">View Details</a>
+        </div>
+        {% empty %}
+        <div class="col-12 text-center text-muted py-5">
+            No featured products available.
         </div>
         {% endfor %}
     </div>
 </section>
 {% endblock %}
+
 {% block extra_js %}
 <script src="{% static 'core/js/home.js' %}"></script>
 {% endblock %}

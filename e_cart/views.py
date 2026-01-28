@@ -1,12 +1,12 @@
 from django.shortcuts import redirect, render, get_object_or_404
 from django.views.decorators.http import require_POST
 from django.http import JsonResponse
-from django.urls import reverse
 from .models import Product, Category, Order, OrderItem, Wallet, WalletTransaction
 from django.contrib.auth.decorators import login_required
 from decimal import Decimal
 from django.contrib import messages
 from django.db import transaction
+from django.db.models import Q
 
 
 # ===========================
@@ -16,16 +16,42 @@ def product_list(request):
     categories = Category.objects.filter(parent__isnull=True).prefetch_related(
         "children"
     )
+
     category_id = request.GET.get("category")
+    search_query = request.GET.get("q", "").strip()
 
     products = Product.objects.filter(is_available=True)
+
+    # ---------------------------
+    # CATEGORY FILTER
+    # ---------------------------
     if category_id:
-        products = products.filter(category_id=category_id)
+        selected_category = Category.objects.filter(id=category_id).first()
+        if selected_category:
+            child_ids = selected_category.children.values_list("id", flat=True)
+            products = products.filter(
+                Q(category=selected_category) | Q(category_id__in=child_ids)
+            )
+
+    # ---------------------------
+    # SEARCH FILTER
+    # ---------------------------
+    if search_query:
+        products = products.filter(
+            Q(name__icontains=search_query)
+            | Q(description__icontains=search_query)
+            | Q(category__name__icontains=search_query)
+        )
 
     return render(
         request,
         "e_cart/product_list.html",
-        {"categories": categories, "products": products},
+        {
+            "categories": categories,
+            "products": products,
+            "search_query": search_query,  # optional, if you want to populate search box
+            "selected_category_id": int(category_id) if category_id else None,
+        },
     )
 
 
@@ -45,9 +71,6 @@ def product_detail(request, id):
     )
 
 
-# ===========================
-# ADD TO CART (AJAX)
-# ===========================
 @require_POST
 def add_to_cart(request, product_id):
     cart = request.session.get("cart", {})
@@ -61,13 +84,27 @@ def add_to_cart(request, product_id):
         qty = 1
 
     pid = str(product_id)
-    # Add the quantity properly
     cart[pid] = cart.get(pid, 0) + qty
 
     request.session["cart"] = cart
     request.session.modified = True
 
-    return JsonResponse({"status": "success", "cart_count": sum(cart.values())})
+    # Calculate totals for live update
+    total = 0
+    for pid, q in cart.items():
+        try:
+            product = Product.objects.get(id=int(pid))
+            total += product.price * q
+        except Product.DoesNotExist:
+            continue
+
+    return JsonResponse(
+        {
+            "status": "success",
+            "cart_count": sum(cart.values()),
+            "cart_total": round(total, 2),
+        }
+    )
 
 
 # ===========================
@@ -108,62 +145,76 @@ def cart_view(request):
 # ===========================
 # UPDATE CART QUANTITY (AJAX)
 # ===========================
+@require_POST
 def update_cart(request, product_id):
-    if request.method == "POST":
+    cart = request.session.get("cart", {})
+    pid = str(product_id)
+
+    if pid not in cart:
+        return JsonResponse({"status": "error"})
+
+    current_qty = cart.get(pid, 1)
+
+    qty_action = request.POST.get("qty")
+
+    if qty_action == "inc":
+        new_qty = current_qty + 1
+    else:
         try:
-            qty = int(request.POST.get("qty", 1))
-            if qty < 1:
-                qty = 1
-        except ValueError:
-            qty = 1
+            new_qty = int(qty_action)
+            if new_qty < 1:
+                new_qty = 1
+        except:
+            new_qty = current_qty
 
-        cart = request.session.get("cart", {})
-        if str(product_id) in cart:
-            cart[str(product_id)] = qty
-            request.session["cart"] = cart
-            request.session.modified = True
+    cart[pid] = new_qty
+    request.session["cart"] = cart
+    request.session.modified = True
 
-            subtotal = get_object_or_404(Product, id=product_id).price * qty
-            total = sum(
-                get_object_or_404(Product, id=int(pid)).price * q
-                for pid, q in cart.items()
-            )
-            return JsonResponse(
-                {"status": "success", "subtotal": subtotal, "total": total}
-            )
+    product = get_object_or_404(Product, id=product_id)
 
-    return JsonResponse({"status": "error"})
+    subtotal = product.price * new_qty
+
+    total = 0
+    for p, q in cart.items():
+        try:
+            prod = Product.objects.get(id=int(p))
+            total += prod.price * q
+        except:
+            pass
+
+    return JsonResponse(
+        {
+            "status": "success",
+            "qty": new_qty,
+            "subtotal": float(subtotal),
+            "total": float(total),
+            "cart_count": sum(cart.values()),
+        }
+    )
 
 
-# ===========================
-# REMOVE FROM CART (AJAX)
-# ===========================
 @require_POST
 def remove_from_cart(request, product_id):
     cart = request.session.get("cart", {})
     product_id = str(product_id)
-    mode = request.POST.get("mode", "all")  # Default removes all
+    mode = request.POST.get("mode", "single")  # default to decrement by 1
 
     if product_id in cart:
         if mode == "single":
-            # Decrement quantity by 1
             cart[product_id] -= 1
             remaining_qty = cart[product_id]
-
-            # Remove key if quantity is 0
             if remaining_qty <= 0:
                 del cart[product_id]
                 remaining_qty = 0
-
         else:
-            # Remove entire item
             remaining_qty = 0
             del cart[product_id]
 
         request.session["cart"] = cart
         request.session.modified = True
 
-        # Recalculate total
+        # Calculate totals
         total = 0
         for pid, qty in cart.items():
             try:
@@ -290,6 +341,8 @@ def wallet_payment(request, order_id):
 def wallet_page(request):
     wallet, _ = Wallet.objects.get_or_create(user=request.user)
     return render(request, "e_cart/wallet_main.html", {"wallet": wallet})
+
+
 @login_required(login_url="/login/")
 def wallet_add_money(request):
     return render(request, "e_cart/wallet_add_money.html")
@@ -311,6 +364,8 @@ def wallet_processing(request):
         return redirect("wallet_processing")
 
     return render(request, "e_cart/wallet_processing.html")
+
+
 @login_required(login_url="/login/")
 @transaction.atomic
 def wallet_topup(request):
@@ -327,16 +382,14 @@ def wallet_topup(request):
     wallet.save()
 
     WalletTransaction.objects.create(
-        wallet=wallet,
-        amount=amount,
-        transaction_type="CREDIT",
-        source="BANK"
+        wallet=wallet, amount=amount, transaction_type="CREDIT", source="BANK"
     )
 
     del request.session["wallet_topup_amount"]
 
     messages.success(request, f"₹{amount} added successfully to your wallet.")
     return redirect("wallet_page")
+
 
 @login_required(login_url="/login/")
 def order_success(request, order_id):

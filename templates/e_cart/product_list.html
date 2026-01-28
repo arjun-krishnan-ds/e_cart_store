@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'e_cart/css/category.css' %}">
+<link rel="stylesheet" href="{% static 'e_cart/css/category.css' %}?v=10">
 {% endblock %}
 
 {% block content %}
@@ -19,10 +19,12 @@
 
         <h5>Categories</h5>
 
-        <input type="text" id="categorySearch" class="form-control mb-3" placeholder="Search categories...">
+        <!-- Search input -->
+        <input type="text" id="categorySearch" class="form-control mb-3" 
+               placeholder="Search categories..." value="{{ search_query|default:'' }}">
 
         {% for category in categories %}
-        <div class="category-group">
+        <div class="category-group {% if selected_category_id == category.id %}active{% endif %}">
 
           <div class="category-title">
             {{ category.name }}
@@ -48,7 +50,7 @@
 
     <!-- =========================
         PRODUCT GRID
-    ========================= -->
+    ========================== -->
     <section class="col-lg-9 col-md-8">
 
       <div id="product-container" class="row g-4">
@@ -58,35 +60,49 @@
 
           <div class="product-card">
 
+            <!-- IMAGE -->
             <div class="product-img-wrapper">
-              <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-img">
+              {% if product.image %}
+              <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-img" loading="lazy">
+              {% else %}
+              <img src="{% static 'core/img/placeholder.png' %}" alt="No image" class="product-img">
+              {% endif %}
             </div>
 
+            <!-- BODY -->
             <div class="product-body">
               <h6 class="product-title">{{ product.name }}</h6>
               <div class="product-price">₹ {{ product.price }}</div>
             </div>
 
+            <!-- ACTIONS -->
             <div class="product-actions">
+
               <a href="{% url 'product_detail' product.id %}" class="btn btn-sm btn-primary">
                 View
               </a>
 
-              <button class="btn btn-warning btn-sm btn-add-cart" data-id="{{ product.id }}">
+              <!-- ✅ Cart Button -->
+              <button class="btn btn-warning btn-sm btn-add-cart" data-id="{{ product.id }}"
+                aria-label="Add {{ product.name }} to cart">
                 Add to Cart
               </button>
+
             </div>
 
           </div>
 
         </div>
         {% empty %}
-        <p>No products available.</p>
+        <div class="col-12 text-center text-muted py-5">
+          No products available.
+        </div>
         {% endfor %}
 
       </div>
 
-      <div id="loader" style="display:none; text-align:center; padding:20px;">
+      <!-- Loader (future infinite scroll / ajax) -->
+      <div id="loader" class="text-center py-4" style="display:none;">
         <i class="fa fa-spinner fa-spin fa-2x"></i>
       </div>
 
@@ -98,5 +114,5 @@
 {% endblock %}
 
 {% block extra_js %}
-<script src="{% static 'e_cart/js/category.js' %}"></script>
+<script src="{% static 'e_cart/js/category.js' %}?v=10"></script>
 {% endblock %}

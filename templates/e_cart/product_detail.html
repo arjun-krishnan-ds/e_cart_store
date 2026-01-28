@@ -2,25 +2,39 @@
 {% load static %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'e_cart/css/store.css' %}?v=5">
-<link rel="stylesheet" href="{% static 'e_cart/css/cart.css' %}?v=7"> {# For toast notifications #}
+<link rel="stylesheet" href="{% static 'e_cart/css/store.css' %}?v=6">
+<link rel="stylesheet" href="{% static 'e_cart/css/cart.css' %}?v=8">
 {% endblock %}
 
 {% block content %}
+
+<!-- ✅ CSRF TOKEN FOR AJAX -->
+<meta name="csrf-token" content="{{ csrf_token }}">
+
 <div class="container my-5 product-page">
 
     <div class="row g-5 align-items-start">
 
         <!-- PRODUCT IMAGE -->
         <div class="col-md-6">
-            <img src="{{ product.image.url }}" class="main-product-img w-100 rounded shadow-sm"
-                 alt="{{ product.name }}">
+            {% if product.image %}
+                <img
+                    src="{{ product.image.url }}"
+                    class="main-product-img w-100 rounded shadow-sm"
+                    alt="{{ product.name }}"
+                >
+            {% else %}
+                <div class="border p-5 text-center text-muted">
+                    No Image Available
+                </div>
+            {% endif %}
         </div>
 
         <!-- PRODUCT DETAILS -->
         <div class="col-md-6 product-details">
 
             <h2 class="fw-bold mb-2">{{ product.name }}</h2>
+
             <p class="product-category text-muted mb-1">
                 {{ product.category.name }}
             </p>
@@ -33,47 +47,71 @@
                 {{ product.description }}
             </p>
 
-            <!-- ✅ SIMPLIFIED QUANTITY SELECTOR -->
+            <!-- ✅ STABLE QUANTITY SELECTOR -->
             <div class="qty-wrapper mb-4">
                 <label class="fw-semibold mb-1 d-block">Quantity</label>
 
-                <div class="qty-control d-flex align-items-center gap-2" style="max-width:120px;">
-                    <button class="qty-btn btn-minus btn-outline-secondary rounded-circle" type="button">−</button>
+                <div class="qty-control d-flex align-items-center gap-2" style="max-width:140px;">
+                    <button
+                        type="button"
+                        class="qty-btn btn-minus btn-outline-secondary rounded-circle"
+                        aria-label="Decrease quantity"
+                    >−</button>
 
-                    <span id="qty-display" class="qty-display px-3 py-1 rounded border text-center">1</span>
+                    <input
+                        type="text"
+                        id="qty-input"
+                        class="form-control text-center"
+                        value="1"
+                        readonly
+                        style="max-width:60px;"
+                    />
 
-                    <button class="qty-btn btn-plus btn-outline-secondary rounded-circle" type="button">+</button>
+                    <button
+                        type="button"
+                        class="qty-btn btn-plus btn-outline-secondary rounded-circle"
+                        aria-label="Increase quantity"
+                    >+</button>
                 </div>
             </div>
 
             <!-- ✅ ACTION BUTTONS -->
             <div class="d-flex gap-3 flex-wrap">
-                <button class="btn btn-primary btn-lg btn-add-cart" data-id="{{ product.id }}">
+                <button
+                    class="btn btn-primary btn-add-cart"
+                    data-id="{{ product.id }}"
+                >
                     🛒 Add to Cart
                 </button>
 
-                <button class="btn btn-success btn-lg btn-buy-now" data-id="{{ product.id }}">
+                <!-- Buy now kept but harmless until wired -->
+                <button
+                    class="btn btn-success btn-buy-now"
+                    data-id="{{ product.id }}"
+                >
                     ⚡ Buy Now
                 </button>
 
-                <a href="{% url 'product_list' %}" class="btn btn-outline-secondary btn-lg">
+                <a href="{% url 'product_list' %}" class="btn btn-outline-secondary">
                     ← Back to Products
                 </a>
             </div>
 
         </div>
-
     </div>
 </div>
+
 {% endblock %}
 
 {% block extra_js %}
 
-<!-- ✅ Pass Django URLs safely -->
 <script>
+    // ✅ URL helpers (respect /store/ prefix)
     const ADD_CART_URL_PREFIX = "{% url 'add_to_cart' 0 %}".replace("0/", "");
     const CHECKOUT_URL = "{% url 'checkout' %}";
 </script>
 
-<script src="{% static 'e_cart/js/store.js' %}?v=5"></script>
+<!-- ✅ Only ONE JS controlling this page -->
+<script src="{% static 'e_cart/js/store.js' %}?v=9"></script>
+
 {% endblock %}

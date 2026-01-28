@@ -24,12 +24,20 @@
                 <div class="cart-info">
                     <h5 class="mb-1">{{ item.product.name }}</h5>
 
-                    <small class="text-muted">
-                        Quantity:
-                        <span class="cart-qty">{{ item.quantity }}</span>
-                    </small>
-                    <br>
+                    <!-- ✅ Quantity Controls -->
+                    <div class="cart-qty-control d-flex align-items-center gap-2 mt-1">
+                        <button class="btn btn-sm btn-outline-secondary btn-qty-minus"
+                                data-id="{{ item.product.id }}">−</button>
 
+                        <span class="cart-qty" id="qty-{{ item.product.id }}">
+                            {{ item.quantity }}
+                        </span>
+
+                        <button class="btn btn-sm btn-outline-secondary btn-qty-plus"
+                                data-id="{{ item.product.id }}">+</button>
+                    </div>
+
+                    <br>
                     <strong>
                         ₹ <span class="cart-item-subtotal">{{ item.subtotal }}</span>
                     </strong>
@@ -81,12 +89,11 @@
 {% endblock %}
 
 {% block extra_js %}
-
-<!-- ✅ Django URLs injected safely -->
 <script>
-    const PRODUCT_LIST_URL = "{% url 'product_list' %}";
     const REMOVE_CART_URL_PREFIX = "{% url 'remove_cart' 0 %}".replace("0/", "");
+    const UPDATE_CART_URL_PREFIX = "{% url 'update_cart' 0 %}".replace("0/", "");
+    const PRODUCT_LIST_URL = "{% url 'product_list' %}";
 </script>
 
-<script src="{% static 'e_cart/js/cart.js' %}?v=6"></script>
+<script src="{% static 'e_cart/js/cart.js' %}?v=10"></script>
 {% endblock %}

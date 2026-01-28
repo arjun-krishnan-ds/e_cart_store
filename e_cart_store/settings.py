@@ -39,6 +39,8 @@ ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "localhost,127.0.0.1").split(","
 # APPLICATION DEFINITION
 # --------------------------
 INSTALLED_APPS = [
+    "cloudinary",
+    "cloudinary_storage",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -48,8 +50,6 @@ INSTALLED_APPS = [
     "e_cart.apps.ECartConfig",
     "core.apps.CoreConfig",
     "rest_framework",
-    "cloudinary",
-    "cloudinary_storage",
 ]
 
 MIDDLEWARE = [
@@ -156,10 +156,8 @@ REST_FRAMEWORK = {
     ]
 }
 # --------------------------
-# CLOUDINARY MEDIA STORAGE
+# CLOUDINARY CONFIG
 # --------------------------
-
-DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
 CLOUDINARY_STORAGE = {
     "CLOUD_NAME": os.environ.get("CLOUDINARY_CLOUD_NAME"),
@@ -167,4 +165,4 @@ CLOUDINARY_STORAGE = {
     "API_SECRET": os.environ.get("CLOUDINARY_API_SECRET"),
 }
 
-MEDIA_URL = "/media/"
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
