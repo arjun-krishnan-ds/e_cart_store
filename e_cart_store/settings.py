@@ -12,10 +12,6 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 import os
 from pathlib import Path
 from django.urls import reverse_lazy
-import dj_database_url
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
 
 # --------------------------
 # BASE DIRECTORY
@@ -31,9 +27,7 @@ DEBUG = os.environ.get("DEBUG", "False") == "True"
 # --------------------------
 # ALLOWED HOSTS
 # --------------------------
-ALLOWED_HOSTS = os.environ.get(
-    "ALLOWED_HOSTS", "localhost,127.0.0.1"
-).split(",")
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
 
 # --------------------------
 # APPLICATION DEFINITION
@@ -54,7 +48,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",  # static files
+    "whitenoise.middleware.WhiteNoiseMiddleware",  # serve static files in production
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -93,6 +87,8 @@ DATABASES = {
     }
 }
 
+# Optional: DATABASE_URL for production
+import dj_database_url
 DATABASE_URL = os.environ.get("DATABASE_URL")
 if DATABASE_URL:
     DATABASES["default"] = dj_database_url.parse(
@@ -103,9 +99,7 @@ if DATABASE_URL:
 # PASSWORD VALIDATION
 # --------------------------
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"
-    },
+    {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
     {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
@@ -123,8 +117,13 @@ USE_TZ = True
 # STATIC FILES
 # --------------------------
 STATIC_URL = "/static/"
-STATICFILES_DIRS = [BASE_DIR / "static"]
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = BASE_DIR / "staticfiles"  # production static files
+STATICFILES_DIRS = [
+    BASE_DIR / "core" / "static" / "core",
+    BASE_DIR / "e_cart" / "static" / "e_cart",
+]
+
+# Use WhiteNoise for serving static in production
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # --------------------------
@@ -147,7 +146,7 @@ LOGIN_REDIRECT_URL = "/dashboard/"
 LOGOUT_REDIRECT_URL = "/"
 
 # --------------------------
-# EMAIL (production-ready placeholders)
+# EMAIL
 # --------------------------
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = os.environ.get("EMAIL_HOST", "smtp.example.com")
@@ -157,16 +156,12 @@ EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
 
 # --------------------------
-# DJANGO REST FRAMEWORK
+# REST FRAMEWORK
 # --------------------------
-REST_FRAMEWORK = {
-    "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework.permissions.AllowAny",
-    ]
-}
+REST_FRAMEWORK = {"DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.AllowAny"]}
 
 # --------------------------
-# SECURITY SETTINGS (production)
+# SECURITY SETTINGS (Production)
 # --------------------------
 SECURE_SSL_REDIRECT = not DEBUG
 CSRF_COOKIE_SECURE = not DEBUG
@@ -178,11 +173,4 @@ SECURE_HSTS_PRELOAD = True
 # --------------------------
 # LOGGING
 # --------------------------
-LOGGING = {
-    "version": 1,
-    "disable_existing_loggers": False,
-    "handlers": {
-        "console": {"class": "logging.StreamHandler"},
-    },
-    "root": {"handlers": ["console"], "level": "WARNING"},
-}
+LOGGING = {"version": 1, "disable_existing_loggers": False, "handlers": {"console": {"class": "logging.StreamHandler"}}, "root": {"handlers": ["console"], "level": "WARNING"}}
