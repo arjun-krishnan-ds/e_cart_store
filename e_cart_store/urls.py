@@ -22,9 +22,10 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls')),
-    path('store/', include('e_cart.urls')),       # normal views
+    path('store/', include('e_cart.urls')),        # normal views
     path('store/api/', include('e_cart.urls_api')),  # API views
 ]
 
+# Serve static files in development (handled by Whitenoise in production)
 if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
