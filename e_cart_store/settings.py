@@ -9,11 +9,11 @@ https://docs.djangoproject.com/en/6.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
+
 import os
 from pathlib import Path
 from django.urls import reverse_lazy
 import dj_database_url
-import cloudinary
 
 # --------------------------
 # BASE DIRECTORY
@@ -30,8 +30,7 @@ DEBUG = os.environ.get("DEBUG", "False") == "True"
 # ALLOWED HOSTS
 # --------------------------
 ALLOWED_HOSTS = os.environ.get(
-    "ALLOWED_HOSTS",
-    "localhost,127.0.0.1,.onrender.com"
+    "ALLOWED_HOSTS", "localhost,127.0.0.1,.onrender.com"
 ).split(",")
 
 # --------------------------
@@ -44,12 +43,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-
     # Third-party
-    "cloudinary_storage",   # 👈 put storage FIRST
+    "cloudinary_storage",  # 👈 put storage FIRST
     "cloudinary",
     "rest_framework",
-
     # Local apps
     "e_cart.apps.ECartConfig",
     "core.apps.CoreConfig",
@@ -100,16 +97,16 @@ DATABASES = {
 DATABASE_URL = os.environ.get("DATABASE_URL")
 if DATABASE_URL:
     DATABASES["default"] = dj_database_url.parse(
-        DATABASE_URL,
-        conn_max_age=600,
-        ssl_require=True
+        DATABASE_URL, conn_max_age=600, ssl_require=True
     )
 
 # --------------------------
 # PASSWORD VALIDATION
 # --------------------------
 AUTH_PASSWORD_VALIDATORS = [
-    {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
+    {
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"
+    },
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
     {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
@@ -142,21 +139,8 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
-# Explicit Cloudinary configuration
-cloudinary.config(
-    cloud_name=os.environ.get("CLOUDINARY_CLOUD_NAME"),
-    api_key=os.environ.get("CLOUDINARY_API_KEY"),
-    api_secret=os.environ.get("CLOUDINARY_API_SECRET"),
-    secure=True
-)
+# Cloudinary auto-configures using CLOUDINARY_URL environment variable
 
-# Safety check (prevents silent failure)
-if not all([
-    os.environ.get("CLOUDINARY_CLOUD_NAME"),
-    os.environ.get("CLOUDINARY_API_KEY"),
-    os.environ.get("CLOUDINARY_API_SECRET"),
-]):
-    print("⚠️ CLOUDINARY ENV VARIABLES NOT LOADED PROPERLY")
 
 # --------------------------
 # AUTHENTICATION
@@ -178,11 +162,7 @@ EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
 # --------------------------
 # REST FRAMEWORK
 # --------------------------
-REST_FRAMEWORK = {
-    "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework.permissions.AllowAny"
-    ]
-}
+REST_FRAMEWORK = {"DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.AllowAny"]}
 
 # --------------------------
 # SECURITY SETTINGS (Production)
@@ -208,4 +188,3 @@ LOGGING = {
         "level": "WARNING",
     },
 }
-
