@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 import os
 from pathlib import Path
 from django.urls import reverse_lazy
+import dj_database_url
 
 # --------------------------
 # BASE DIRECTORY
@@ -27,28 +28,35 @@ DEBUG = os.environ.get("DEBUG", "False") == "True"
 # --------------------------
 # ALLOWED HOSTS
 # --------------------------
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
+ALLOWED_HOSTS = os.environ.get(
+    "ALLOWED_HOSTS",
+    "localhost,127.0.0.1,.onrender.com"
+).split(",")
 
 # --------------------------
 # APPLICATION DEFINITION
 # --------------------------
 INSTALLED_APPS = [
-    "cloudinary",
-    "cloudinary_storage",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+
+    # Third-party
+    "cloudinary",
+    "cloudinary_storage",
+    "rest_framework",
+
+    # Local apps
     "e_cart.apps.ECartConfig",
     "core.apps.CoreConfig",
-    "rest_framework",
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",  # serve static files in production
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -87,12 +95,12 @@ DATABASES = {
     }
 }
 
-# Optional: DATABASE_URL for production
-import dj_database_url
 DATABASE_URL = os.environ.get("DATABASE_URL")
 if DATABASE_URL:
     DATABASES["default"] = dj_database_url.parse(
-        DATABASE_URL, conn_max_age=600, ssl_require=True
+        DATABASE_URL,
+        conn_max_age=600,
+        ssl_require=True
     )
 
 # --------------------------
@@ -114,20 +122,16 @@ USE_I18N = True
 USE_TZ = True
 
 # --------------------------
-# STATIC FILES
+# STATIC FILES (FIXED)
 # --------------------------
 STATIC_URL = "/static/"
-STATIC_ROOT = BASE_DIR / "staticfiles"  # production static files
-STATICFILES_DIRS = [
-    BASE_DIR / "core" / "static" / "core",
-    BASE_DIR / "e_cart" / "static" / "e_cart",
-]
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
-# Use WhiteNoise for serving static in production
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+# IMPORTANT: Do NOT use Manifest storage until stable
+STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 # --------------------------
-# MEDIA FILES (Cloudinary)
+# MEDIA FILES (Cloudinary only)
 # --------------------------
 MEDIA_URL = "/media/"
 DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
@@ -158,7 +162,11 @@ EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
 # --------------------------
 # REST FRAMEWORK
 # --------------------------
-REST_FRAMEWORK = {"DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.AllowAny"]}
+REST_FRAMEWORK = {
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.AllowAny"
+    ]
+}
 
 # --------------------------
 # SECURITY SETTINGS (Production)
@@ -173,4 +181,14 @@ SECURE_HSTS_PRELOAD = True
 # --------------------------
 # LOGGING
 # --------------------------
-LOGGING = {"version": 1, "disable_existing_loggers": False, "handlers": {"console": {"class": "logging.StreamHandler"}}, "root": {"handlers": ["console"], "level": "WARNING"}}
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {"class": "logging.StreamHandler"},
+    },
+    "root": {
+        "handlers": ["console"],
+        "level": "WARNING",
+    },
+}
