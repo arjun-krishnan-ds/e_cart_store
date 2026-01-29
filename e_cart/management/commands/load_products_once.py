@@ -9,5 +9,5 @@ class Command(BaseCommand):
         if Product.objects.exists():
             self.stdout.write("Products already exist. Skipping load.")
         else:
-            call_command("loaddata", "products.json")
+            call_command("loaddata", "data.json","full_data.json")
             self.stdout.write("Products loaded successfully.")

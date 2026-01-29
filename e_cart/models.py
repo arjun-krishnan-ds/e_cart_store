@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.utils.text import slugify
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from cloudinary.models import CloudinaryField
 
 
 # Create your models here.
@@ -45,7 +46,8 @@ class Product(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
     stock = models.PositiveIntegerField(default=0)
-    image = models.ImageField(upload_to="products/")
+    image = CloudinaryField("image", folder="products")
+
     is_available = models.BooleanField(default=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
@@ -146,6 +148,7 @@ class WalletTransaction(models.Model):
 
     def __str__(self):
         return f"{self.wallet.user} | {self.transaction_type} | ₹{self.amount}"
+
 
 @receiver(post_save, sender=User)
 def create_wallet(sender, instance, created, **kwargs):
