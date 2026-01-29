@@ -129,12 +129,11 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 # --------------------------
-# MEDIA FILES (Cloudinary only)
+# MEDIA FILES (CLOUDINARY ONLY - PRODUCTION SAFE)
 # --------------------------
-MEDIA_ROOT = BASE_DIR / "media"  # Local folder for temporary file access
-MEDIA_URL = "/media/"            # Keep for Django to reference
+# ⚠️ DO NOT define MEDIA_ROOT or MEDIA_URL on Render
+# This prevents Django from trying to use local filesystem storage
 
-# Use Cloudinary as default storage for production
 DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
 CLOUDINARY_STORAGE = {
@@ -142,6 +141,9 @@ CLOUDINARY_STORAGE = {
     "API_KEY": os.environ.get("CLOUDINARY_API_KEY"),
     "API_SECRET": os.environ.get("CLOUDINARY_API_SECRET"),
 }
+
+# Optional but recommended:
+# If CLOUDINARY_URL is set in Render, Cloudinary auto-configures itself.
 
 # --------------------------
 # AUTHENTICATION
