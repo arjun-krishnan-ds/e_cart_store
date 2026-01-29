@@ -122,18 +122,19 @@ USE_I18N = True
 USE_TZ = True
 
 # --------------------------
-# STATIC FILES (FIXED)
+# STATIC FILES
 # --------------------------
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
-
-# IMPORTANT: Do NOT use Manifest storage until stable
 STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 # --------------------------
 # MEDIA FILES (Cloudinary only)
 # --------------------------
-MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"  # Local folder for temporary file access
+MEDIA_URL = "/media/"            # Keep for Django to reference
+
+# Use Cloudinary as default storage for production
 DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
 CLOUDINARY_STORAGE = {
