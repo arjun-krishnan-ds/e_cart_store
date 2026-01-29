@@ -46,14 +46,15 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 
     # Third-party
+    "cloudinary_storage",   # 👈 put storage FIRST
     "cloudinary",
-    "cloudinary_storage",
     "rest_framework",
 
     # Local apps
     "e_cart.apps.ECartConfig",
     "core.apps.CoreConfig",
 ]
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -141,7 +142,7 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
-
+# Explicit Cloudinary configuration
 cloudinary.config(
     cloud_name=os.environ.get("CLOUDINARY_CLOUD_NAME"),
     api_key=os.environ.get("CLOUDINARY_API_KEY"),
@@ -149,8 +150,13 @@ cloudinary.config(
     secure=True
 )
 
-# Optional but recommended:
-# If CLOUDINARY_URL is set in Render, Cloudinary auto-configures itself.
+# Safety check (prevents silent failure)
+if not all([
+    os.environ.get("CLOUDINARY_CLOUD_NAME"),
+    os.environ.get("CLOUDINARY_API_KEY"),
+    os.environ.get("CLOUDINARY_API_SECRET"),
+]):
+    print("⚠️ CLOUDINARY ENV VARIABLES NOT LOADED PROPERLY")
 
 # --------------------------
 # AUTHENTICATION
