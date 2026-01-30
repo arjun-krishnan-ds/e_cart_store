@@ -1,0 +1,402 @@
+[
+{
+  "model": "e_cart.product",
+  "pk": 1,
+  "fields": {
+    "name": "Iphone 11",
+    "slug": "iphone-11",
+    "category": 22,
+    "description": "8 GB RAM 256 GB ROM | Wonderful White | 3200 mAh Battery",
+    "price": "42999.00",
+    "stock": 111,
+    "image": "image/upload/products/iphone11_g0Sqz7B_xYz5RSs.avif",
+    "is_available": true,
+    "created_at": "2026-01-04T00:05:47.562Z",
+    "updated_at": "2026-01-29T09:24:54.917Z"
+  }
+},
+{
+  "model": "e_cart.product",
+  "pk": 2,
+  "fields": {
+    "name": "Iphone 12",
+    "slug": "iphone-12",
+    "category": 22,
+    "description": "8 GB RAM 256 GB ROM | Glacier Grey | 3700 mAh Battery",
+    "price": "51999.00",
+    "stock": 245,
+    "image": "image/upload/products/iphone12_Hj3gON8_Lr9LK2H.avif",
+    "is_available": true,
+    "created_at": "2026-01-04T00:07:15.698Z",
+    "updated_at": "2026-01-29T09:24:54.669Z"
+  }
+},
+{
+  "model": "e_cart.product",
+  "pk": 3,
+  "fields": {
+    "name": "Iphone 13",
+    "slug": "iphone-13",
+    "category": 22,
+    "description": "6GB RAM 128 GB ROM | Wonderful White | 2700 mAh Battery",
+    "price": "67899.00",
+    "stock": 456,
+    "image": "image/upload/products/iphone13_ot5mb3K_FTJeqK1.avif",
+    "is_available": true,
+    "created_at": "2026-01-04T00:08:51.047Z",
+    "updated_at": "2026-01-29T09:24:54.420Z"
+  }
+},
+{
+  "model": "e_cart.product",
+  "pk": 4,
+  "fields": {
+    "name": "Samsung Galaxy S23 Ultra",
+    "slug": "samsung-galaxy-s23-ultra",
+    "category": 3,
+    "description": "8 GB RAM 256 GB ROM | Brilliant Black | 5100 mAh Battery",
+    "price": "65999.00",
+    "stock": 503,
+    "image": "image/upload/products/s23ultra_Xg6yVCF_uM0k8n6.avif",
+    "is_available": true,
+    "created_at": "2026-01-04T00:10:38.327Z",
+    "updated_at": "2026-01-29T09:24:54.180Z"
+  }
+},
+{
+  "model": "e_cart.product",
+  "pk": 5,
+  "fields": {
+    "name": "Samsung Galaxy S24 Ultra",
+    "slug": "samsung-galaxy-s24-ultra",
+    "category": 3,
+    "description": "12 GB RAM 512GB ROM | Titanium Gray | 5200 mAh Battery",
+    "price": "78999.00",
+    "stock": 657,
+    "image": "image/upload/products/s24ultra_yY5Qmoy_SrgETrI.avif",
+    "is_available": true,
+    "created_at": "2026-01-04T00:12:58.608Z",
+    "updated_at": "2026-01-29T09:24:53.932Z"
+  }
+},
+{
+  "model": "e_cart.product",
+  "pk": 6,
+  "fields": {
+    "name": "Kids Combo Wear",
+    "slug": "kids-combo-wear",
+    "category": 17,
+    "description": "XYZ Kid's Wear Size : Medium (M) | Age:8 -12 Years",
+    "price": "2999.00",
+    "stock": 56,
+    "image": "image/upload/products/kidswear1_93TydBx_h1UaOlC.avif",
+    "is_available": true,
+    "created_at": "2026-01-04T00:16:47.007Z",
+    "updated_at": "2026-01-29T09:24:53.689Z"
+  }
+},
+{
+  "model": "e_cart.product",
+  "pk": 7,
+  "fields": {
+    "name": "Kids Wear Combo",
+    "slug": "kids-wear-combo",
+    "category": 17,
+    "description": "XYZ Kid's Wear Size : Small (S) | Age:8 -12 Years",
+    "price": "2799.00",
+    "stock": 13,
+    "image": "image/upload/products/kidswear2_lsHC5yF_Rw4apwg.avif",
+    "is_available": true,
+    "created_at": "2026-01-04T00:18:50.630Z",
+    "updated_at": "2026-01-29T09:24:53.445Z"
+  }
+},
+{
+  "model": "e_cart.product",
+  "pk": 8,
+  "fields": {
+    "name": "SONY Wired Headphones",
+    "slug": "sony-wired-headphones",
+    "category": 14,
+    "description": "SONY Wired Headphones White premium Sound Quality",
+    "price": "7000.00",
+    "stock": 99,
+    "image": "image/upload/products/headphones-wired1_Ob0LfPu_XPiGp0h.avif",
+    "is_available": true,
+    "created_at": "2026-01-04T00:21:42.370Z",
+    "updated_at": "2026-01-29T09:24:53.200Z"
+  }
+},
+{
+  "model": "e_cart.product",
+  "pk": 9,
+  "fields": {
+    "name": "Nothing in ear bluetooth Ear pods",
+    "slug": "nothing-in-ear-bluetooth-ear-pods",
+    "category": 23,
+    "description": "Raging Red| Fast Charging Supported |8hr Battery Back-up",
+    "price": "5999.00",
+    "stock": 271,
+    "image": "image/upload/products/earpods1_deATK6p_sLKpMSQ.avif",
+    "is_available": true,
+    "created_at": "2026-01-04T00:27:54.925Z",
+    "updated_at": "2026-01-29T09:24:52.946Z"
+  }
+},
+{
+  "model": "e_cart.product",
+  "pk": 10,
+  "fields": {
+    "name": "ASUS Rog Gaming Series ROG-7000",
+    "slug": "asus-rog-gaming-series-rog-7000",
+    "category": 18,
+    "description": "NVIDIA| TUF Gaming|",
+    "price": "98199.00",
+    "stock": 579,
+    "image": "image/upload/products/gaminglaptop1_x8LO9PR_PCeMw8C.avif",
+    "is_available": true,
+    "created_at": "2026-01-04T00:29:52.528Z",
+    "updated_at": "2026-01-29T09:24:52.700Z"
+  }
+},
+{
+  "model": "e_cart.product",
+  "pk": 11,
+  "fields": {
+    "name": "Audible Wireless Bluetooth Headphones",
+    "slug": "audible-wireless-bluetooth-headphones",
+    "category": 13,
+    "description": "Bluetooth Wireless Headphones",
+    "price": "3455.00",
+    "stock": 12,
+    "image": "image/upload/products/headphones1_vnUPj3F_qzrPx4k.avif",
+    "is_available": true,
+    "created_at": "2026-01-04T00:31:59.498Z",
+    "updated_at": "2026-01-29T09:24:52.428Z"
+  }
+},
+{
+  "model": "e_cart.product",
+  "pk": 12,
+  "fields": {
+    "name": "Audible Wireless Headphones",
+    "slug": "audible-wireless-headphones",
+    "category": 13,
+    "description": "White Bluetooth Wireless Headphones",
+    "price": "2955.00",
+    "stock": 90,
+    "image": "image/upload/products/headphones2_rXq3FZk_0WM77ip.avif",
+    "is_available": true,
+    "created_at": "2026-01-04T00:35:18.854Z",
+    "updated_at": "2026-01-29T09:24:52.182Z"
+  }
+},
+{
+  "model": "e_cart.product",
+  "pk": 13,
+  "fields": {
+    "name": "Audible Wired Headphones",
+    "slug": "audible-wired-headphones",
+    "category": 14,
+    "description": "Metallic Red",
+    "price": "1199.00",
+    "stock": 3,
+    "image": "image/upload/products/headphones-wired2_IX2Q8Mr_q8ChIdA.avif",
+    "is_available": true,
+    "created_at": "2026-01-04T00:36:52.538Z",
+    "updated_at": "2026-01-29T09:24:51.938Z"
+  }
+},
+{
+  "model": "e_cart.product",
+  "pk": 14,
+  "fields": {
+    "name": "Audible Bluetooth Speaker",
+    "slug": "audible-bluetooth-speaker",
+    "category": 12,
+    "description": "Comes with Mic along with it",
+    "price": "21000.00",
+    "stock": 98,
+    "image": "image/upload/products/speaker1_qPt56E4_Se0QfV9.avif",
+    "is_available": true,
+    "created_at": "2026-01-04T00:39:11.044Z",
+    "updated_at": "2026-01-29T09:24:51.692Z"
+  }
+},
+{
+  "model": "e_cart.product",
+  "pk": 15,
+  "fields": {
+    "name": "Kurti for Women",
+    "slug": "kurti-for-women",
+    "category": 24,
+    "description": "Traditional Kurti for Women | Navy Blue",
+    "price": "4177.00",
+    "stock": 78,
+    "image": "image/upload/products/womens-wear_idssOqc_adErTb0.avif",
+    "is_available": true,
+    "created_at": "2026-01-04T00:42:36.975Z",
+    "updated_at": "2026-01-29T09:24:51.445Z"
+  }
+},
+{
+  "model": "e_cart.product",
+  "pk": 16,
+  "fields": {
+    "name": "SONY BRAVIA B-40 AMOLED TV",
+    "slug": "sony-bravia-b-40-amoled-tv",
+    "category": 21,
+    "description": "40 INCH AMOLED TV | 2 Years Warranty",
+    "price": "71000.00",
+    "stock": 56,
+    "image": "image/upload/products/tv2_2jVnBf9_dDwHOSV.avif",
+    "is_available": true,
+    "created_at": "2026-01-04T00:45:26.394Z",
+    "updated_at": "2026-01-29T09:24:51.199Z"
+  }
+},
+{
+  "model": "e_cart.product",
+  "pk": 17,
+  "fields": {
+    "name": "TIMEX Black Series for Men",
+    "slug": "timex-black-series-for-men",
+    "category": 25,
+    "description": "45Cm dial ANALOGUE",
+    "price": "7000.00",
+    "stock": 23,
+    "image": "image/upload/products/watches3_hdAoLaL_fEBbtUl.avif",
+    "is_available": true,
+    "created_at": "2026-01-04T00:48:08.012Z",
+    "updated_at": "2026-01-29T09:24:50.953Z"
+  }
+},
+{
+  "model": "e_cart.product",
+  "pk": 18,
+  "fields": {
+    "name": "Rodeo Classic Watches for Women",
+    "slug": "rodeo-classic-watches-for-women",
+    "category": 27,
+    "description": "Premium look Classy White",
+    "price": "5999.00",
+    "stock": 5,
+    "image": "image/upload/products/womes-watches1_oO9kiaP_moGo8im.avif",
+    "is_available": true,
+    "created_at": "2026-01-04T00:52:08.757Z",
+    "updated_at": "2026-01-29T09:24:50.700Z"
+  }
+},
+{
+  "model": "e_cart.product",
+  "pk": 19,
+  "fields": {
+    "name": "Retro T-Shirt for Men Prime Black",
+    "slug": "retro-t-shirt-for-men-prime-black",
+    "category": 7,
+    "description": "Black XL",
+    "price": "1799.00",
+    "stock": 0,
+    "image": "image/upload/products/tshirt1_3TaUmfW_4p6lgDN.avif",
+    "is_available": true,
+    "created_at": "2026-01-04T00:54:08.733Z",
+    "updated_at": "2026-01-29T09:24:50.455Z"
+  }
+},
+{
+  "model": "e_cart.product",
+  "pk": 20,
+  "fields": {
+    "name": "Retro T-Shirt for Men Wonder White",
+    "slug": "retro-t-shirt-for-men-wonder-white",
+    "category": 7,
+    "description": "White 32 XL",
+    "price": "1799.00",
+    "stock": 0,
+    "image": "image/upload/products/tshirt2_09zxL1P_RJDpzJ4.avif",
+    "is_available": true,
+    "created_at": "2026-01-04T00:55:33.257Z",
+    "updated_at": "2026-01-29T09:24:50.211Z"
+  }
+},
+{
+  "model": "e_cart.product",
+  "pk": 21,
+  "fields": {
+    "name": "Rodeo Classic Watches for Men",
+    "slug": "rodeo-classic-watches-for-men",
+    "category": 25,
+    "description": "Analogue dial",
+    "price": "5699.00",
+    "stock": 0,
+    "image": "image/upload/products/watches2_kCkEFxt_U0x1BEA.avif",
+    "is_available": true,
+    "created_at": "2026-01-04T01:00:19.511Z",
+    "updated_at": "2026-01-29T09:24:49.961Z"
+  }
+},
+{
+  "model": "e_cart.product",
+  "pk": 22,
+  "fields": {
+    "name": "Femme Women's Wear Full Set",
+    "slug": "femme-womens-wear-full-set",
+    "category": 16,
+    "description": "Full Set",
+    "price": "6999.00",
+    "stock": 12,
+    "image": "image/upload/products/womens-wear1_cYo2amF_lG1w1Gx.avif",
+    "is_available": true,
+    "created_at": "2026-01-04T01:03:01.515Z",
+    "updated_at": "2026-01-29T09:24:49.714Z"
+  }
+},
+{
+  "model": "e_cart.product",
+  "pk": 23,
+  "fields": {
+    "name": "JBL Bluetooth Speaker",
+    "slug": "jbl-bluetooth-speaker",
+    "category": 12,
+    "description": "12HR battery backup",
+    "price": "16799.00",
+    "stock": 3,
+    "image": "image/upload/products/speaker2_5pmptBg_083yptc.avif",
+    "is_available": true,
+    "created_at": "2026-01-04T01:05:07.548Z",
+    "updated_at": "2026-01-29T09:24:49.470Z"
+  }
+},
+{
+  "model": "e_cart.product",
+  "pk": 24,
+  "fields": {
+    "name": "SONY SMART TV Android",
+    "slug": "sony-smart-tv-android",
+    "category": 20,
+    "description": "Android Smart TV  42 Inch",
+    "price": "91000.00",
+    "stock": 45,
+    "image": "image/upload/products/tv4_XG296I7_N2xp2st.webp",
+    "is_available": true,
+    "created_at": "2026-01-04T01:06:57.031Z",
+    "updated_at": "2026-01-29T09:24:49.225Z"
+  }
+},
+{
+  "model": "e_cart.product",
+  "pk": 25,
+  "fields": {
+    "name": "SONY SMART TV",
+    "slug": "sony-smart-tv",
+    "category": 20,
+    "description": "40 Inch Android TV Sony Bravia series",
+    "price": "72000.00",
+    "stock": 41,
+    "image": "image/upload/products/tv3_Ly9L3Cj_sOZO6d4.avif",
+    "is_available": true,
+    "created_at": "2026-01-04T01:08:52.963Z",
+    "updated_at": "2026-01-29T09:24:48.981Z"
+  }
+}
+]

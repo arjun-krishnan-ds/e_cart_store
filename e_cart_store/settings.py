@@ -14,6 +14,8 @@ import os
 from pathlib import Path
 from django.urls import reverse_lazy
 import dj_database_url
+from decouple import config
+import dj_database_url
 
 # --------------------------
 # BASE DIRECTORY
@@ -84,21 +86,15 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "e_cart_store.wsgi.application"
 
-# --------------------------
-# DATABASE CONFIGURATION
-# --------------------------
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
-}
+#DATABASE
 
-DATABASE_URL = os.environ.get("DATABASE_URL")
-if DATABASE_URL:
-    DATABASES["default"] = dj_database_url.parse(
-        DATABASE_URL, conn_max_age=600, ssl_require=True
+DATABASES = {
+    "default": dj_database_url.config(
+        default="sqlite:///" + str(BASE_DIR / "db.sqlite3"),  # fallback local
+        conn_max_age=600,
+        ssl_require=True
     )
+}
 
 # --------------------------
 # PASSWORD VALIDATION
