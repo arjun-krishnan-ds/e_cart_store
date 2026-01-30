@@ -46,160 +46,166 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ---------------------------
-    // EVENT DELEGATION
+    // EVENT DELEGATION (SAFE – attach only once)
     // ---------------------------
-    document.body.addEventListener("click", (e) => {
-        const btn = e.target.closest(".btn-remove-cart, .btn-qty-plus, .btn-qty-minus");
-        if (!btn) return;
+    if (!window.__cartListenerAttached) {
+        window.__cartListenerAttached = true;
 
-        const productId = btn.dataset.id;
-        if (!productId) return;
+        document.body.addEventListener("click", (e) => {
 
-        const row = document.getElementById(`cart-row-${productId}`);
-        if (!row) return;
+            const btn = e.target.closest(".btn-remove-cart, .btn-qty-plus, .btn-qty-minus");
+            if (!btn) return;
 
-        const qtySpan = row.querySelector(".cart-qty");
-        const subtotalSpan = row.querySelector(".cart-item-subtotal");
+            const productId = btn.dataset.id;
+            if (!productId) return;
 
-        const currentQty = parseInt(qtySpan.innerText) || 1;
-        const currentSubtotal = parseFloat(subtotalSpan.innerText) || 0;
+            const row = document.getElementById(`cart-row-${productId}`);
+            if (!row) return;
 
-        // ✅ SAFE: avoid divide by zero
-        const unitPrice = currentQty ? (currentSubtotal / currentQty) : 0;
+            const qtySpan = row.querySelector(".cart-qty");
+            const subtotalSpan = row.querySelector(".cart-item-subtotal");
 
-        // ==================================================
-        // REMOVE (decrement first, delete if reaches 0)
-        // ==================================================
-        if (btn.classList.contains("btn-remove-cart")) {
+            const currentQty = parseInt(qtySpan.innerText) || 1;
+            const currentSubtotal = parseFloat(subtotalSpan.innerText) || 0;
 
-            const mode = currentQty > 1 ? "single" : "all";
+            const unitPrice = currentQty ? (currentSubtotal / currentQty) : 0;
 
-            fetch(`${REMOVE_CART_URL_PREFIX}${productId}/`, {
-                method: "POST",
-                headers: {
-                    "X-CSRFToken": csrftoken,
-                    "X-Requested-With": "XMLHttpRequest",
-                    "Content-Type": "application/x-www-form-urlencoded",
-                },
-                body: `mode=${mode}`
-            })
-            .then(async res => {
-                const text = await res.text();
-                try {
-                    return JSON.parse(text);
-                } catch (e) {
-                    console.error("❌ Invalid JSON from server:", text);
-                    throw new Error("Invalid JSON");
-                }
-            })
-            .then(data => {
-                if (!data.success) {
-                    showToast("❌ Failed to remove item", "error");
-                    return;
-                }
+            // ==================================================
+            // REMOVE (decrement first, delete if reaches 0)
+            // ==================================================
+            if (btn.classList.contains("btn-remove-cart")) {
 
-                // ✅ If item still exists → update qty + subtotal
-                if (data.remaining_qty > 0) {
-                    const newQty = data.remaining_qty;
-                    const newSubtotal = unitPrice * newQty;
+                const mode = currentQty > 1 ? "single" : "all";
 
-                    qtySpan.innerText = newQty;
-                    subtotalSpan.innerText = newSubtotal.toFixed(2);
-
-                    showToast("➖ 1 item removed from cart", "success");
-                }
-                // ✅ If qty became zero → remove row
-                else {
-                    row.remove();
-                    showToast("🗑️ Item removed from cart", "success");
-                }
-
-                // ✅ Always update summary
-                updateSummary(data.cart_count, data.cart_total);
-
-                // ✅ Empty cart UI
-                if (data.cart_count === 0) {
-                    const wrapper = document.querySelector(".cart-wrapper");
-                    if (wrapper) {
-                        wrapper.innerHTML = `
-                            <div class="text-center py-5">
-                                <h4>🛒 Your cart is empty</h4>
-                                <a href="${PRODUCT_LIST_URL}" class="btn btn-primary mt-3">
-                                    Continue Shopping
-                                </a>
-                            </div>
-                        `;
+                fetch(`${REMOVE_CART_URL_PREFIX}${productId}/`, {
+                    method: "POST",
+                    headers: {
+                        "X-CSRFToken": csrftoken,
+                        "X-Requested-With": "XMLHttpRequest",
+                        "Content-Type": "application/x-www-form-urlencoded",
+                    },
+                    body: `mode=${mode}`
+                })
+                .then(async res => {
+                    const text = await res.text();
+                    try {
+                        return JSON.parse(text);
+                    } catch (e) {
+                        console.error("❌ Invalid JSON from server:", text);
+                        throw new Error("Invalid JSON");
                     }
-                }
-            })
-            .catch((err) => {
-                console.error(err);
-                showToast("⚠️ Network error. Try again.", "error");
-            });
-        }
+                })
+                .then(data => {
+                    if (!data.success) {
+                        showToast("❌ Failed to remove item", "error");
+                        return;
+                    }
 
-        // ==================================================
-        // INCREMENT QUANTITY
-        // ==================================================
-        if (btn.classList.contains("btn-qty-plus")) {
+                    if (data.remaining_qty > 0) {
+                        const newQty = data.remaining_qty;
+                        const newSubtotal = unitPrice * newQty;
 
-            fetch(`${UPDATE_CART_URL_PREFIX}${productId}/`, {
-                method: "POST",
-                headers: {
-                    "X-CSRFToken": csrftoken,
-                    "Content-Type": "application/x-www-form-urlencoded",
-                    "X-Requested-With": "XMLHttpRequest",
-                },
-                body: `qty=${currentQty + 1}`
-            })
-            .then(res => res.json())
-            .then(data => {
-                if (data.status !== "success") {
-                    showToast("❌ Failed to update quantity", "error");
-                    return;
-                }
+                        qtySpan.innerText = newQty;
+                        subtotalSpan.innerText = newSubtotal.toFixed(2);
 
-                qtySpan.innerText = currentQty + 1;
-                subtotalSpan.innerText = Number(data.subtotal).toFixed(2);
+                        showToast("➖ 1 item removed from cart", "success");
+                    } else {
+                        row.remove();
+                        showToast("🗑️ Item removed from cart", "success");
+                    }
 
-                updateSummary(data.cart_count, data.total);
-            })
-            .catch(() => {
-                showToast("⚠️ Network error. Try again.", "error");
-            });
-        }
+                    updateSummary(data.cart_count, data.cart_total);
 
-        // ==================================================
-        // DECREMENT QUANTITY
-        // ==================================================
-        if (btn.classList.contains("btn-qty-minus")) {
-            if (currentQty <= 1) return;
+                    if (data.cart_count === 0) {
+                        const wrapper = document.querySelector(".cart-wrapper");
+                        if (wrapper) {
+                            wrapper.innerHTML = `
+                                <div class="text-center py-5">
+                                    <h4>🛒 Your cart is empty</h4>
+                                    <a href="${PRODUCT_LIST_URL}" class="btn btn-primary mt-3">
+                                        Continue Shopping
+                                    </a>
+                                </div>
+                            `;
+                        }
+                    }
+                })
+                .catch((err) => {
+                    console.error(err);
+                    showToast("⚠️ Network error. Try again.", "error");
+                });
 
-            fetch(`${UPDATE_CART_URL_PREFIX}${productId}/`, {
-                method: "POST",
-                headers: {
-                    "X-CSRFToken": csrftoken,
-                    "Content-Type": "application/x-www-form-urlencoded",
-                    "X-Requested-With": "XMLHttpRequest",
-                },
-                body: `qty=${currentQty - 1}`
-            })
-            .then(res => res.json())
-            .then(data => {
-                if (data.status !== "success") {
-                    showToast("❌ Failed to update quantity", "error");
-                    return;
-                }
+                return;
+            }
 
-                qtySpan.innerText = currentQty - 1;
-                subtotalSpan.innerText = Number(data.subtotal).toFixed(2);
+            // ==================================================
+            // INCREMENT QUANTITY
+            // ==================================================
+            if (btn.classList.contains("btn-qty-plus")) {
 
-                updateSummary(data.cart_count, data.total);
-            })
-            .catch(() => {
-                showToast("⚠️ Network error. Try again.", "error");
-            });
-        }
+                fetch(`${UPDATE_CART_URL_PREFIX}${productId}/`, {
+                    method: "POST",
+                    headers: {
+                        "X-CSRFToken": csrftoken,
+                        "Content-Type": "application/x-www-form-urlencoded",
+                        "X-Requested-With": "XMLHttpRequest",
+                    },
+                    body: `qty=${currentQty + 1}`
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.status !== "success") {
+                        showToast("❌ Failed to update quantity", "error");
+                        return;
+                    }
 
-    });
+                    qtySpan.innerText = currentQty + 1;
+                    subtotalSpan.innerText = Number(data.subtotal).toFixed(2);
+
+                    updateSummary(data.cart_count, data.total);
+                })
+                .catch(() => {
+                    showToast("⚠️ Network error. Try again.", "error");
+                });
+
+                return;
+            }
+
+            // ==================================================
+            // DECREMENT QUANTITY
+            // ==================================================
+            if (btn.classList.contains("btn-qty-minus")) {
+                if (currentQty <= 1) return;
+
+                fetch(`${UPDATE_CART_URL_PREFIX}${productId}/`, {
+                    method: "POST",
+                    headers: {
+                        "X-CSRFToken": csrftoken,
+                        "Content-Type": "application/x-www-form-urlencoded",
+                        "X-Requested-With": "XMLHttpRequest",
+                    },
+                    body: `qty=${currentQty - 1}`
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.status !== "success") {
+                        showToast("❌ Failed to update quantity", "error");
+                        return;
+                    }
+
+                    qtySpan.innerText = currentQty - 1;
+                    subtotalSpan.innerText = Number(data.subtotal).toFixed(2);
+
+                    updateSummary(data.cart_count, data.total);
+                })
+                .catch(() => {
+                    showToast("⚠️ Network error. Try again.", "error");
+                });
+
+                return;
+            }
+
+        });
+    }
+
 });
