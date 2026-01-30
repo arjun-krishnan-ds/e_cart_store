@@ -88,14 +88,21 @@ WSGI_APPLICATION = "e_cart_store.wsgi.application"
 
 #DATABASE
 
+
+# Default to SQLite
 DATABASES = {
-    "default": dj_database_url.config(
-        default="sqlite:///" + str(BASE_DIR / "db.sqlite3"),  # fallback local
-        conn_max_age=600,
-        ssl_require=True
-    )
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    }
 }
 
+# Override with PostgreSQL if DATABASE_URL exists
+DATABASE_URL = os.environ.get("DATABASE_URL")
+if DATABASE_URL:
+    DATABASES["default"] = dj_database_url.parse(
+        DATABASE_URL, conn_max_age=600, ssl_require=True
+    )
 # --------------------------
 # PASSWORD VALIDATION
 # --------------------------
