@@ -16,6 +16,7 @@ from django.urls import reverse_lazy
 import dj_database_url
 from decouple import config
 import dj_database_url
+import cloudinary
 
 # --------------------------
 # BASE DIRECTORY
@@ -139,6 +140,10 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 # ==========================
 # CLOUDINARY MEDIA STORAGE
 # ==========================
+cloudinary.config(
+    cloudinary_url=os.environ.get("CLOUDINARY_URL")
+)
+
 
 DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
