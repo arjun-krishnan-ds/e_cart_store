@@ -69,7 +69,22 @@ class Product(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
     stock = models.PositiveIntegerField(default=0)
-    image = CloudinaryField("image", folder="products", public_id=product_image_path)
+
+    # Lambda ensures safe public_id generation at upload time
+    image = CloudinaryField(
+        "image",
+        folder="products",
+        public_id=lambda instance, filename: (
+            (
+                instance.slug
+                if getattr(instance, "slug", None)
+                else slugify(getattr(instance, "name", "product"))
+            )
+            + "."
+            + filename.split(".")[-1]
+        ),
+    )
+
     is_available = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
