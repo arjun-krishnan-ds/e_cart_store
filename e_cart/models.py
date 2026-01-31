@@ -35,37 +35,38 @@ class Category(models.Model):
             self.slug = slugify(self.name)
         super().save(*args, **kwargs)
 
+# -----------------------------
+# Public ID Functions (Safe)
+# -----------------------------
 
 def product_image_path(instance, filename):
     """
-    Generates a predictable Cloudinary public_id based on product slug.
-    Example: products/my-cool-product.jpg
+    Generates a predictable Cloudinary public_id for product images.
+    Uses slug or name fallback to avoid errors.
     """
-    ext = filename.split('.')[-1]  # preserve original extension
-    # fallback: if slug not set yet, slugify the name
-    slug = instance.slug if instance.slug else slugify(instance.name)
-    return f"{slug}.{ext}"  # file name will be slug.extension
+    ext = filename.split('.')[-1]
+    slug = instance.slug if getattr(instance, 'slug', None) else slugify(getattr(instance, 'name', 'product'))
+    return f"{slug}.{ext}"  # example: products/my-cool-product.jpg
+
+# -----------------------------
+# Product Model
+# -----------------------------
 
 class Product(models.Model):
     name = models.CharField(max_length=200)
     slug = models.SlugField(max_length=220, unique=True, blank=True)
     category = models.ForeignKey(
-        'Category', on_delete=models.CASCADE, related_name="products"
+        "Category", on_delete=models.CASCADE, related_name="products"
     )
-
     description = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
     stock = models.PositiveIntegerField(default=0)
-    
-    # Use our custom product_image_path for predictable filenames
     image = CloudinaryField(
         'image',
-        folder='products',           # Cloudinary folder
+        folder='products',
         public_id=product_image_path
     )
-
     is_available = models.BooleanField(default=True)
-
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -76,7 +77,6 @@ class Product(models.Model):
         return self.name
 
     def save(self, *args, **kwargs):
-        # Auto-generate slug if missing
         if not self.slug:
             self.slug = slugify(self.name)
         super().save(*args, **kwargs)
