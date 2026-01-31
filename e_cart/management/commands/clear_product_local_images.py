@@ -4,11 +4,11 @@ import django
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "e_cart.settings")
 django.setup()
 
-from e_cart.models import Product   # change app name
+from e_cart.models import Product
 
 
 def run():
-    qs = Product.objects.exclude(image="")
+    qs = Product.objects.exclude(image=None)
 
     print(f"Found {qs.count()} product image entries")
 

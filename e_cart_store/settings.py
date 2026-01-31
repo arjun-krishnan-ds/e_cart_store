@@ -14,8 +14,6 @@ import os
 from pathlib import Path
 from django.urls import reverse_lazy
 import dj_database_url
-from decouple import config
-import dj_database_url
 import cloudinary
 
 # --------------------------
@@ -47,7 +45,6 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # Third-party
-    "cloudinary_storage",  # 👈 put storage FIRST
     "cloudinary",
     "rest_framework",
     # Local apps
@@ -137,7 +134,7 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 # ⚠️ DO NOT define MEDIA_ROOT or MEDIA_URL on Render
 # This prevents Django from trying to use local filesystem storage
 
-#
+
 # --------------------------
 # Cloudinary Config
 # --------------------------
@@ -145,15 +142,6 @@ cloudinary.config(
     cloudinary_url=os.environ.get("CLOUDINARY_URL")  # your env var on Render
 )
 
-# Cloudinary storage backend
-DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
-
-# Optional: ensure files are always uploaded to a specific folder
-CLOUDINARY_STORAGE = {
-    "FOLDER": "products",   # base folder in Cloudinary
-    "OVERWRITE": True,      # overwrite files if same public_id exists
-    "CACHE": False          # important: disables ephemeral local caching
-}
 # --------------------------
 # AUTHENTICATION
 # --------------------------

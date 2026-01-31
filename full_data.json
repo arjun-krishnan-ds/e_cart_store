@@ -2075,7 +2075,6 @@
             "description": "8 GB RAM 256 GB ROM | Wonderful White | 3200 mAh Battery",
             "price": "42999.00",
             "stock": 111,
-            "image": "products/iphone11_g0Sqz7B_xYz5RSs.avif",
             "is_available": true,
             "created_at": "2026-01-04T00:05:47.562Z",
             "updated_at": "2026-01-29T09:24:54.917Z"
@@ -2091,7 +2090,6 @@
             "description": "8 GB RAM 256 GB ROM | Glacier Grey | 3700 mAh Battery",
             "price": "51999.00",
             "stock": 245,
-            "image": "products/iphone12_Hj3gON8_Lr9LK2H.avif",
             "is_available": true,
             "created_at": "2026-01-04T00:07:15.698Z",
             "updated_at": "2026-01-29T09:24:54.669Z"
@@ -2107,7 +2105,6 @@
             "description": "6GB RAM 128 GB ROM | Wonderful White | 2700 mAh Battery",
             "price": "67899.00",
             "stock": 456,
-            "image": "products/iphone13_ot5mb3K_FTJeqK1.avif",
             "is_available": true,
             "created_at": "2026-01-04T00:08:51.047Z",
             "updated_at": "2026-01-29T09:24:54.420Z"
@@ -2123,7 +2120,6 @@
             "description": "8 GB RAM 256 GB ROM | Brilliant Black | 5100 mAh Battery",
             "price": "65999.00",
             "stock": 503,
-            "image": "products/s23ultra_Xg6yVCF_uM0k8n6.avif",
             "is_available": true,
             "created_at": "2026-01-04T00:10:38.327Z",
             "updated_at": "2026-01-29T09:24:54.180Z"
@@ -2139,7 +2135,6 @@
             "description": "12 GB RAM 512GB ROM | Titanium Gray | 5200 mAh Battery",
             "price": "78999.00",
             "stock": 657,
-            "image": "products/s24ultra_yY5Qmoy_SrgETrI.avif",
             "is_available": true,
             "created_at": "2026-01-04T00:12:58.608Z",
             "updated_at": "2026-01-29T09:24:53.932Z"
@@ -2155,7 +2150,6 @@
             "description": "XYZ Kid's Wear Size : Medium (M) | Age:8 -12 Years",
             "price": "2999.00",
             "stock": 56,
-            "image": "products/kidswear1_93TydBx_h1UaOlC.avif",
             "is_available": true,
             "created_at": "2026-01-04T00:16:47.007Z",
             "updated_at": "2026-01-29T09:24:53.689Z"
@@ -2171,7 +2165,6 @@
             "description": "XYZ Kid's Wear Size : Small (S) | Age:8 -12 Years",
             "price": "2799.00",
             "stock": 13,
-            "image": "products/kidswear2_lsHC5yF_Rw4apwg.avif",
             "is_available": true,
             "created_at": "2026-01-04T00:18:50.630Z",
             "updated_at": "2026-01-29T09:24:53.445Z"
@@ -2187,7 +2180,6 @@
             "description": "SONY Wired Headphones White premium Sound Quality",
             "price": "7000.00",
             "stock": 99,
-            "image": "products/headphones-wired1_Ob0LfPu_XPiGp0h.avif",
             "is_available": true,
             "created_at": "2026-01-04T00:21:42.370Z",
             "updated_at": "2026-01-29T09:24:53.200Z"
@@ -2203,7 +2195,6 @@
             "description": "Raging Red| Fast Charging Supported |8hr Battery Back-up",
             "price": "5999.00",
             "stock": 271,
-            "image": "products/earpods1_deATK6p_sLKpMSQ.avif",
             "is_available": true,
             "created_at": "2026-01-04T00:27:54.925Z",
             "updated_at": "2026-01-29T09:24:52.946Z"
@@ -2219,7 +2210,6 @@
             "description": "NVIDIA| TUF Gaming|",
             "price": "98199.00",
             "stock": 579,
-            "image": "products/gaminglaptop1_x8LO9PR_PCeMw8C.avif",
             "is_available": true,
             "created_at": "2026-01-04T00:29:52.528Z",
             "updated_at": "2026-01-29T09:24:52.700Z"
@@ -2235,7 +2225,6 @@
             "description": "Bluetooth Wireless Headphones",
             "price": "3455.00",
             "stock": 12,
-            "image": "products/headphones1_vnUPj3F_qzrPx4k.avif",
             "is_available": true,
             "created_at": "2026-01-04T00:31:59.498Z",
             "updated_at": "2026-01-29T09:24:52.428Z"
@@ -2251,7 +2240,6 @@
             "description": "White Bluetooth Wireless Headphones",
             "price": "2955.00",
             "stock": 90,
-            "image": "products/headphones2_rXq3FZk_0WM77ip.avif",
             "is_available": true,
             "created_at": "2026-01-04T00:35:18.854Z",
             "updated_at": "2026-01-29T09:24:52.182Z"
@@ -2267,8 +2255,6 @@
             "description": "Metallic Red",
             "price": "1199.00",
             "stock": 3,
-            "image": "products/headphones-wired2_IX2Q8Mr_q8ChIdA.avif",
-            "is_available": true,
             "created_at": "2026-01-04T00:36:52.538Z",
             "updated_at": "2026-01-29T09:24:51.938Z"
         }
@@ -2283,7 +2269,6 @@
             "description": "Comes with Mic along with it",
             "price": "21000.00",
             "stock": 98,
-            "image": "products/speaker1_qPt56E4_Se0QfV9.avif",
             "is_available": true,
             "created_at": "2026-01-04T00:39:11.044Z",
             "updated_at": "2026-01-29T09:24:51.692Z"
@@ -2299,7 +2284,6 @@
             "description": "Traditional Kurti for Women | Navy Blue",
             "price": "4177.00",
             "stock": 78,
-            "image": "products/womens-wear_idssOqc_adErTb0.avif",
             "is_available": true,
             "created_at": "2026-01-04T00:42:36.975Z",
             "updated_at": "2026-01-29T09:24:51.445Z"
@@ -2315,7 +2299,6 @@
             "description": "40 INCH AMOLED TV | 2 Years Warranty",
             "price": "71000.00",
             "stock": 56,
-            "image": "products/tv2_2jVnBf9_dDwHOSV.avif",
             "is_available": true,
             "created_at": "2026-01-04T00:45:26.394Z",
             "updated_at": "2026-01-29T09:24:51.199Z"
@@ -2331,7 +2314,6 @@
             "description": "45Cm dial ANALOGUE",
             "price": "7000.00",
             "stock": 23,
-            "image": "products/watches3_hdAoLaL_fEBbtUl.avif",
             "is_available": true,
             "created_at": "2026-01-04T00:48:08.012Z",
             "updated_at": "2026-01-29T09:24:50.953Z"
@@ -2347,7 +2329,6 @@
             "description": "Premium look Classy White",
             "price": "5999.00",
             "stock": 5,
-            "image": "products/womes-watches1_oO9kiaP_moGo8im.avif",
             "is_available": true,
             "created_at": "2026-01-04T00:52:08.757Z",
             "updated_at": "2026-01-29T09:24:50.700Z"
@@ -2363,7 +2344,6 @@
             "description": "Black XL",
             "price": "1799.00",
             "stock": 0,
-            "image": "products/tshirt1_3TaUmfW_4p6lgDN.avif",
             "is_available": true,
             "created_at": "2026-01-04T00:54:08.733Z",
             "updated_at": "2026-01-29T09:24:50.455Z"
@@ -2379,7 +2359,6 @@
             "description": "White 32 XL",
             "price": "1799.00",
             "stock": 0,
-            "image": "products/tshirt2_09zxL1P_RJDpzJ4.avif",
             "is_available": true,
             "created_at": "2026-01-04T00:55:33.257Z",
             "updated_at": "2026-01-29T09:24:50.211Z"
@@ -2395,7 +2374,6 @@
             "description": "Analogue dial",
             "price": "5699.00",
             "stock": 0,
-            "image": "products/watches2_kCkEFxt_U0x1BEA.avif",
             "is_available": true,
             "created_at": "2026-01-04T01:00:19.511Z",
             "updated_at": "2026-01-29T09:24:49.961Z"
@@ -2411,7 +2389,6 @@
             "description": "Full Set",
             "price": "6999.00",
             "stock": 12,
-            "image": "products/womens-wear1_cYo2amF_lG1w1Gx.avif",
             "is_available": true,
             "created_at": "2026-01-04T01:03:01.515Z",
             "updated_at": "2026-01-29T09:24:49.714Z"
@@ -2427,7 +2404,6 @@
             "description": "12HR battery backup",
             "price": "16799.00",
             "stock": 3,
-            "image": "products/speaker2_5pmptBg_083yptc.avif",
             "is_available": true,
             "created_at": "2026-01-04T01:05:07.548Z",
             "updated_at": "2026-01-29T09:24:49.470Z"
@@ -2443,7 +2419,6 @@
             "description": "Android Smart TV  42 Inch",
             "price": "91000.00",
             "stock": 45,
-            "image": "products/tv4_XG296I7_N2xp2st.webp",
             "is_available": true,
             "created_at": "2026-01-04T01:06:57.031Z",
             "updated_at": "2026-01-29T09:24:49.225Z"
@@ -2459,7 +2434,6 @@
             "description": "40 Inch Android TV Sony Bravia series",
             "price": "72000.00",
             "stock": 41,
-            "image": "products/tv3_Ly9L3Cj_sOZO6d4.avif",
             "is_available": true,
             "created_at": "2026-01-04T01:08:52.963Z",
             "updated_at": "2026-01-29T09:24:48.981Z"

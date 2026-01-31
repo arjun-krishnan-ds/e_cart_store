@@ -35,47 +35,33 @@ class Category(models.Model):
             self.slug = slugify(self.name)
         super().save(*args, **kwargs)
 
-
-# -----------------------------
-# Public ID Functions (Safe)
-# -----------------------------
-
-
-def product_image_path(instance, filename):
-    """
-    Generates a predictable Cloudinary public_id for product images.
-    Uses slug or name fallback to avoid errors.
-    """
-    ext = filename.split(".")[-1]
-    slug = (
-        instance.slug
-        if getattr(instance, "slug", None)
-        else slugify(getattr(instance, "name", "product"))
-    )
-    return f"{slug}.{ext}"  # example: products/my-cool-product.jpg
-
-
 # -----------------------------
 # Product Model
 # -----------------------------
-from django.db import models
-from django.utils.text import slugify
-from cloudinary.models import CloudinaryField
 
 class Product(models.Model):
     name = models.CharField(max_length=200)
     slug = models.SlugField(max_length=220, unique=True, blank=True)
+
     category = models.ForeignKey(
-        "Category", on_delete=models.CASCADE, related_name="products"
+        Category,
+        on_delete=models.CASCADE,
+        related_name="products"
     )
+
     description = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
     stock = models.PositiveIntegerField(default=0)
-    
-    # Keep simple CloudinaryField; public_id will be set in save()
-    image = CloudinaryField('image', folder='products')
-    
+
+    image = CloudinaryField(
+        "image",
+        folder="products",
+        blank=True,
+        null=True
+    )
+
     is_available = models.BooleanField(default=True)
+
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -86,17 +72,9 @@ class Product(models.Model):
         return self.name
 
     def save(self, *args, **kwargs):
-        # Ensure slug exists
         if not self.slug:
             self.slug = slugify(self.name)
-
-        # Set predictable public_id for Cloudinary
-        if self.image:
-            ext = self.image.name.split('.')[-1]
-            self.image.public_id = f"{self.slug}.{ext}"
-
         super().save(*args, **kwargs)
-
 
 class Order(models.Model):
     PAYMENT_CHOICES = (
