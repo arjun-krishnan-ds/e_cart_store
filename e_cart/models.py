@@ -58,7 +58,9 @@ def product_image_path(instance, filename):
 # -----------------------------
 # Product Model
 # -----------------------------
-
+from django.db import models
+from django.utils.text import slugify
+from cloudinary.models import CloudinaryField
 
 class Product(models.Model):
     name = models.CharField(max_length=200)
@@ -69,22 +71,10 @@ class Product(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
     stock = models.PositiveIntegerField(default=0)
-
-    # Lambda ensures safe public_id generation at upload time
-    image = CloudinaryField(
-        "image",
-        folder="products",
-        public_id=lambda instance, filename: (
-            (
-                instance.slug
-                if getattr(instance, "slug", None)
-                else slugify(getattr(instance, "name", "product"))
-            )
-            + "."
-            + filename.split(".")[-1]
-        ),
-    )
-
+    
+    # Keep simple CloudinaryField; public_id will be set in save()
+    image = CloudinaryField('image', folder='products')
+    
     is_available = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -96,8 +86,15 @@ class Product(models.Model):
         return self.name
 
     def save(self, *args, **kwargs):
+        # Ensure slug exists
         if not self.slug:
             self.slug = slugify(self.name)
+
+        # Set predictable public_id for Cloudinary
+        if self.image:
+            ext = self.image.name.split('.')[-1]
+            self.image.public_id = f"{self.slug}.{ext}"
+
         super().save(*args, **kwargs)
 
 
